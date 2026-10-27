@@ -4,181 +4,258 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kindo/Legal — Security Policy</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.7;padding:2rem 1rem}
-.container{max-width:960px;margin:0 auto}
-a{color:#58a6ff;text-decoration:none}
-a:hover{text-decoration:underline}
-.back-link{display:inline-block;margin-bottom:2rem;font-size:0.95rem}
-h1{font-size:2rem;font-weight:600;color:#f0f6fc;margin-bottom:0.25rem}
-.subtitle{color:#8b949e;font-size:0.95rem;margin-bottom:2rem}
-h2{font-size:1.4rem;font-weight:600;color:#f0f6fc;margin-top:2.5rem;margin-bottom:1rem;padding-bottom:0.4rem;border-bottom:1px solid #21262d}
-h3{font-size:1.1rem;font-weight:600;color:#e6edf3;margin-top:1.5rem;margin-bottom:0.75rem}
-p,li{margin-bottom:0.6rem;font-size:0.95rem}
-ul,ol{padding-left:1.5rem;margin-bottom:1rem}
-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.9rem}
-th{background:#161b22;color:#f0f6fc;text-align:left;padding:0.75rem 1rem;border:1px solid #30363d;font-weight:600}
-td{padding:0.75rem 1rem;border:1px solid #21262d;vertical-align:top}
-tr:nth-child(even){background:#161b22}
-tr:hover{background:#1c2128}
-code{background:#161b22;color:#79c0ff;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.88rem}
-.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.8rem;font-weight:600;margin-right:0.3rem}
-.badge-blue{background:#1f6feb33;color:#58a6ff;border:1px solid #1f6feb55}
-.badge-green{background:#23863633;color:#3fb950;border:1px solid #23863655}
-.badge-yellow{background:#9e6a0333;color:#d29922;border:1px solid #9e6a0355}
-.badge-red{background:#da363433;color:#f85149;border:1px solid #da363455}
-.badge-purple{background:#8957e533;color:#bc8cff;border:1px solid #8957e555}
-.info-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.25rem;margin:1rem 0}
-.info-box.warning{border-left:4px solid #d29922}
-.info-box.info{border-left:4px solid #58a6ff}
-.divider{border:0;border-top:1px solid #21262d;margin:2rem 0}
-footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b949e;font-size:0.85rem}
-@media(max-width:768px){body{padding:1rem 0.5rem}table{display:block;overflow-x:auto}h1{font-size:1.5rem}}
-</style>
+<link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
-<div class="container">
-<a href="../" class="back-link">← Back to Help Center</a>
 
-<h1>Kindo/Legal — Security Policy</h1>
-<p class="subtitle">Effective: October 21, 2026 · Publisher: Kindo (KinHelm Inc.) · Quarterly Review Cycle</p>
+<header class="site-header">
+  <nav aria-label="Breadcrumb">
+    <ol class="breadcrumbs">
+      <li><a href="../">Help Center</a></li>
+      <li><a href="./">Kindo/Legal</a></li>
+      <li aria-current="page">Security Policy</li>
+    </ol>
+  </nav>
+</header>
 
-<h2>1. Overview</h2>
-<p><strong>Kindo/Legal</strong> is a legal operations application built on Atlassian Forge. It provides contract lifecycle management, legal hold tracking, compliance monitoring, and legal analytics within Jira and Confluence. The app is <strong>Forge-native</strong> with no external servers, inheriting Atlassian's <strong>SOC 2 Type II</strong> and <strong>ISO 27001</strong> certifications.</p>
+<main class="container">
 
-<h2>2. Platform Architecture</h2>
-<div class="info-box info">
-<p><strong>Platform:</strong> Atlassian Forge (serverless)</p>
-<p><strong>Runtime:</strong> Node.js 22.x</p>
-<p><strong>Storage:</strong> Forge KVS + Forge SQL</p>
-<p><strong>Agents:</strong> Rovo agents (5)</p>
-<p><strong>External connectivity:</strong> None — no Forge Remote, no external fetch, no egress</p>
-</div>
+  <h1>Kindo/Legal — Security Policy</h1>
+  <p class="placard">Effective: October 21, 2026 · Publisher: Kindo (KinHelm Inc.) · Quarterly Review Cycle</p>
 
-<h2>3. Agents</h2>
-<table>
-<thead>
-<tr><th>Agent</th><th>Role</th><th>Security-Relevant Behaviour</th></tr>
-</thead>
-<tbody>
-<tr><td><span class="badge badge-red">KNOT</span></td><td>Cross-app integration router</td><td>Routes structured event payloads between Kindo apps; validates source/destination identity; no raw data forwarding</td></tr>
-<tr><td><span class="badge badge-blue">ATTICUS</span></td><td>Contract lifecycle management</td><td>Manages contract workflows in Jira; tracks obligations and deadlines; read/write scoped to legal project</td></tr>
-<tr><td><span class="badge badge-green">CLAUSE</span></td><td>Document analysis</td><td>Analyzes Confluence documents for legal clauses and terms; read-only Confluence access; no content modification without explicit action</td></tr>
-<tr><td><span class="badge badge-yellow">SENTINEL</span></td><td>Legal hold &amp; compliance</td><td>Manages legal holds and compliance monitoring; flags issues requiring legal review; advisory-only — does not enforce holds automatically</td></tr>
-<tr><td><span class="badge badge-purple">LEDGER</span></td><td>Legal analytics &amp; reporting</td><td>Generates legal operations metrics and reports; aggregate data; tracks matter costs and timelines</td></tr>
-</tbody>
-</table>
+  <h2>1. Overview</h2>
+  <p><strong>Kindo/Legal</strong> is a legal operations application built on Atlassian Forge. It provides contract lifecycle management, legal hold tracking, compliance monitoring, and legal analytics within Jira and Confluence. The app is <strong>Forge-native</strong> with no external servers, inheriting Atlassian's <strong>SOC 2 Type II</strong> and <strong>ISO 27001</strong> certifications.</p>
 
-<h2>4. Permission Scopes</h2>
-<p>All scopes follow the principle of <strong>least privilege</strong>:</p>
-<table>
-<thead>
-<tr><th>Scope</th><th>Justification</th></tr>
-</thead>
-<tbody>
-<tr><td><code>read:jira-work</code></td><td>Read legal matters, contracts, and compliance issues from Jira</td></tr>
-<tr><td><code>write:jira-work</code></td><td>Create/update legal matters, contract tasks, and compliance items</td></tr>
-<tr><td><code>read:confluence-content.all</code></td><td>Read Confluence pages for contract document analysis and legal clause extraction</td></tr>
-<tr><td><code>write:confluence-content.all</code></td><td>Create/update Confluence pages for generated legal summaries and contract registers</td></tr>
-<tr><td><code>storage:app</code></td><td>Persist configuration, onboarding state, and operational data in Forge KVS/SQL</td></tr>
-</tbody>
-</table>
+  <h2>2. Platform Architecture</h2>
+  <div class="notice notice--info">
+    <p><strong>Platform:</strong> Atlassian Forge (serverless)</p>
+    <p><strong>Runtime:</strong> Node.js 22.x</p>
+    <p><strong>Storage:</strong> Forge KVS + Forge SQL</p>
+    <p><strong>Agents:</strong> Rovo agents (5)</p>
+    <p><strong>External connectivity:</strong> None — no Forge Remote, no external fetch, no egress</p>
+  </div>
 
-<h2>5. Data Collected</h2>
-<table>
-<thead>
-<tr><th>Category</th><th>Data</th><th>Storage</th></tr>
-</thead>
-<tbody>
-<tr><td>Configuration</td><td>Admin settings, workflow preferences, notification thresholds</td><td>KVS</td></tr>
-<tr><td>Onboarding State</td><td>Setup wizard progress, initial configuration choices</td><td>KVS</td></tr>
-<tr><td>Operational Data</td><td>Matter metadata, contract lifecycle state, compliance tracking, analytics</td><td>Forge SQL</td></tr>
-</tbody>
-</table>
+  <h2>3. Agents</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Agent</th>
+        <th>Role</th>
+        <th>Security-Relevant Behaviour</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="placard">KNOT</span></td>
+        <td>Cross-app integration router</td>
+        <td>Routes structured event payloads between Kindo apps; validates source/destination identity; no raw data forwarding</td>
+      </tr>
+      <tr>
+        <td><span class="placard">ATTICUS</span></td>
+        <td>Contract lifecycle management</td>
+        <td>Manages contract workflows in Jira; tracks obligations and deadlines; read/write scoped to legal project</td>
+      </tr>
+      <tr>
+        <td><span class="placard">CLAUSE</span></td>
+        <td>Document analysis</td>
+        <td>Analyzes Confluence documents for legal clauses and terms; read-only Confluence access; no content modification without explicit action</td>
+      </tr>
+      <tr>
+        <td><span class="placard">SENTINEL</span></td>
+        <td>Legal hold &amp; compliance</td>
+        <td>Manages legal holds and compliance monitoring; flags issues requiring legal review; advisory-only — does not enforce holds automatically</td>
+      </tr>
+      <tr>
+        <td><span class="placard">LEDGER</span></td>
+        <td>Legal analytics &amp; reporting</td>
+        <td>Generates legal operations metrics and reports; aggregate data; tracks matter costs and timelines</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h3>Data NOT Collected</h3>
-<div class="info-box warning">
-<ul>
-<li><strong>No personal data</strong> beyond Atlassian <code>accountId</code></li>
-<li><strong>No credentials</strong> — the app never stores, processes, or transmits user credentials</li>
-<li><strong>No external data</strong> — no data is imported from outside the Atlassian environment</li>
-<li><strong>No external telemetry</strong> — no usage data is transmitted outside the Forge sandbox</li>
-</ul>
-</div>
+  <h2>4. Permission Scopes</h2>
+  <p>All scopes follow the principle of <strong>least privilege</strong>:</p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Scope</th>
+        <th>Justification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>read:jira-work</code></td>
+        <td>Read legal matters, contracts, and compliance issues from Jira</td>
+      </tr>
+      <tr>
+        <td><code>write:jira-work</code></td>
+        <td>Create/update legal matters, contract tasks, and compliance items</td>
+      </tr>
+      <tr>
+        <td><code>read:confluence-content.all</code></td>
+        <td>Read Confluence pages for contract document analysis and legal clause extraction</td>
+      </tr>
+      <tr>
+        <td><code>write:confluence-content.all</code></td>
+        <td>Create/update Confluence pages for generated legal summaries and contract registers</td>
+      </tr>
+      <tr>
+        <td><code>storage:app</code></td>
+        <td>Persist configuration, onboarding state, and operational data in Forge KVS/SQL</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h2>6. Data Residency &amp; Retention</h2>
-<ul>
-<li><strong>Data residency:</strong> all data resides within the Atlassian Forge environment; residency is governed by the customer's Atlassian configuration</li>
-<li><strong>Pre-uninstall handler:</strong> removes all app-managed data from Forge storage on uninstall</li>
-<li><strong>Customer content:</strong> Jira issues and Confluence pages created by the app remain under the customer's control after uninstall</li>
-<li><strong>Key management:</strong> Kindo does not manage encryption keys — key management is handled by Atlassian</li>
-</ul>
+  <h2>5. Data Collected</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Data</th>
+        <th>Storage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Configuration</td>
+        <td>Admin settings, workflow preferences, notification thresholds</td>
+        <td>KVS</td>
+      </tr>
+      <tr>
+        <td>Onboarding State</td>
+        <td>Setup wizard progress, initial configuration choices</td>
+        <td>KVS</td>
+      </tr>
+      <tr>
+        <td>Operational Data</td>
+        <td>Matter metadata, contract lifecycle state, compliance tracking, analytics</td>
+        <td>Forge SQL</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h2>7. Encryption</h2>
-<table>
-<thead>
-<tr><th>Layer</th><th>Method</th><th>Managed By</th></tr>
-</thead>
-<tbody>
-<tr><td>In transit</td><td>TLS 1.2+</td><td>Atlassian</td></tr>
-<tr><td>At rest — KVS</td><td>Encrypted</td><td>Atlassian</td></tr>
-<tr><td>At rest — SQL</td><td>Encrypted</td><td>Atlassian</td></tr>
-<tr><td>At rest — Confluence/Jira</td><td>Encrypted</td><td>Atlassian</td></tr>
-</tbody>
-</table>
+  <h3>Data NOT Collected</h3>
+  <div class="card card--accent">
+    <ul>
+      <li><strong>No personal data</strong> beyond Atlassian <code>accountId</code></li>
+      <li><strong>No credentials</strong> — the app never stores, processes, or transmits user credentials</li>
+      <li><strong>No external data</strong> — no data is imported from outside the Atlassian environment</li>
+      <li><strong>No external telemetry</strong> — no usage data is transmitted outside the Forge sandbox</li>
+    </ul>
+  </div>
 
-<h2>8. Vulnerability Management</h2>
-<ul>
-<li><strong>SAST:</strong> static analysis in CI/CD pipeline on every pull request</li>
-<li><strong>SCA:</strong> software composition analysis for dependency vulnerabilities</li>
-<li><strong>Input validation:</strong> type guards and parameterized SQL for all inputs</li>
-<li><strong>Dependency updates:</strong> continuous monitoring and automated update tooling</li>
-</ul>
+  <h2>6. Data Residency &amp; Retention</h2>
+  <ul>
+    <li><strong>Data residency:</strong> all data resides within the Atlassian Forge environment; residency is governed by the customer's Atlassian configuration</li>
+    <li><strong>Pre-uninstall handler:</strong> removes all app-managed data from Forge storage on uninstall</li>
+    <li><strong>Customer content:</strong> Jira issues and Confluence pages created by the app remain under the customer's control after uninstall</li>
+    <li><strong>Key management:</strong> Kindo does not manage encryption keys — key management is handled by Atlassian</li>
+  </ul>
 
-<h3>Vulnerability Disclosure Program</h3>
-<ul>
-<li><strong>Report to:</strong> <a href="mailto:security@kindo.ai">security@kindo.ai</a></li>
-<li><strong>Acknowledgment:</strong> within <strong>48 hours</strong></li>
-<li><strong>Triage:</strong> completed within <strong>5 business days</strong></li>
-</ul>
+  <h2>7. Encryption</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Method</th>
+        <th>Managed By</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>In transit</td>
+        <td>TLS 1.2+</td>
+        <td>Atlassian</td>
+      </tr>
+      <tr>
+        <td>At rest — KVS</td>
+        <td>Encrypted</td>
+        <td>Atlassian</td>
+      </tr>
+      <tr>
+        <td>At rest — SQL</td>
+        <td>Encrypted</td>
+        <td>Atlassian</td>
+      </tr>
+      <tr>
+        <td>At rest — Confluence/Jira</td>
+        <td>Encrypted</td>
+        <td>Atlassian</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h2>9. Incident Response</h2>
-<p>Kindo maintains a documented incident response plan covering identification, containment, eradication, recovery, notification, and post-incident review. Timelines are aligned with contractual and regulatory requirements.</p>
+  <h2>8. Vulnerability Management</h2>
+  <ul>
+    <li><strong>SAST:</strong> static analysis in CI/CD pipeline on every pull request</li>
+    <li><strong>SCA:</strong> software composition analysis for dependency vulnerabilities</li>
+    <li><strong>Input validation:</strong> type guards and parameterized SQL for all inputs</li>
+    <li><strong>Dependency updates:</strong> continuous monitoring and automated update tooling</li>
+  </ul>
 
-<h2>10. Access Control</h2>
-<ul>
-<li><strong>Admin install:</strong> app installation restricted to Jira/Confluence administrators</li>
-<li><strong><code>asApp()</code> scoped:</strong> all API calls execute under the app's identity with defined scopes</li>
-<li><strong><code>getTeamList</code> validation:</strong> team-based access controls enforce visibility boundaries</li>
-<li><strong>GitHub branch protection:</strong> protected branches with required PR reviews; individual authentication only (no shared credentials)</li>
-</ul>
+  <h3>Vulnerability Disclosure Program</h3>
+  <ul>
+    <li><strong>Report to:</strong> <a href="mailto:security@kindo.ai">security@kindo.ai</a></li>
+    <li><strong>Acknowledgment:</strong> within <strong>48 hours</strong></li>
+    <li><strong>Triage:</strong> completed within <strong>5 business days</strong></li>
+  </ul>
 
-<h2>11. Compliance</h2>
-<table>
-<thead>
-<tr><th>Framework</th><th>Status</th></tr>
-</thead>
-<tbody>
-<tr><td>SOC 2 Type II</td><td>Inherited from Atlassian Forge platform</td></tr>
-<tr><td>ISO 27001</td><td>Inherited from Atlassian Forge platform</td></tr>
-<tr><td>GDPR</td><td>Kindo acts as data processor; customer is data controller</td></tr>
-<tr><td>Marketplace Partner</td><td>Verified Atlassian Marketplace partner</td></tr>
-<tr><td>Forge Security Review</td><td>Completed</td></tr>
-</tbody>
-</table>
+  <h2>9. Incident Response</h2>
+  <p>Kindo maintains a documented incident response plan covering identification, containment, eradication, recovery, notification, and post-incident review. Timelines are aligned with contractual and regulatory requirements.</p>
 
-<h2>12. Contact</h2>
-<div class="info-box">
-<p><strong>Security inquiries &amp; vulnerability reports:</strong> <a href="mailto:security@kindo.ai">security@kindo.ai</a></p>
-</div>
+  <h2>10. Access Control</h2>
+  <ul>
+    <li><strong>Admin install:</strong> app installation restricted to Jira/Confluence administrators</li>
+    <li><strong><code>asApp()</code> scoped:</strong> all API calls execute under the app's identity with defined scopes</li>
+    <li><strong><code>getTeamList</code> validation:</strong> team-based access controls enforce visibility boundaries</li>
+    <li><strong>GitHub branch protection:</strong> protected branches with required PR reviews; individual authentication only (no shared credentials)</li>
+  </ul>
 
-<h2>13. Review</h2>
-<p>This policy is reviewed <strong>quarterly</strong> and updated as needed to reflect changes in the application, platform, or regulatory landscape.</p>
+  <h2>11. Compliance</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Framework</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SOC 2 Type II</td>
+        <td>Inherited from Atlassian Forge platform</td>
+      </tr>
+      <tr>
+        <td>ISO 27001</td>
+        <td>Inherited from Atlassian Forge platform</td>
+      </tr>
+      <tr>
+        <td>GDPR</td>
+        <td>Kindo acts as data processor; customer is data controller</td>
+      </tr>
+      <tr>
+        <td>Marketplace Partner</td>
+        <td>Verified Atlassian Marketplace partner</td>
+      </tr>
+      <tr>
+        <td>Forge Security Review</td>
+        <td>Completed</td>
+      </tr>
+    </tbody>
+  </table>
 
-<footer>
-<p>© 2026 Kindo (KinHelm Inc.) · <a href="mailto:security@kindo.ai">security@kindo.ai</a></p>
+  <h2>12. Contact</h2>
+  <div class="card card--accent">
+    <p><strong>Security inquiries &amp; vulnerability reports:</strong> <a href="mailto:security@kindo.ai">security@kindo.ai</a></p>
+  </div>
+
+  <h2>13. Review</h2>
+  <p>This policy is reviewed <strong>quarterly</strong> and updated as needed to reflect changes in the application, platform, or regulatory landscape.</p>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Kindo (KinHelm Inc.) · <a href="mailto:security@kindo.ai">security@kindo.ai</a></p>
 </footer>
-</div>
+
 </body>
 </html>
