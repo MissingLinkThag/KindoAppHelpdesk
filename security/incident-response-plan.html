@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KindoApps — Incident Response Plan</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6;padding:2rem;max-width:900px;margin:0 auto}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+h1{font-size:2rem;margin-bottom:.5rem;color:#f0f6fc}
+h2{font-size:1.4rem;margin:2rem 0 .75rem;color:#f0f6fc;border-bottom:1px solid #30363d;padding-bottom:.4rem}
+h3{font-size:1.1rem;margin:1.5rem 0 .5rem;color:#e6edf3}
+p{margin:.75rem 0}
+ul,ol{margin:.75rem 0 .75rem 1.5rem}
+li{margin:.4rem 0}
+.back-link{display:inline-block;margin-bottom:1.5rem;font-size:.9rem;color:#8b949e}
+.back-link:hover{color:#58a6ff}
+.meta{color:#8b949e;font-size:.9rem;margin-bottom:2rem}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{text-align:left;padding:.6rem .8rem;border:1px solid #30363d}
+th{background:#161b22;color:#f0f6fc;font-weight:600}
+td{background:#0d1117}
+.phase{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.25rem;margin:1rem 0}
+.phase h3{margin-top:0;color:#58a6ff}
+.severity-p1{color:#f85149;font-weight:600}
+.severity-p2{color:#d29922;font-weight:600}
+.severity-p3{color:#58a6ff;font-weight:600}
+.severity-p4{color:#8b949e;font-weight:600}
+</style>
+</head>
+<body>
+<a href="../" class="back-link">← Back to Kindo App Help</a>
+<h1>KindoApps — Incident Response Plan</h1>
+<p class="meta">Document Owner: Kindo Security Team · Contact: <a href="mailto:support@kindo.ai">support@kindo.ai</a> · Version 1.0 · Effective: September 2026 · Review: Annual</p>
+
+<h2>1. Purpose</h2>
+<p>This document defines Kindo's procedures for detecting, responding to, and recovering from security incidents affecting Kindo Marketplace applications. It ensures timely communication with Atlassian, affected customers, and relevant authorities.</p>
+
+<h2>2. Scope</h2>
+<p>This plan covers all Kindo applications published on the Atlassian Marketplace, including but not limited to: Kindo Mentor, Kindo HR, Kindo Compliance, Kindo Change, Kindo Legal, and Kindo/Waldo.</p>
+<p>All Kindo Marketplace applications are built on the Atlassian Forge platform. All data storage, compute, and user authentication are managed within Atlassian's infrastructure. No end-user data is stored or processed outside the Atlassian environment.</p>
+
+<h2>3. Definitions</h2>
+<ul>
+<li><strong>Security Incident:</strong> Any event that compromises the confidentiality, integrity, or availability of end-user data or app functionality.</li>
+<li><span class="severity-p1">P1 (Critical):</span> Active exploitation, data breach, or complete loss of service.</li>
+<li><span class="severity-p2">P2 (High):</span> Exploitable vulnerability identified but no evidence of active exploitation.</li>
+<li><span class="severity-p3">P3 (Medium):</span> Vulnerability with limited exploitability or impact.</li>
+<li><span class="severity-p4">P4/P5 (Low/Informational):</span> Minor issues, hardening opportunities.</li>
+</ul>
+
+<h2>4. Incident Response Team</h2>
+<table>
+<thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+<tbody>
+<tr><td>Incident Lead</td><td>Coordinates response, owns communication</td></tr>
+<tr><td>Security Contact</td><td>Manages Atlassian AMS portal tickets, vulnerability triage</td></tr>
+<tr><td>Engineering Lead</td><td>Root cause analysis, remediation development</td></tr>
+<tr><td>Customer Communications</td><td>Drafts and sends customer notifications</td></tr>
+</tbody>
+</table>
+
+<h2>5. Response Phases</h2>
+
+<div class="phase">
+<h3>Phase 1 — Detection &amp; Triage (0–2 hours)</h3>
+<ol>
+<li>Incident reported via: Atlassian AMS ticket, customer report to <a href="mailto:support@kindo.ai">support@kindo.ai</a>, internal discovery, or automated monitoring.</li>
+<li>Incident Lead assesses severity (P1–P5) based on: data exposure scope, exploitability, number of affected customers, active exploitation evidence.</li>
+<li>Incident documented in internal tracking with: timestamp, reporter, affected app(s), initial severity, scope assessment.</li>
+</ol>
+</div>
+
+<div class="phase">
+<h3>Phase 2 — Containment (2–8 hours for P1/P2)</h3>
+<ol>
+<li>If active exploitation confirmed: request app delisting from Atlassian Marketplace if necessary.</li>
+<li>Deploy hotfix to neutralize the vulnerability. For Forge apps, Atlassian pushes updates automatically to all customers.</li>
+<li>Restrict any compromised access paths.</li>
+<li>Preserve logs and evidence for forensic analysis.</li>
+</ol>
+</div>
+
+<div class="phase">
+<h3>Phase 3 — Notification</h3>
+<p><strong>Atlassian Notification (within 24 hours of confirmed incident):</strong></p>
+<ul>
+<li>Submit P1 severity ticket to Atlassian Marketplace Security with: scope of the incident, types of data affected, timeline of events, containment measures taken, remediation plan and timeline.</li>
+<li>Provide status updates to Atlassian every 6 hours during active P1 incidents.</li>
+</ul>
+<p><strong>Customer Notification (within 72 hours of confirmed incident):</strong></p>
+<ul>
+<li>Notify all affected customers using the Kindo Customer Vulnerability Notification Template.</li>
+<li>Include: nature of the vulnerability, affected app versions, whether exploitation occurred, remediation steps, CVSS score if applicable.</li>
+<li>For GDPR-covered customers: notification to relevant supervisory authority within 72 hours if personal data was compromised.</li>
+</ul>
+</div>
+
+<div class="phase">
+<h3>Phase 4 — Remediation</h3>
+<ol>
+<li>Develop and test fix in isolated environment.</li>
+<li>Code review and security review of the fix.</li>
+<li>Deploy fix via Forge. Atlassian automatically propagates to all installations.</li>
+<li>Verify fix resolves the vulnerability without introducing regressions.</li>
+<li>Confirm with Atlassian that containment measures can be lifted.</li>
+</ol>
+</div>
+
+<div class="phase">
+<h3>Phase 5 — Post-Incident Review (within 5 business days)</h3>
+<ol>
+<li>Conduct root cause analysis (RCA) using 5 Whys methodology.</li>
+<li>Document: timeline, root cause, impact assessment, remediation actions, lessons learned.</li>
+<li>Identify preventive measures to avoid recurrence.</li>
+<li>Submit post-incident review findings to Atlassian.</li>
+<li>Update this plan if process gaps are identified.</li>
+</ol>
+</div>
+
+<h2>6. Remediation Timelines</h2>
+<table>
+<thead><tr><th>Severity</th><th>Remediation Target</th></tr></thead>
+<tbody>
+<tr><td><span class="severity-p1">P1 (Critical)</span></td><td>24 hours</td></tr>
+<tr><td><span class="severity-p2">P2 (High)</span></td><td>5 business days</td></tr>
+<tr><td><span class="severity-p3">P3 (Medium)</span></td><td>30 business days</td></tr>
+<tr><td><span class="severity-p4">P4/P5 (Low)</span></td><td>Next scheduled release</td></tr>
+</tbody>
+</table>
+<p>Timelines align with Atlassian Marketplace Security Bug Fix Policy. Extensions require Atlassian approval.</p>
+
+<h2>7. Communication Channels</h2>
+<table>
+<thead><tr><th>Audience</th><th>Channel</th></tr></thead>
+<tbody>
+<tr><td>Atlassian Marketplace Security</td><td>AMS Jira project (<a href="https://ecosystem.atlassian.net">ecosystem.atlassian.net</a>)</td></tr>
+<tr><td>Customers</td><td>Email via <a href="mailto:support@kindo.ai">support@kindo.ai</a> + in-app notification where possible</td></tr>
+<tr><td>Internal team</td><td>Secure internal channel</td></tr>
+</tbody>
+</table>
+
+<h2>8. Document Review</h2>
+<p>This plan is reviewed annually or after any P1/P2 incident, whichever comes first. All revisions are version-controlled.</p>
+
+</body>
+</html>
