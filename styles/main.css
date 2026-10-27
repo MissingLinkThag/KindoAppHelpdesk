@@ -1,0 +1,1322 @@
+/* ============================================================
+   KINHELM DESIGN SYSTEM — main.css
+   Documentation / Helpdesk Site
+   Based on kinhelm.ai design spec
+   ============================================================ */
+
+/* ————————————————————————————————————————————————————————————
+   FONTS
+   ———————————————————————————————————————————————————————————— */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+/* ————————————————————————————————————————————————————————————
+   CUSTOM PROPERTIES
+   ———————————————————————————————————————————————————————————— */
+
+:root {
+  --paper:      #EDF1F4;
+  --panel:      #FFFFFF;
+  --ink:        #16232E;
+  --steel:      #54677A;
+  --line:       #C6D2DB;
+  --amber:      #E09A1A;
+  --amber-dark: #B87B0A;
+  --green:      #2E7D5B;
+  --green-bg:   #E3F0EA;
+  --red:        #B3402E;
+
+  /* Dark band palette */
+  --dark-text:       #EDF1F4;
+  --dark-muted:      #B7C6D3;
+  --dark-border:     #2A3B4A;
+  --dark-footer-text:#8FA5B8;
+
+  /* Spacing scale */
+  --section-pad:  88px;
+  --card-pad-y:   26px;
+  --card-pad-x:   24px;
+  --container-max: 1160px;
+  --header-h:     64px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   RESET & BASE
+   ———————————————————————————————————————————————————————————— */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--amber-dark);
+}
+
+ul, ol {
+  padding-left: 1.25em;
+}
+
+li {
+  margin-bottom: 0.35em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0;
+}
+
+/* ————————————————————————————————————————————————————————————
+   TYPOGRAPHY
+   ———————————————————————————————————————————————————————————— */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  margin-bottom: 0.4em;
+}
+
+h2 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+p {
+  color: var(--steel);
+  margin-bottom: 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875em;
+  background: rgba(198, 210, 219, 0.3);
+  padding: 0.15em 0.4em;
+  color: var(--ink);
+}
+
+pre {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  background: var(--ink);
+  color: var(--dark-text);
+  padding: 20px 24px;
+  overflow-x: auto;
+  border: 1px solid var(--dark-border);
+  margin: 24px 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+blockquote {
+  border-left: 3px solid var(--amber);
+  padding: 12px 20px;
+  margin: 24px 0;
+  color: var(--steel);
+  background: var(--panel);
+}
+
+/* ————————————————————————————————————————————————————————————
+   LAYOUT — CONTAINER
+   ———————————————————————————————————————————————————————————— */
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   SECTIONS
+   ———————————————————————————————————————————————————————————— */
+
+section,
+.section {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-of-type,
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* ————————————————————————————————————————————————————————————
+   HEADER / NAV
+   ———————————————————————————————————————————————————————————— */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-h);
+  background: rgba(237, 241, 244, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.site-header__logo img {
+  height: 28px;
+  width: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--steel);
+  text-decoration: none;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+}
+
+.site-nav a.active {
+  color: var(--ink);
+}
+
+.site-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--amber);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* ————————————————————————————————————————————————————————————
+   PLACARDS / EYEBROW LABELS
+   ———————————————————————————————————————————————————————————— */
+
+.placard {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--amber-dark);
+  margin-bottom: 16px;
+}
+
+.placard::before {
+  content: '';
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+
+/* ————————————————————————————————————————————————————————————
+   MONO LABELS
+   ———————————————————————————————————————————————————————————— */
+
+.mono-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--steel);
+}
+
+.mono-label--amber {
+  color: var(--amber-dark);
+}
+
+.mono-label--11 {
+  font-size: 11px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   CARDS
+   ———————————————————————————————————————————————————————————— */
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  padding: var(--card-pad-y) var(--card-pad-x);
+}
+
+.card--accent {
+  border-top: 4px solid var(--amber);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+}
+
+.card p {
+  font-size: 14.5px;
+}
+
+.card a.card-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  transition: color 0.15s ease;
+}
+
+.card a.card-link:hover {
+  color: var(--amber-dark);
+}
+
+.card .tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  margin-bottom: 10px;
+  border-radius: 0;
+}
+
+.card .tag.available {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.card .tag.coming-soon {
+  background: #FDF3E0;
+  color: var(--amber-dark);
+}
+
+.card.disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* ————————————————————————————————————————————————————————————
+   CARD GRID — 1px gap trick
+   ———————————————————————————————————————————————————————————— */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+}
+
+.card-grid > .card {
+  border: none;
+}
+
+/* Alternate: standard gap grid */
+.card-grid--gap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+.card-grid--gap > .card {
+  border: 1px solid var(--line);
+}
+
+/* ————————————————————————————————————————————————————————————
+   BUTTONS
+   ———————————————————————————————————————————————————————————— */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  line-height: 1.4;
+}
+
+.button-primary,
+.button--primary {
+  background-color: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.button-primary:hover,
+.button--primary:hover {
+  background-color: var(--amber-dark);
+  border-color: var(--amber-dark);
+  color: var(--panel);
+}
+
+.button-outline,
+.button--outline {
+  background-color: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.button-outline:hover,
+.button--outline:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.button--ghost {
+  background-color: transparent;
+  color: var(--steel);
+  border-color: var(--line);
+}
+
+.button--ghost:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.button--amber {
+  background-color: var(--amber);
+  color: var(--ink);
+  border-color: var(--amber);
+}
+
+.button--amber:hover {
+  background-color: var(--amber-dark);
+  border-color: var(--amber-dark);
+  color: var(--panel);
+}
+
+.button--small {
+  font-size: 11px;
+  padding: 6px 14px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   TABLES — DATA TABLES
+   ———————————————————————————————————————————————————————————— */
+
+.data-table {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table thead th {
+  background: #F5F8FA;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--steel);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.data-table tbody td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody td code {
+  font-size: 12px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   AGENT TABLE — for agent reference pages
+   ———————————————————————————————————————————————————————————— */
+
+.agent-table {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.agent-table thead th {
+  background: #F5F8FA;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--steel);
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1.5px solid var(--ink);
+  white-space: nowrap;
+}
+
+.agent-table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--steel);
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.agent-table tbody td:first-child {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.agent-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ————————————————————————————————————————————————————————————
+   TROUBLESHOOTING TABLE
+   ———————————————————————————————————————————————————————————— */
+
+.troubleshooting-table {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.troubleshooting-table thead th {
+  background: #F5F8FA;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--steel);
+  text-align: left;
+  padding: 11px 16px;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.troubleshooting-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--steel);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.troubleshooting-table tbody td:first-child {
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 180px;
+}
+
+.troubleshooting-table tbody td:last-child {
+  color: var(--green);
+}
+
+.troubleshooting-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ————————————————————————————————————————————————————————————
+   SCREENSHOTS / GUIDE IMAGES
+   ———————————————————————————————————————————————————————————— */
+
+.screenshot {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 24px 0;
+}
+
+.screenshot-caption {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--steel);
+  letter-spacing: 0.02em;
+  margin-top: -16px;
+  margin-bottom: 24px;
+  padding-left: 2px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   STEP SECTIONS — walkthrough guides
+   ———————————————————————————————————————————————————————————— */
+
+.step-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.step-section:last-of-type {
+  border-bottom: none;
+}
+
+.step-section__number {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--amber-dark);
+  margin-bottom: 8px;
+}
+
+.step-section__title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 2.8vw, 30px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.step-section__body {
+  max-width: 720px;
+}
+
+.step-section__body p {
+  font-size: 15px;
+  color: var(--steel);
+  margin-bottom: 1em;
+}
+
+.step-section__body ul,
+.step-section__body ol {
+  color: var(--steel);
+  font-size: 15px;
+  margin-bottom: 1em;
+}
+
+/* ————————————————————————————————————————————————————————————
+   DARK BAND — CTAs, footer-style sections
+   ———————————————————————————————————————————————————————————— */
+
+.dark-band {
+  background-color: var(--ink);
+  color: var(--dark-text);
+  padding: var(--section-pad) 0;
+  border-top: 1px solid var(--dark-border);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.dark-band h2,
+.dark-band h3 {
+  color: var(--dark-text);
+}
+
+.dark-band p {
+  color: var(--dark-muted);
+}
+
+.dark-band a {
+  color: var(--dark-text);
+  transition: color 0.15s ease;
+}
+
+.dark-band a:hover {
+  color: var(--amber);
+}
+
+.dark-band .placard {
+  color: var(--amber);
+}
+
+.dark-band .mono-label {
+  color: var(--dark-muted);
+}
+
+.dark-band hr {
+  border-top-color: var(--dark-border);
+}
+
+.dark-band .button-primary {
+  background-color: var(--amber);
+  border-color: var(--amber);
+  color: var(--ink);
+}
+
+.dark-band .button-primary:hover {
+  background-color: var(--amber-dark);
+  border-color: var(--amber-dark);
+}
+
+.dark-band .button-outline {
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+.dark-band .button-outline:hover {
+  background-color: var(--dark-text);
+  color: var(--ink);
+  border-color: var(--dark-text);
+}
+
+/* ————————————————————————————————————————————————————————————
+   FOOTER
+   ———————————————————————————————————————————————————————————— */
+
+.site-footer {
+  background-color: var(--ink);
+  border-top: 1px solid var(--dark-border);
+  padding: 48px 0 40px;
+  color: var(--dark-footer-text);
+  font-size: 13.5px;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.site-footer__left {
+  flex: 1;
+}
+
+.site-footer__right {
+  flex: 1;
+  text-align: right;
+}
+
+.site-footer__logo {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.site-footer p {
+  color: var(--dark-footer-text);
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 0.5em;
+}
+
+.site-footer a {
+  color: var(--dark-footer-text);
+  transition: color 0.15s ease;
+}
+
+.site-footer a:hover {
+  color: var(--amber);
+}
+
+.site-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.site-footer__links a {
+  font-size: 13px;
+}
+
+.site-footer__divider {
+  border: none;
+  border-top: 1px solid var(--dark-border);
+  margin: 32px 0 20px;
+}
+
+.site-footer__copyright {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #5E7385;
+}
+
+/* ————————————————————————————————————————————————————————————
+   STATUS INDICATORS
+   ———————————————————————————————————————————————————————————— */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.status--positive {
+  color: var(--green);
+}
+
+.status--positive::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  display: block;
+  flex-shrink: 0;
+}
+
+.status--warning {
+  color: var(--red);
+}
+
+.status--warning::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  display: block;
+  flex-shrink: 0;
+}
+
+.status--neutral {
+  color: var(--steel);
+}
+
+.status-badge {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  border-radius: 0;
+}
+
+.status-badge--green {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.status-badge--amber {
+  background: #FDF3E0;
+  color: var(--amber-dark);
+}
+
+.status-badge--red {
+  background: #FAE8E5;
+  color: var(--red);
+}
+
+/* ————————————————————————————————————————————————————————————
+   ALERT / NOTICE BOXES
+   ———————————————————————————————————————————————————————————— */
+
+.notice {
+  padding: 18px 22px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--amber);
+  background: var(--panel);
+  margin: 24px 0;
+}
+
+.notice p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.notice--info {
+  border-left-color: var(--steel);
+}
+
+.notice--success {
+  border-left-color: var(--green);
+  background: var(--green-bg);
+}
+
+.notice--warning {
+  border-left-color: var(--red);
+}
+
+.notice__label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--amber-dark);
+  margin-bottom: 6px;
+}
+
+.notice--warning .notice__label {
+  color: var(--red);
+}
+
+.notice--success .notice__label {
+  color: var(--green);
+}
+
+/* ————————————————————————————————————————————————————————————
+   CONTENT AREA — prose styling for guide pages
+   ———————————————————————————————————————————————————————————— */
+
+.content-area {
+  max-width: 760px;
+}
+
+.content-area h2 {
+  margin-top: 2em;
+}
+
+.content-area h3 {
+  margin-top: 1.8em;
+}
+
+.content-area ul,
+.content-area ol {
+  color: var(--steel);
+  margin-bottom: 1.2em;
+  font-size: 15px;
+}
+
+.content-area li {
+  margin-bottom: 0.45em;
+}
+
+.content-area img {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  margin: 24px 0;
+  width: 100%;
+}
+
+/* ————————————————————————————————————————————————————————————
+   TWO-COLUMN LAYOUT
+   ———————————————————————————————————————————————————————————— */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.two-col--sidebar {
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+}
+
+/* ————————————————————————————————————————————————————————————
+   SIDEBAR NAV — for guide sub-navigation
+   ———————————————————————————————————————————————————————————— */
+
+.sidebar-nav {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+}
+
+.sidebar-nav li {
+  margin-bottom: 2px;
+}
+
+.sidebar-nav a {
+  display: block;
+  font-size: 13px;
+  color: var(--steel);
+  padding: 5px 0;
+  transition: color 0.15s ease;
+}
+
+.sidebar-nav a:hover {
+  color: var(--ink);
+}
+
+.sidebar-nav a.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ————————————————————————————————————————————————————————————
+   BREADCRUMBS
+   ———————————————————————————————————————————————————————————— */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--steel);
+  padding: 16px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.breadcrumbs a {
+  color: var(--steel);
+}
+
+.breadcrumbs a:hover {
+  color: var(--ink);
+}
+
+.breadcrumbs li + li::before {
+  content: '/';
+  margin-right: 6px;
+  color: var(--line);
+}
+
+/* ————————————————————————————————————————————————————————————
+   DIVIDERS & SPACERS
+   ———————————————————————————————————————————————————————————— */
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+.spacer-sm  { height: 24px; }
+.spacer-md  { height: 48px; }
+.spacer-lg  { height: 80px; }
+
+/* ————————————————————————————————————————————————————————————
+   UTILITY — text alignment
+   ———————————————————————————————————————————————————————————— */
+
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.text-steel  { color: var(--steel); }
+.text-amber  { color: var(--amber-dark); }
+.text-green  { color: var(--green); }
+.text-red    { color: var(--red); }
+.text-small  { font-size: 13px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ————————————————————————————————————————————————————————————
+   RESPONSIVE — 960px breakpoint
+   ———————————————————————————————————————————————————————————— */
+
+@media (max-width: 960px) {
+
+  .card-grid,
+  .card-grid--gap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-col--sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-nav {
+    position: static;
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+    padding-left: 0;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+  }
+
+}
+
+/* ————————————————————————————————————————————————————————————
+   RESPONSIVE — 760px breakpoint
+   ———————————————————————————————————————————————————————————— */
+
+@media (max-width: 760px) {
+
+  :root {
+    --section-pad: 60px;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card-grid,
+  .card-grid--gap {
+    grid-template-columns: 1fr;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Mobile nav */
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(237, 241, 244, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 20px;
+    gap: 4px;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .site-nav a.active::after {
+    display: none;
+  }
+
+  /* Footer stacks */
+  .site-footer .container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .site-footer__right {
+    text-align: left;
+  }
+
+  .site-footer__links {
+    align-items: flex-start;
+  }
+
+  /* Step sections tighter */
+  .step-section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  /* Tables scroll */
+  .data-table,
+  .agent-table,
+  .troubleshooting-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+}
+
+/* ————————————————————————————————————————————————————————————
+   PRINT
+   ———————————————————————————————————————————————————————————— */
+
+@media print {
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .nav-toggle,
+  .sidebar-nav {
+    display: none;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  section, .section {
+    padding: 24pt 0;
+    border-bottom: 0.5pt solid #ccc;
+  }
+
+  .card {
+    border: 0.5pt solid #ccc;
+    break-inside: avoid;
+  }
+
+  .dark-band {
+    background: #f5f5f5;
+    color: #000;
+  }
+
+  .dark-band p,
+  .dark-band h2,
+  .dark-band h3 {
+    color: #000;
+  }
+
+  a { color: #000; }
+  a[href]::after { content: ' (' attr(href) ')'; font-size: 9pt; color: #666; }
+
+}
