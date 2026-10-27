@@ -3,185 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kindo HR — Security Policy</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.7;padding:2rem 1rem}
-.container{max-width:960px;margin:0 auto}
-a{color:#58a6ff;text-decoration:none}
-a:hover{text-decoration:underline}
-.back-link{display:inline-block;margin-bottom:2rem;font-size:0.95rem}
-h1{font-size:2rem;font-weight:600;color:#f0f6fc;margin-bottom:0.25rem}
-.subtitle{color:#8b949e;font-size:0.95rem;margin-bottom:2rem}
-h2{font-size:1.4rem;font-weight:600;color:#f0f6fc;margin-top:2.5rem;margin-bottom:1rem;padding-bottom:0.4rem;border-bottom:1px solid #21262d}
-h3{font-size:1.1rem;font-weight:600;color:#e6edf3;margin-top:1.5rem;margin-bottom:0.75rem}
-p,li{margin-bottom:0.6rem;font-size:0.95rem}
-ul,ol{padding-left:1.5rem;margin-bottom:1rem}
-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.9rem}
-th{background:#161b22;color:#f0f6fc;text-align:left;padding:0.75rem 1rem;border:1px solid #30363d;font-weight:600}
-td{padding:0.75rem 1rem;border:1px solid #21262d;vertical-align:top}
-tr:nth-child(even){background:#161b22}
-tr:hover{background:#1c2128}
-code{background:#161b22;color:#79c0ff;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.88rem}
-.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.8rem;font-weight:600;margin-right:0.3rem}
-.badge-blue{background:#1f6feb33;color:#58a6ff;border:1px solid #1f6feb55}
-.badge-green{background:#23863633;color:#3fb950;border:1px solid #23863655}
-.badge-yellow{background:#9e6a0333;color:#d29922;border:1px solid #9e6a0355}
-.badge-red{background:#da363433;color:#f85149;border:1px solid #da363455}
-.info-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.25rem;margin:1rem 0}
-.info-box.warning{border-left:4px solid #d29922}
-.info-box.info{border-left:4px solid #58a6ff}
-.divider{border:0;border-top:1px solid #21262d;margin:2rem 0}
-footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b949e;font-size:0.85rem}
-@media(max-width:768px){body{padding:1rem 0.5rem}table{display:block;overflow-x:auto}h1{font-size:1.5rem}}
-</style>
+<title>Kindo/HR — Security Policy</title>
+<link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
-<div class="container">
-<a href="../" class="back-link">← Back to Help Center</a>
 
-<h1>Kindo HR — Security Policy</h1>
-<p class="subtitle">Version 1.0 · October 2026 · Annual Review Cycle</p>
+<header class="site-header">
+  <nav aria-label="Breadcrumb">
+    <ol class="breadcrumbs">
+      <li><a href="../">Help Center</a></li>
+      <li><a href="./">Kindo/HR</a></li>
+      <li aria-current="page">Security Policy</li>
+    </ol>
+  </nav>
+</header>
 
-<h2>1. Overview</h2>
-<p><strong>Kindo HR</strong> is a human resources management application built on Atlassian Forge. It provides employee lifecycle management, employee relations case handling, workforce analytics, and compliance tracking — all within the Atlassian cloud environment.</p>
+<main class="container">
 
-<h2>2. Platform Architecture</h2>
-<div class="info-box info">
-<p><strong>Platform:</strong> Atlassian Forge (serverless)</p>
-<p><strong>Runtime:</strong> Node.js 22.x</p>
-<p><strong>Storage:</strong> Forge KVS + Forge SQL</p>
-<p><strong>External servers:</strong> None</p>
-<p><strong>Credential handling:</strong> None</p>
-<p><strong>Network egress:</strong> None — no Forge Remote, no external fetch</p>
-</div>
+  <h1>Kindo/HR — Security Policy</h1>
+  <p class="placard">Version 1.0 · October 2026 · Annual Review Cycle</p>
 
-<h2>3. Data Inventory</h2>
-<table>
-<thead>
-<tr><th>Data Type</th><th>Storage</th><th>Description</th><th>Sensitivity</th></tr>
-</thead>
-<tbody>
-<tr><td>Employee Records</td><td>Jira Issues (KHR project)</td><td>Employee lifecycle data managed as Jira issues</td><td>High</td></tr>
-<tr><td>ER Cases</td><td>Forge SQL</td><td>Employee relations cases with configurable confidentiality levels; supports anonymous reporting</td><td>High</td></tr>
-<tr><td>Onboarding / Offboarding</td><td>Forge SQL</td><td>Lifecycle workflows with jurisdiction-aware compliance deadlines</td><td>Medium</td></tr>
-<tr><td>Workforce Analytics</td><td>Forge SQL</td><td>Aggregate-only metrics; never individual-level data</td><td>Low</td></tr>
-<tr><td>Cross-App Event Logs</td><td>Forge SQL</td><td>Structured event payloads from Tier 2 communication</td><td>Low</td></tr>
-<tr><td>HR Policy Configuration</td><td>KVS</td><td>Admin-defined HR policies, thresholds, and jurisdiction settings</td><td>Low</td></tr>
-</tbody>
-</table>
+  <h2>1. Overview</h2>
+  <p><strong>Kindo/HR</strong> is a human resources management application built on Atlassian Forge. It provides employee lifecycle management, employee relations case handling, workforce analytics, and compliance tracking — all within the Atlassian cloud environment.</p>
 
-<h2>4. Privacy Controls</h2>
-<div class="info-box warning">
-<p><strong>HR data requires elevated privacy protections.</strong> Kindo HR implements the following controls beyond standard app security:</p>
-</div>
-<table>
-<thead>
-<tr><th>Control</th><th>Implementation</th></tr>
-</thead>
-<tbody>
-<tr><td>PULSE aggregate-only</td><td>Workforce analytics operate exclusively on aggregate data with <strong>team size minimums</strong> enforced — individual identification through small-group analytics is prevented</td></tr>
-<tr><td>ER case confidentiality</td><td>ER cases are classified by confidentiality level; confidential cases are <strong>never exposed on dashboards</strong> or in aggregate reporting</td></tr>
-<tr><td><code>medicalDocsInJira</code></td><td>Hardcoded to <code>false</code> — the app <strong>never</strong> stores medical documentation in Jira; this cannot be overridden by configuration</td></tr>
-<tr><td>Cross-app data isolation</td><td>HR data is never shared via Tier 2 events; only structural metadata (event type, timestamp) crosses app boundaries</td></tr>
-<tr><td>Advisory-only mode</td><td>ER, performance, separation, compensation, and accommodation functions are <strong>advisory only</strong> — the app provides guidance but never makes binding decisions</td></tr>
-</tbody>
-</table>
+  <h2>2. Platform Architecture</h2>
+  <div class="notice notice--info">
+    <p><strong>Platform:</strong> Atlassian Forge (serverless)</p>
+    <p><strong>Runtime:</strong> Node.js 22.x</p>
+    <p><strong>Storage:</strong> Forge KVS + Forge SQL</p>
+    <p><strong>External servers:</strong> None</p>
+    <p><strong>Credential handling:</strong> None</p>
+    <p><strong>Network egress:</strong> None — no Forge Remote, no external fetch</p>
+  </div>
 
-<h2>5. Agents</h2>
-<table>
-<thead>
-<tr><th>Agent</th><th>Role</th><th>Security Constraints</th></tr>
-</thead>
-<tbody>
-<tr><td><span class="badge badge-blue">HARPER</span></td><td>HR operations coordinator</td><td>Permission-scoped: actions restricted to the user's Jira project permissions; cannot access projects outside assigned scope</td></tr>
-<tr><td><span class="badge badge-green">ONYX</span></td><td>Compliance &amp; lifecycle</td><td>Jurisdiction-aware: applies locale-specific compliance rules; deadline calculations use jurisdiction-appropriate labour law parameters</td></tr>
-<tr><td><span class="badge badge-yellow">PULSE</span></td><td>Workforce analytics</td><td>Aggregate only: <strong>never reports on individuals</strong>; enforces minimum team size thresholds; all queries return aggregate metrics</td></tr>
-<tr><td><span class="badge badge-red">KNOT</span></td><td>Cross-app integration</td><td><strong>Never discloses individual HR data externally</strong>; routes only typed event envelopes; HR-specific data fields are stripped before cross-app transmission</td></tr>
-</tbody>
-</table>
+  <h2>3. Data Inventory</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>Data Type</th><th>Storage</th><th>Description</th><th>Sensitivity</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Employee Records</td><td>Jira Issues (KHR project)</td><td>Employee lifecycle data managed as Jira issues</td><td>High</td></tr>
+      <tr><td>ER Cases</td><td>Forge SQL</td><td>Employee relations cases with configurable confidentiality levels; supports anonymous reporting</td><td>High</td></tr>
+      <tr><td>Onboarding / Offboarding</td><td>Forge SQL</td><td>Lifecycle workflows with jurisdiction-aware compliance deadlines</td><td>Medium</td></tr>
+      <tr><td>Workforce Analytics</td><td>Forge SQL</td><td>Aggregate-only metrics; never individual-level data</td><td>Low</td></tr>
+      <tr><td>Cross-App Event Logs</td><td>Forge SQL</td><td>Structured event payloads from Tier 2 communication</td><td>Low</td></tr>
+      <tr><td>HR Policy Configuration</td><td>KVS</td><td>Admin-defined HR policies, thresholds, and jurisdiction settings</td><td>Low</td></tr>
+    </tbody>
+  </table>
 
-<h2>6. Scheduled Operations</h2>
-<table>
-<thead>
-<tr><th>Check</th><th>Frequency</th><th>Guard</th><th>Purpose</th></tr>
-</thead>
-<tbody>
-<tr><td>Compliance Deadline Monitoring</td><td>Daily</td><td><code>appIsLicensed</code> required</td><td>Identifies approaching compliance deadlines for onboarding/offboarding tasks per jurisdiction</td></tr>
-</tbody>
-</table>
+  <h2>4. Privacy Controls</h2>
+  <div class="card card--accent">
+    <p><strong>HR data requires elevated privacy protections.</strong> Kindo/HR implements the following controls beyond standard app security:</p>
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Control</th><th>Implementation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PULSE aggregate-only</td><td>Workforce analytics operate exclusively on aggregate data with <strong>team size minimums</strong> enforced — individual identification through small-group analytics is prevented</td></tr>
+      <tr><td>ER case confidentiality</td><td>ER cases are classified by confidentiality level; confidential cases are <strong>never exposed on dashboards</strong> or in aggregate reporting</td></tr>
+      <tr><td><code>medicalDocsInJira</code></td><td>Hardcoded to <code>false</code> — the app <strong>never</strong> stores medical documentation in Jira; this cannot be overridden by configuration</td></tr>
+      <tr><td>Cross-app data isolation</td><td>HR data is never shared via Tier 2 events; only structural metadata (event type, timestamp) crosses app boundaries</td></tr>
+      <tr><td>Advisory-only mode</td><td>ER, performance, separation, compensation, and accommodation functions are <strong>advisory only</strong> — the app provides guidance but never makes binding decisions</td></tr>
+    </tbody>
+  </table>
 
-<h2>7. Permission Scopes</h2>
-<table>
-<thead>
-<tr><th>Scope</th><th>Justification</th></tr>
-</thead>
-<tbody>
-<tr><td><code>read:jira-work</code></td><td>Read employee records (KHR issues) and lifecycle task status</td></tr>
-<tr><td><code>write:jira-work</code></td><td>Create/update employee lifecycle tasks, ER cases, and compliance items</td></tr>
-<tr><td><code>read:jira-user</code></td><td>Resolve employee identity (accountId) for record association</td></tr>
-<tr><td><code>manage:jira-configuration</code></td><td>Configure HR project settings, issue types, and workflows</td></tr>
-<tr><td><code>manage:jira-project</code></td><td>Manage KHR project setup and configuration</td></tr>
-<tr><td><code>storage:app</code></td><td>Persist HR data, ER cases, analytics, and configuration in Forge KVS/SQL</td></tr>
-</tbody>
-</table>
+  <h2>5. Agents</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>Agent</th><th>Role</th><th>Security Constraints</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="placard">HARPER</span></td><td>HR operations coordinator</td><td>Permission-scoped: actions restricted to the user's Jira project permissions; cannot access projects outside assigned scope</td></tr>
+      <tr><td><span class="placard">ONYX</span></td><td>Compliance &amp; lifecycle</td><td>Jurisdiction-aware: applies locale-specific compliance rules; deadline calculations use jurisdiction-appropriate labour law parameters</td></tr>
+      <tr><td><span class="placard">PULSE</span></td><td>Workforce analytics</td><td>Aggregate only: <strong>never reports on individuals</strong>; enforces minimum team size thresholds; all queries return aggregate metrics</td></tr>
+      <tr><td><span class="placard">KNOT</span></td><td>Cross-app integration</td><td><strong>Never discloses individual HR data externally</strong>; routes only typed event envelopes; HR-specific data fields are stripped before cross-app transmission</td></tr>
+    </tbody>
+  </table>
 
-<h2>8. Pre-Uninstall Handler</h2>
-<p>Kindo HR includes a <strong>pre-uninstall handler</strong> that removes all app-managed data from Forge storage (KVS and SQL) when the app is uninstalled. Jira issues in the KHR project remain under the customer's control.</p>
+  <h2>6. Scheduled Operations</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>Check</th><th>Frequency</th><th>Guard</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Compliance Deadline Monitoring</td><td>Daily</td><td><code>appIsLicensed</code> required</td><td>Identifies approaching compliance deadlines for onboarding/offboarding tasks per jurisdiction</td></tr>
+    </tbody>
+  </table>
 
-<h2>9. Development Security</h2>
-<ul>
-<li><strong>Source control:</strong> private GitHub repositories with MFA enforced</li>
-<li><strong>Code review:</strong> pull request reviews required; no direct commits to protected branches</li>
-<li><strong>SAST:</strong> static analysis on every PR</li>
-<li><strong>SCA:</strong> software composition analysis for dependency vulnerabilities</li>
-<li><strong>npm audit:</strong> automated audit on build</li>
-<li><strong>OWASP Top 10 2025:</strong> development aligned with current OWASP guidance</li>
-<li><strong>Least privilege:</strong> scopes limited to operational necessity</li>
-<li><strong>Schema management:</strong> ALTER-only migrations per <strong>SOP-014</strong> — no destructive schema operations</li>
-</ul>
+  <h2>7. Permission Scopes</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>Scope</th><th>Justification</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>read:jira-work</code></td><td>Read employee records (KHR issues) and lifecycle task status</td></tr>
+      <tr><td><code>write:jira-work</code></td><td>Create/update employee lifecycle tasks, ER cases, and compliance items</td></tr>
+      <tr><td><code>read:jira-user</code></td><td>Resolve employee identity (accountId) for record association</td></tr>
+      <tr><td><code>manage:jira-configuration</code></td><td>Configure HR project settings, issue types, and workflows</td></tr>
+      <tr><td><code>manage:jira-project</code></td><td>Manage KHR project setup and configuration</td></tr>
+      <tr><td><code>storage:app</code></td><td>Persist HR data, ER cases, analytics, and configuration in Forge KVS/SQL</td></tr>
+    </tbody>
+  </table>
 
-<h2>10. Secrets Management</h2>
-<ul>
-<li>Secrets are <strong>never hardcoded</strong> in source code</li>
-<li>Environment configuration via Forge environment variables</li>
-<li>Periodic rotation of operational secrets</li>
-</ul>
+  <h2>8. Pre-Uninstall Handler</h2>
+  <p>Kindo/HR includes a <strong>pre-uninstall handler</strong> that removes all app-managed data from Forge storage (KVS and SQL) when the app is uninstalled. Jira issues in the KHR project remain under the customer's control.</p>
 
-<h2>11. Access Control</h2>
-<ul>
-<li><strong>Per-handler permission checks</strong> — every admin function validates caller permissions before execution</li>
-<li><strong>Admin pages restricted</strong> via Atlassian's built-in admin controls</li>
-<li><strong>Confirmation gates</strong> for destructive operations</li>
-</ul>
+  <h2>9. Development Security</h2>
+  <ul>
+    <li><strong>Source control:</strong> private GitHub repositories with MFA enforced</li>
+    <li><strong>Code review:</strong> pull request reviews required; no direct commits to protected branches</li>
+    <li><strong>SAST:</strong> static analysis on every PR</li>
+    <li><strong>SCA:</strong> software composition analysis for dependency vulnerabilities</li>
+    <li><strong>npm audit:</strong> automated audit on build</li>
+    <li><strong>OWASP Top 10 2025:</strong> development aligned with current OWASP guidance</li>
+    <li><strong>Least privilege:</strong> scopes limited to operational necessity</li>
+    <li><strong>Schema management:</strong> ALTER-only migrations per <strong>SOP-014</strong> — no destructive schema operations</li>
+  </ul>
 
-<h2>12. Vulnerability Management</h2>
-<ul>
-<li>Automated dependency scanning</li>
-<li>Platform vulnerabilities patched per Atlassian's Bug Fix Policy timelines</li>
-<li>Report vulnerabilities to <a href="mailto:support@kindo.ai">support@kindo.ai</a> or via the Atlassian Marketplace</li>
-</ul>
+  <h2>10. Secrets Management</h2>
+  <ul>
+    <li>Secrets are <strong>never hardcoded</strong> in source code</li>
+    <li>Environment configuration via Forge environment variables</li>
+    <li>Periodic rotation of operational secrets</li>
+  </ul>
 
-<h2>13. Incident Response</h2>
-<ul>
-<li><strong>24 hours:</strong> Atlassian notified of confirmed security incidents</li>
-<li><strong>72 hours:</strong> affected customers notified with impact assessment</li>
-<li><strong>5 business days:</strong> post-incident review with root cause analysis and remediation</li>
-</ul>
+  <h2>11. Access Control</h2>
+  <ul>
+    <li><strong>Per-handler permission checks</strong> — every admin function validates caller permissions before execution</li>
+    <li><strong>Admin pages restricted</strong> via Atlassian's built-in admin controls</li>
+    <li><strong>Confirmation gates</strong> for destructive operations</li>
+  </ul>
 
-<h2>14. GDPR &amp; Compliance</h2>
-<ul>
-<li><strong>Role:</strong> Kindo acts as a <strong>data processor</strong>; the customer is the data controller</li>
-<li><strong>Data subject rights:</strong> supported via customer's Atlassian controls and upon request</li>
-<li><strong>Data location:</strong> governed by customer's Atlassian data residency configuration</li>
-</ul>
+  <h2>12. Vulnerability Management</h2>
+  <ul>
+    <li>Automated dependency scanning</li>
+    <li>Platform vulnerabilities patched per Atlassian's Bug Fix Policy timelines</li>
+    <li>Report vulnerabilities to <a href="mailto:support@kindo.ai">support@kindo.ai</a> or via the Atlassian Marketplace</li>
+  </ul>
 
-<h2>15. Review</h2>
-<p>This policy is reviewed <strong>annually</strong> and updated as needed.</p>
+  <h2>13. Incident Response</h2>
+  <ul>
+    <li><strong>24 hours:</strong> Atlassian notified of confirmed security incidents</li>
+    <li><strong>72 hours:</strong> affected customers notified with impact assessment</li>
+    <li><strong>5 business days:</strong> post-incident review with root cause analysis and remediation</li>
+  </ul>
 
-<footer>
-<p>© 2026 Kindo (KinHelm Inc.) · <a href="mailto:support@kindo.ai">support@kindo.ai</a></p>
+  <h2>14. GDPR &amp; Compliance</h2>
+  <ul>
+    <li><strong>Role:</strong> Kindo acts as a <strong>data processor</strong>; the customer is the data controller</li>
+    <li><strong>Data subject rights:</strong> supported via customer's Atlassian controls and upon request</li>
+    <li><strong>Data location:</strong> governed by customer's Atlassian data residency configuration</li>
+  </ul>
+
+  <h2>15. Review</h2>
+  <p>This policy is reviewed <strong>annually</strong> and updated as needed.</p>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Kindo (KinHelm Inc.) · <a href="mailto:support@kindo.ai">support@kindo.ai</a></p>
 </footer>
-</div>
+
 </body>
 </html>
