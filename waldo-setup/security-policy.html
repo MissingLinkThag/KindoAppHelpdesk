@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kindo/Waldo — Security Policy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.7;padding:2rem 1rem}
+.container{max-width:960px;margin:0 auto}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+.back-link{display:inline-block;margin-bottom:2rem;font-size:0.95rem}
+h1{font-size:2rem;font-weight:600;color:#f0f6fc;margin-bottom:0.25rem}
+.subtitle{color:#8b949e;font-size:0.95rem;margin-bottom:2rem}
+h2{font-size:1.4rem;font-weight:600;color:#f0f6fc;margin-top:2.5rem;margin-bottom:1rem;padding-bottom:0.4rem;border-bottom:1px solid #21262d}
+h3{font-size:1.1rem;font-weight:600;color:#e6edf3;margin-top:1.5rem;margin-bottom:0.75rem}
+p,li{margin-bottom:0.6rem;font-size:0.95rem}
+ul,ol{padding-left:1.5rem;margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.9rem}
+th{background:#161b22;color:#f0f6fc;text-align:left;padding:0.75rem 1rem;border:1px solid #30363d;font-weight:600}
+td{padding:0.75rem 1rem;border:1px solid #21262d;vertical-align:top}
+tr:nth-child(even){background:#161b22}
+tr:hover{background:#1c2128}
+code{background:#161b22;color:#79c0ff;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.88rem}
+.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.8rem;font-weight:600;margin-right:0.3rem}
+.badge-blue{background:#1f6feb33;color:#58a6ff;border:1px solid #1f6feb55}
+.badge-green{background:#23863633;color:#3fb950;border:1px solid #23863655}
+.badge-yellow{background:#9e6a0333;color:#d29922;border:1px solid #9e6a0355}
+.badge-red{background:#da363433;color:#f85149;border:1px solid #da363455}
+.badge-purple{background:#8957e533;color:#bc8cff;border:1px solid #8957e555}
+.info-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.25rem;margin:1rem 0}
+.info-box.warning{border-left:4px solid #d29922}
+.info-box.info{border-left:4px solid #58a6ff}
+.divider{border:0;border-top:1px solid #21262d;margin:2rem 0}
+footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b949e;font-size:0.85rem}
+@media(max-width:768px){body{padding:1rem 0.5rem}table{display:block;overflow-x:auto}h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../" class="back-link">← Back to Help Center</a>
+
+<h1>Kindo/Waldo — Security Policy</h1>
+<p class="subtitle">Version 1.0 · October 2026 · Annual Review Cycle</p>
+
+<h2>1. Overview</h2>
+<p><strong>Kindo/Waldo</strong> is an AI governance application built on Atlassian Forge. It provides automated governance assessments, risk scoring, trust tracking, and policy enforcement across Jira projects. Waldo operates with <strong>5 Rovo agents</strong>, <strong>31 actions</strong>, and <strong>44 functions</strong>.</p>
+
+<h2>2. Platform Architecture</h2>
+<div class="info-box info">
+<p><strong>Platform:</strong> Atlassian Forge (serverless)</p>
+<p><strong>Runtime:</strong> Node.js 22.x</p>
+<p><strong>Storage:</strong> Forge SQL + Forge KVS</p>
+<p><strong>External servers:</strong> None</p>
+<p><strong>Network egress:</strong> None — no Forge Remote, no external fetch</p>
+</div>
+
+<h2>3. Agents</h2>
+<table>
+<thead>
+<tr><th>Agent</th><th>Role</th><th>Security-Relevant Behaviour</th></tr>
+</thead>
+<tbody>
+<tr><td><span class="badge badge-blue">Waldo</span></td><td>Governance advisor</td><td>Primary conversational agent; provides governance guidance based on customer's own Jira data; never modifies data without explicit user action</td></tr>
+<tr><td><span class="badge badge-green">CENSUS</span></td><td>Component inventory</td><td>Discovers and catalogues AI/software components from Jira issues; read-only analysis; all derived data stored in Forge SQL</td></tr>
+<tr><td><span class="badge badge-red">EMBER</span></td><td>Risk assessment</td><td>Calculates risk scores and trust decay; all assessments derived from customer Jira data; no external data sources</td></tr>
+<tr><td><span class="badge badge-yellow">DECREE</span></td><td>Policy enforcement</td><td>Monitors compliance with configured governance policies; advisory-only — flags violations but does not block workflows</td></tr>
+<tr><td><span class="badge badge-purple">VISTA</span></td><td>Analytics &amp; reporting</td><td>Generates governance dashboards and trend analysis; aggregate metrics only; data classification labels applied per policy</td></tr>
+</tbody>
+</table>
+
+<h2>4. Governance Data</h2>
+<p>All governance data is <strong>derived exclusively from the customer's existing Jira data</strong>. Waldo does not import, collect, or generate data from external sources.</p>
+<table>
+<thead>
+<tr><th>Data Type</th><th>Storage</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Component Records</td><td>Forge SQL</td><td>Inventory of discovered AI/software components with metadata</td></tr>
+<tr><td>Risk Assessments</td><td>Forge SQL</td><td>Calculated risk scores per component and project</td></tr>
+<tr><td>Trust Scores</td><td>Forge SQL</td><td>Trust metrics with time-decay calculations</td></tr>
+<tr><td>Policy Configurations</td><td>KVS</td><td>Customer-defined governance policies and thresholds</td></tr>
+<tr><td>Data Classifications</td><td>Forge SQL</td><td>Labels applied to components per governance policy</td></tr>
+<tr><td>Governance Analytics</td><td>Forge SQL</td><td>Aggregate metrics, trends, and compliance summaries</td></tr>
+</tbody>
+</table>
+
+<h2>5. Scheduled Operations</h2>
+<p>Waldo runs <strong>4 daily scheduled governance checks</strong>:</p>
+<table>
+<thead>
+<tr><th>Check</th><th>Frequency</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td>Review Check</td><td>Daily</td><td>Identifies components due for governance review based on policy schedules</td></tr>
+<tr><td>Trust Decay</td><td>Daily</td><td>Recalculates trust scores applying time-decay algorithms</td></tr>
+<tr><td>Policy Review</td><td>Daily</td><td>Flags policies approaching review dates</td></tr>
+<tr><td>Access Expiry</td><td>Daily</td><td>Identifies expired access grants and flags for re-authorization</td></tr>
+</tbody>
+</table>
+
+<h3>Event-Driven Triggers</h3>
+<ul>
+<li><strong>Tier 1:</strong> Jira issue update triggers — governance re-assessment when monitored issues change</li>
+<li><strong>Tier 2:</strong> Cross-app event router via KNOT — structured event exchange with other Kindo apps</li>
+</ul>
+
+<h2>6. Data Principles</h2>
+<ul>
+<li><strong>No external storage</strong> — all data resides within Forge KVS and Forge SQL; no external databases or file systems</li>
+<li><strong>No third-party sharing</strong> — governance data is never transmitted to third parties</li>
+<li><strong>No sensitive data logged</strong> — log output excludes PII, credentials, and governance scores</li>
+<li><strong>Encryption inherited</strong> — AES-256 at rest and TLS 1.2+ in transit, managed by Atlassian Forge</li>
+<li><strong>Derived data only</strong> — governance data is derived exclusively from the customer's own Jira data</li>
+<li><strong>Pre-uninstall cleanup</strong> — a pre-uninstall handler removes all app-managed data from Forge storage</li>
+</ul>
+
+<h2>7. Development Security</h2>
+<ul>
+<li><strong>Source control:</strong> private GitHub repositories with MFA enforced for all contributors</li>
+<li><strong>Code review:</strong> pull request reviews required; no direct commits to protected branches</li>
+<li><strong>SAST:</strong> static analysis on every PR</li>
+<li><strong>SCA:</strong> software composition analysis for dependency vulnerabilities</li>
+<li><strong>npm audit:</strong> automated audit on build</li>
+<li><strong>OWASP Top 10 2025:</strong> development practices aligned with current OWASP guidance</li>
+<li><strong>Input validation:</strong> type guards and parameterized SQL for all user-supplied and API-sourced inputs</li>
+</ul>
+
+<h2>8. Permission Scopes</h2>
+<p>Scopes follow the principle of <strong>least privilege</strong>:</p>
+<table>
+<thead>
+<tr><th>Scope</th><th>Justification</th></tr>
+</thead>
+<tbody>
+<tr><td><code>read:jira-work</code></td><td>Read Jira issues and projects for governance component discovery and risk assessment</td></tr>
+<tr><td><code>write:jira-work</code></td><td>Create/update governance-related issues (risk flags, review tasks, policy violations)</td></tr>
+<tr><td><code>read:jira-user</code></td><td>Resolve user identity (accountId) for component ownership and access tracking</td></tr>
+<tr><td><code>manage:jira-configuration</code></td><td>Configure project-level governance settings and custom fields</td></tr>
+<tr><td><code>manage:jira-project</code></td><td>Manage governance project setup and configuration</td></tr>
+<tr><td><code>storage:app</code></td><td>Persist governance data, policy configs, and analytics in Forge KVS/SQL</td></tr>
+</tbody>
+</table>
+
+<h2>9. Secrets Management</h2>
+<ul>
+<li>Secrets are <strong>never hardcoded</strong> in source code</li>
+<li>Environment configuration managed via Forge environment variables</li>
+<li>Periodic rotation of any operational secrets</li>
+</ul>
+
+<h2>10. Access Control</h2>
+<ul>
+<li><strong>Authorized engineering only</strong> — repository and deployment access restricted to authorized Kindo engineers</li>
+<li><strong>Admin pages restricted</strong> — admin UI is accessible only via Atlassian's built-in admin controls</li>
+<li><strong>Confirmation gates</strong> — destructive operations (data reset, policy deletion) require explicit confirmation</li>
+</ul>
+
+<h2>11. Vulnerability Management</h2>
+<ul>
+<li><strong>Dependency scans</strong> — automated scanning for known vulnerabilities in all dependencies</li>
+<li><strong>Atlassian Bug Fix Policy</strong> — platform vulnerabilities patched per Atlassian's published timelines</li>
+<li><strong>Reporting:</strong> vulnerabilities can be reported to <a href="mailto:support@kindo.ai">support@kindo.ai</a> or via the Atlassian Marketplace support channel</li>
+</ul>
+
+<h2>12. Incident Response</h2>
+<ul>
+<li><strong>24 hours:</strong> Atlassian notified of confirmed security incidents</li>
+<li><strong>72 hours:</strong> affected customers notified with impact assessment</li>
+<li><strong>5 business days:</strong> post-incident review completed with root cause analysis and remediation plan</li>
+</ul>
+
+<h2>13. GDPR &amp; Compliance</h2>
+<ul>
+<li><strong>Role:</strong> Kindo acts as a <strong>data processor</strong>; the customer is the data controller</li>
+<li><strong>Data subject rights:</strong> supported via customer's Atlassian controls and upon request to Kindo</li>
+<li><strong>Data location:</strong> governed by the customer's Atlassian data residency configuration</li>
+</ul>
+
+<h2>14. Review</h2>
+<p>This policy is reviewed <strong>annually</strong> and updated as needed to reflect changes in the application, platform, or regulatory landscape.</p>
+
+<footer>
+<p>© 2026 Kindo (KinHelm Inc.) · <a href="mailto:support@kindo.ai">support@kindo.ai</a></p>
+</footer>
+</div>
+</body>
+</html>
