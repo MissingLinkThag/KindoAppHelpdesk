@@ -3,248 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kindo Mentor — Setup &amp; Walkthrough Guide</title>
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #1a1a2e;
-            color: #e0e0e0;
-            line-height: 1.7;
-            font-size: 16px;
-        }
-        a { color: #64b5f6; text-decoration: none; }
-        a:hover { text-decoration: underline; color: #90caf9; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
-        h1 { color: #ffffff; font-size: 2rem; margin-bottom: 0.5rem; border-bottom: 2px solid #3a3a5c; padding-bottom: 0.75rem; }
-        h2 { color: #ffffff; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #2a2a4a; padding-bottom: 0.5rem; }
-        h3 { color: #d0d0d0; font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
-        p { margin-bottom: 1rem; }
-        ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
-        li { margin-bottom: 0.4rem; }
-        code { background: #2a2a4a; color: #ce93d8; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.92em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.95rem; }
-        th { background-color: #2a2a4a; color: #ffffff; text-align: left; padding: 0.75rem 1rem; border: 1px solid #3a3a5c; font-weight: 600; }
-        td { padding: 0.65rem 1rem; border: 1px solid #3a3a5c; }
-        tr:nth-child(even) td { background-color: #1e1e36; }
-        tr:nth-child(odd) td { background-color: #22223a; }
-        .screenshot { max-width: 100%; border-radius: 8px; border: 1px solid #3a3a5c; margin: 1.5rem 0; display: block; }
-        .callout { border-left: 4px solid #64b5f6; background-color: #1e1e38; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 6px 6px 0; }
-        .callout.tip { border-left-color: #81c784; }
-        .callout.warning { border-left-color: #ffb74d; }
-        .callout-label { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
-        .callout.tip .callout-label { color: #81c784; }
-        .callout.warning .callout-label { color: #ffb74d; }
-        .callout p:last-child { margin-bottom: 0; }
-        .back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.95rem; }
-        .back-link::before { content: '\2190  '; }
-        footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #2a2a4a; text-align: center; color: #777; font-size: 0.9rem; }
-        footer a { color: #777; }
-        footer a:hover { color: #64b5f6; }
-        @media (max-width: 600px) { .container { padding: 1.25rem 1rem; } h1 { font-size: 1.5rem; } h2 { font-size: 1.25rem; } table { font-size: 0.85rem; } th, td { padding: 0.5rem 0.65rem; } }
-    </style>
+    <title>Kindo/Mentor &mdash; Setup &amp; Walkthrough Guide</title>
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__logo">KinHelm</div>
+            <nav>
+                <ul class="site-nav">
+                    <li><a href="../">Help Center</a></li>
+                    <li><a href="./" class="active">Kindo/Mentor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== BREADCRUMBS ========== -->
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="../">Kindo App Help Center</a></li>
+            <li>Kindo/Mentor Setup</li>
+        </ul>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section>
+        <div class="container">
+            <span class="placard">Setup &amp; Walkthrough Guide</span>
+            <h1>Kindo/Mentor</h1>
+            <div class="step-section__body">
+                <p>Kindo/Mentor is an AI-powered training and curriculum management app for Atlassian Jira. It uses the <strong>Feynman Teaching Method</strong> to deliver personalized, mastery-based learning tied to your organization's actual knowledge sources.</p>
+                <p>Five AI agents work together to manage every aspect of organizational training:</p>
+            </div>
+
+            <!-- Agent Roster -->
+            <table class="agent-table">
+                <thead>
+                    <tr>
+                        <th>Agent</th>
+                        <th>Role</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>KNOT</td><td>App Configuration Guide</td><td>Setup help, health checks, discovery</td></tr>
+                    <tr><td>SENSEI</td><td>Curriculum Management</td><td>Create programs, define standards, manage lifecycle</td></tr>
+                    <tr><td>MENTOR</td><td>Personalized Teaching</td><td>Feynman method, baseline assessment, mastery tracking</td></tr>
+                    <tr><td>COACH</td><td>Ad-hoc Learning</td><td>Feynman teaching within policy, on-demand help</td></tr>
+                    <tr><td>VERIFIER</td><td>Assessment &amp; Certification</td><td>Independent mastery validation, certification management</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========== PREREQUISITES ========== -->
+    <section>
+        <div class="container">
+            <span class="placard">Before You Begin</span>
+            <h2>Prerequisites</h2>
+            <div class="card card--accent">
+                <ul>
+                    <li>Jira Cloud instance with <strong>Rovo enabled</strong></li>
+                    <li>Site admin permissions (for initial install)</li>
+                    <li>At least one Jira project or Confluence space with organizational knowledge content</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STEP 01 ========== -->
     <div class="container">
 
-        <a class="back-link" href="../">Kindo App Help Center</a>
+        <div class="step-section">
+            <span class="step-section__number">Step 01</span>
+            <h2 class="step-section__title">Install &amp; Get Started</h2>
+            <div class="step-section__body">
+                <p>After installing Kindo/Mentor from the Atlassian Marketplace:</p>
+                <ol>
+                    <li>Navigate to <strong>Jira Admin Settings &rarr; Manage Apps &rarr; Kindo/Mentor</strong></li>
+                    <li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li>
+                </ol>
 
-        <h1>Kindo Mentor &mdash; Setup &amp; Walkthrough Guide</h1>
+                <h3>Auto-completed on Install</h3>
+                <ul>
+                    <li>&#x2705; <strong>Training project created</strong> &mdash; a dedicated <code>TRAINING</code> project is created in your Jira instance</li>
+                    <li>&#x2705; <strong>Learning framework applied</strong> &mdash; the KinHelm Training Framework is configured</li>
+                    <li>&#x2705; <strong>Discovery scan complete</strong> &mdash; your Atlassian site is scanned for existing knowledge content</li>
+                </ul>
 
-        <h2>Overview</h2>
-        <p>Kindo Mentor is an AI-powered training and curriculum management app for Atlassian Jira. It uses the <strong>Feynman Teaching Method</strong> to deliver personalized, mastery-based learning tied to your organization's actual knowledge sources.</p>
-        <p>Five AI agents work together to manage every aspect of organizational training:</p>
+                <h3>Requires Your Configuration</h3>
 
-        <table>
-            <thead><tr><th>Agent</th><th>Role</th><th>Description</th></tr></thead>
-            <tbody>
-                <tr><td><strong>KNOT</strong></td><td>App Configuration Guide</td><td>Setup help, health checks, discovery</td></tr>
-                <tr><td><strong>SENSEI</strong></td><td>Curriculum Management</td><td>Create programs, define standards, manage lifecycle</td></tr>
-                <tr><td><strong>MENTOR</strong></td><td>Personalized Teaching</td><td>Feynman method, baseline assessment, mastery tracking</td></tr>
-                <tr><td><strong>COACH</strong></td><td>Ad-hoc Learning</td><td>Feynman teaching within policy, on-demand help</td></tr>
-                <tr><td><strong>VERIFIER</strong></td><td>Assessment &amp; Certification</td><td>Independent mastery validation, certification management</td></tr>
-            </tbody>
-        </table>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Checklist Item</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Training team assigned</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
+                        <tr><td>Curriculum sources configured</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
+                        <tr><td>Certification requirements defined</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
+                        <tr><td>Peer apps connected</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
+                    </tbody>
+                </table>
 
-        <h2>Prerequisites</h2>
-        <ul>
-            <li>Jira Cloud instance with <strong>Rovo enabled</strong></li>
-            <li>Site admin permissions (for initial install)</li>
-            <li>At least one Jira project or Confluence space with organizational knowledge content</li>
-        </ul>
+                <p>Click <strong>&ldquo;Configure App&rdquo;</strong> to begin setup, or talk to <strong>KNOT</strong> for guided help.</p>
 
-        <h2>Step 1 &mdash; Install &amp; Get Started</h2>
-        <p>After installing Kindo Mentor from the Atlassian Marketplace:</p>
-        <ol>
-            <li>Navigate to <strong>Jira Admin Settings &rarr; Manage Apps &rarr; Kindo Mentor</strong></li>
-            <li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li>
-        </ol>
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%201.png" alt="Kindo/Mentor Get Started checklist">
+            </div>
+        </div>
 
-        <h3>Auto-completed on Install</h3>
-        <ul>
-            <li>&#x2705; <strong>Training project created</strong> &mdash; a dedicated <code>TRAINING</code> project is created in your Jira instance</li>
-            <li>&#x2705; <strong>Learning framework applied</strong> &mdash; the KinHelm Training Framework is configured</li>
-            <li>&#x2705; <strong>Discovery scan complete</strong> &mdash; your Atlassian site is scanned for existing knowledge content</li>
-        </ul>
+        <!-- ========== STEP 02 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 02</span>
+            <h2 class="step-section__title">Configure: Training Team</h2>
+            <div class="step-section__body">
+                <p>Navigate to <strong>Configure &rarr; Training Team</strong> tab. Add team members who will manage curricula, review training outcomes, and oversee certifications.</p>
 
-        <h3>Requires Your Configuration</h3>
-        <table>
-            <thead><tr><th>Checklist Item</th><th>Status</th></tr></thead>
-            <tbody>
-                <tr><td>Training team assigned</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
-                <tr><td>Curriculum sources configured</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
-                <tr><td>Certification requirements defined</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
-                <tr><td>Peer apps connected</td><td>&#x26A0;&#xFE0F; Configuration required</td></tr>
-            </tbody>
-        </table>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Atlassian Account ID</td><td>Their Jira account identifier</td></tr>
+                        <tr><td>Display Name</td><td>How they appear in the app</td></tr>
+                        <tr><td>Role</td><td>e.g., Training Admin</td></tr>
+                    </tbody>
+                </table>
 
-        <p>Click <strong>&ldquo;Configure App&rdquo;</strong> to begin setup, or talk to <strong>KNOT</strong> for guided help.</p>
+                <p>Click <strong>&ldquo;Add Member&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. A green confirmation banner confirms the save was successful.</p>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%201.png" alt="Kindo Mentor Get Started checklist">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%202.png" alt="Training Team configuration">
+            </div>
+        </div>
 
-        <h2>Step 2 &mdash; Configure: Training Team</h2>
-        <p>Navigate to <strong>Configure &rarr; Training Team</strong> tab. Add team members who will manage curricula, review training outcomes, and oversee certifications.</p>
-        <table>
-            <thead><tr><th>Field</th><th>Description</th></tr></thead>
-            <tbody>
-                <tr><td>Atlassian Account ID</td><td>Their Jira account identifier</td></tr>
-                <tr><td>Display Name</td><td>How they appear in the app</td></tr>
-                <tr><td>Role</td><td>e.g., Training Admin</td></tr>
-            </tbody>
-        </table>
-        <p>Click <strong>&ldquo;Add Member&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. A green confirmation banner confirms the save was successful.</p>
+        <!-- ========== STEP 03 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 03</span>
+            <h2 class="step-section__title">Configure: Curriculum Sources</h2>
+            <div class="step-section__body">
+                <p>Navigate to <strong>Configure &rarr; Curriculum Sources</strong> tab. Define where MENTOR pulls organizational knowledge from.</p>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%202.png" alt="Training Team configuration">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Source Type</td><td>Jira or Confluence</td></tr>
+                        <tr><td>Identifier</td><td>Project key or space key (e.g., <code>EO</code>)</td></tr>
+                        <tr><td>Display Name</td><td>A readable label for the source</td></tr>
+                        <tr><td>Refresh Frequency</td><td>How often to check for content updates (e.g., Weekly)</td></tr>
+                    </tbody>
+                </table>
 
-        <h2>Step 3 &mdash; Configure: Curriculum Sources</h2>
-        <p>Navigate to <strong>Configure &rarr; Curriculum Sources</strong> tab. Define where MENTOR pulls organizational knowledge from.</p>
-        <table>
-            <thead><tr><th>Field</th><th>Description</th></tr></thead>
-            <tbody>
-                <tr><td>Source Type</td><td>Jira or Confluence</td></tr>
-                <tr><td>Identifier</td><td>Project key or space key (e.g., <code>EO</code>)</td></tr>
-                <tr><td>Display Name</td><td>A readable label for the source</td></tr>
-                <tr><td>Refresh Frequency</td><td>How often to check for content updates (e.g., Weekly)</td></tr>
-            </tbody>
-        </table>
-        <p>Click <strong>&ldquo;Add Source&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>.</p>
+                <p>Click <strong>&ldquo;Add Source&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>.</p>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%203.png" alt="Curriculum Sources configuration">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%203.png" alt="Curriculum Sources configuration">
+            </div>
+        </div>
 
-        <h2>Step 4 &mdash; Configure: Additional Tabs</h2>
-        <p>The Configure page includes additional tabs for fine-tuning your training environment:</p>
-        <table>
-            <thead><tr><th>Tab</th><th>Description</th></tr></thead>
-            <tbody>
-                <tr><td><strong>Certification Requirements</strong></td><td>Define pass thresholds, assessment types, validity periods, and recertification triggers.</td></tr>
-                <tr><td><strong>Feynman Method</strong></td><td>Configure the teaching methodology parameters that MENTOR uses during learning sessions.</td></tr>
-                <tr><td><strong>Content Change Detection</strong></td><td>Set sensitivity for detecting when source material changes. Changes trigger retraining alerts automatically.</td></tr>
-                <tr><td><strong>Ecosystem</strong></td><td>View connected Kindo peer apps. Standalone mode if no other Kindo apps are installed.</td></tr>
-            </tbody>
-        </table>
-        <div class="callout tip"><div class="callout-label">Tip</div><p>Accept the defaults for all tabs other than Certification Requirements.</p></div>
+        <!-- ========== STEP 04 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 04</span>
+            <h2 class="step-section__title">Configure: Additional Tabs</h2>
+            <div class="step-section__body">
+                <p>The Configure page includes additional tabs for fine-tuning your training environment:</p>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%204.png" alt="Configure page additional tabs">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tab</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Certification Requirements</strong></td><td>Define pass thresholds, assessment types, validity periods, and recertification triggers.</td></tr>
+                        <tr><td><strong>Feynman Method</strong></td><td>Configure the teaching methodology parameters that MENTOR uses during learning sessions.</td></tr>
+                        <tr><td><strong>Content Change Detection</strong></td><td>Set sensitivity for detecting when source material changes. Changes trigger retraining alerts automatically.</td></tr>
+                        <tr><td><strong>Ecosystem</strong></td><td>View connected Kindo peer apps. Standalone mode if no other Kindo apps are installed.</td></tr>
+                    </tbody>
+                </table>
 
-        <h2>Step 5 &mdash; Create a Curriculum with SENSEI</h2>
-        <p><strong>SENSEI</strong> is your curriculum management agent. To create a training program:</p>
-        <ol>
-            <li>Open Rovo Chat (click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar)</li>
-            <li>Select <strong>SENSEI (Kindo)</strong> from your available agents</li>
-            <li>Tell SENSEI what curriculum to create. Example: <em>&ldquo;Help me develop a curriculum for employee onboarding using Jira space EO&rdquo;</em></li>
-        </ol>
-        <table>
-            <thead><tr><th>Field</th><th>Description</th></tr></thead>
-            <tbody>
-                <tr><td>Program Name</td><td>The title of the curriculum</td></tr>
-                <tr><td>Source Content</td><td>Where the source material lives</td></tr>
-                <tr><td>Learning Objectives</td><td>Key outcomes learners should achieve</td></tr>
-                <tr><td>Recertification Period</td><td>How often learners should be retrained (default: 365 days)</td></tr>
-                <tr><td>Description</td><td>A brief overview of the program</td></tr>
-            </tbody>
-        </table>
-        <p>Once you confirm, SENSEI creates a Jira issue in the <code>TRAINING</code> project with the full program details, a unique Program ID, linked source references, and auto-generated learning objectives.</p>
+                <div class="notice notice--success">
+                    <span class="notice__label">Tip</span>
+                    <p>Accept the defaults for all tabs other than Certification Requirements.</p>
+                </div>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%205.png" alt="SENSEI creating a curriculum">
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%206.png" alt="SENSEI curriculum details">
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%207.png" alt="SENSEI curriculum confirmation and Jira issue created">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%204.png" alt="Configure page additional tabs">
+            </div>
+        </div>
 
-        <h2>Step 6 &mdash; Define Mastery Standards with SENSEI</h2>
-        <p>After creating a curriculum, ask SENSEI to define the mastery standards: <em>&ldquo;Help me define the mastery standards for this&rdquo;</em></p>
-        <h3>Assessment Thresholds</h3>
-        <p>Pass scores (e.g., 80% for general modules, 100% for compliance), attempt limits before admin review.</p>
-        <h3>Competency Levels</h3>
-        <table>
-            <thead><tr><th>Level</th><th>Name</th><th>Description</th></tr></thead>
-            <tbody>
-                <tr><td>Level 1</td><td>Novice</td><td>Completed reading, not yet assessed</td></tr>
-                <tr><td>Level 2</td><td>Developing</td><td>Passed assessments, still needs guidance</td></tr>
-                <tr><td>Level 3</td><td>Proficient</td><td>Independent operation in internal systems (target mastery)</td></tr>
-                <tr><td>Level 4</td><td>Expert</td><td>Capable of mentoring others</td></tr>
-            </tbody>
-        </table>
-        <h3>Evidence of Mastery</h3>
-        <p>Practical tasks tied to Atlassian usage. Review and confirm or customize the standards. SENSEI writes the certification requirements to the <code>TRAINING</code> project and updates your app configuration.</p>
+        <!-- ========== STEP 05 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 05</span>
+            <h2 class="step-section__title">Create a Curriculum with SENSEI</h2>
+            <div class="step-section__body">
+                <p><strong>SENSEI</strong> is your curriculum management agent. To create a training program:</p>
+                <ol>
+                    <li>Open Rovo Chat (click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar)</li>
+                    <li>Select <strong>SENSEI (Kindo)</strong> from your available agents</li>
+                    <li>Tell SENSEI what curriculum to create. Example: <em>&ldquo;Help me develop a curriculum for employee onboarding using Jira space EO&rdquo;</em></li>
+                </ol>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%208.png" alt="SENSEI mastery standards proposal">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Program Name</td><td>The title of the curriculum</td></tr>
+                        <tr><td>Source Content</td><td>Where the source material lives</td></tr>
+                        <tr><td>Learning Objectives</td><td>Key outcomes learners should achieve</td></tr>
+                        <tr><td>Recertification Period</td><td>How often learners should be retrained (default: 365 days)</td></tr>
+                        <tr><td>Description</td><td>A brief overview of the program</td></tr>
+                    </tbody>
+                </table>
 
-        <h2>Step 7 &mdash; Begin Learning with MENTOR</h2>
-        <p><strong>MENTOR</strong> is your personalized teaching agent, built on the <strong>Feynman Teaching Method</strong>.</p>
-        <ol>
-            <li>Open Rovo Chat and select <strong>MENTOR (Kindo)</strong></li>
-            <li>Ask about your learning profile: <em>&ldquo;What is my learning profile?&rdquo;</em></li>
-            <li>If no profile exists, MENTOR initiates a <strong>baseline assessment</strong></li>
-            <li>MENTOR asks about your role and day-to-day work before starting any teaching</li>
-        </ol>
-        <p>From there, MENTOR teaches using the Feynman cycle:</p>
-        <ul>
-            <li><strong>Explain</strong> &mdash; presents concepts in plain language</li>
-            <li><strong>Check</strong> &mdash; probes your understanding with targeted questions</li>
-            <li><strong>Identify</strong> &mdash; finds gaps in comprehension</li>
-            <li><strong>Gate</strong> &mdash; does not advance until mastery is demonstrated</li>
-        </ul>
-        <div class="callout tip"><div class="callout-label">Tip</div><p>Progress is tracked against your baseline &mdash; growth-based assessment, not pass/fail.</p></div>
+                <p>Once you confirm, SENSEI creates a Jira issue in the <code>TRAINING</code> project with the full program details, a unique Program ID, linked source references, and auto-generated learning objectives.</p>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%209.png" alt="MENTOR personalized teaching session">
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%2010.png" alt="MENTOR teaching continued">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%205.png" alt="SENSEI creating a curriculum">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%206.png" alt="SENSEI curriculum details">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%207.png" alt="SENSEI curriculum confirmation and Jira issue created">
+            </div>
+        </div>
 
-        <h2>Step 8 &mdash; Verify Setup Progress</h2>
-        <p>Return to the <strong>Get Started</strong> page to verify your progress. After completing all configuration steps and creating a curriculum with SENSEI, all items should show green.</p>
-        <table>
-            <thead><tr><th>Item</th><th>Notes</th></tr></thead>
-            <tbody>
-                <tr><td><strong>Certification requirements</strong></td><td>Defined manually in Configure, or created automatically when SENSEI builds a curriculum with mastery standards.</td></tr>
-                <tr><td><strong>Peer apps</strong></td><td>Shows green in standalone mode. If other Kindo apps are installed, peer connections are detected automatically.</td></tr>
-            </tbody>
-        </table>
+        <!-- ========== STEP 06 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 06</span>
+            <h2 class="step-section__title">Define Mastery Standards with SENSEI</h2>
+            <div class="step-section__body">
+                <p>After creating a curriculum, ask SENSEI to define the mastery standards: <em>&ldquo;Help me define the mastery standards for this&rdquo;</em></p>
 
-        <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%2011.png" alt="All 7 Get Started items complete">
+                <h3>Assessment Thresholds</h3>
+                <p>Pass scores (e.g., 80% for general modules, 100% for compliance), attempt limits before admin review.</p>
 
-        <h2>Key Design Principles</h2>
-        <ul>
-            <li><strong>All data stays in your Atlassian environment</strong> &mdash; Forge Storage and Jira issues. No external data storage.</li>
-            <li><strong>Gaps are attributed to the material, not the learner</strong> &mdash; if understanding isn't there, the teaching adapts.</li>
-            <li><strong>Content changes trigger retraining</strong> &mdash; when source material is updated, affected learners are automatically flagged for delta retraining.</li>
-            <li><strong>Certification requirements can be created two ways</strong> &mdash; manually through Configure, or automatically when SENSEI creates a curriculum with mastery standards.</li>
-            <li><strong>Standalone by default, ecosystem-ready</strong> &mdash; works fully as a single app. Cross-app features activate automatically when other Kindo apps are installed.</li>
-        </ul>
+                <h3>Competency Levels</h3>
 
-        <h2>Troubleshooting</h2>
-        <table>
-            <thead><tr><th>Issue</th><th>Solution</th></tr></thead>
-            <tbody>
-                <tr><td>Get Started buttons don't navigate</td><td>Verify the app is upgraded to the latest version (<code>forge install --upgrade</code>)</td></tr>
-                <tr><td>Configure page is blank</td><td>Check browser console for errors. Ensure the app is deployed and upgraded.</td></tr>
-                <tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
-                <tr><td>Certification requirements not showing</td><td>Create a curriculum via SENSEI &mdash; requirements are generated automatically. Or define manually in Configure &rarr; Certification Requirements.</td></tr>
-                <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
-            </tbody>
-        </table>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Level 1</td><td>Novice</td><td>Completed reading, not yet assessed</td></tr>
+                        <tr><td>Level 2</td><td>Developing</td><td>Passed assessments, still needs guidance</td></tr>
+                        <tr><td>Level 3</td><td>Proficient</td><td>Independent operation in internal systems (target mastery)</td></tr>
+                        <tr><td>Level 4</td><td>Expert</td><td>Capable of mentoring others</td></tr>
+                    </tbody>
+                </table>
 
-        <footer>
-            <p>&copy; 2026 KinHelm &nbsp;&middot;&nbsp; <a href="../">Back to Help Center</a></p>
-        </footer>
+                <h3>Evidence of Mastery</h3>
+                <p>Practical tasks tied to Atlassian usage. Review and confirm or customize the standards. SENSEI writes the certification requirements to the <code>TRAINING</code> project and updates your app configuration.</p>
+
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%208.png" alt="SENSEI mastery standards proposal">
+            </div>
+        </div>
+
+        <!-- ========== STEP 07 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 07</span>
+            <h2 class="step-section__title">Begin Learning with MENTOR</h2>
+            <div class="step-section__body">
+                <p><strong>MENTOR</strong> is your personalized teaching agent, built on the <strong>Feynman Teaching Method</strong>.</p>
+                <ol>
+                    <li>Open Rovo Chat and select <strong>MENTOR (Kindo)</strong></li>
+                    <li>Ask about your learning profile: <em>&ldquo;What is my learning profile?&rdquo;</em></li>
+                    <li>If no profile exists, MENTOR initiates a <strong>baseline assessment</strong></li>
+                    <li>MENTOR asks about your role and day-to-day work before starting any teaching</li>
+                </ol>
+
+                <p>From there, MENTOR teaches using the Feynman cycle:</p>
+                <ul>
+                    <li><strong>Explain</strong> &mdash; presents concepts in plain language</li>
+                    <li><strong>Check</strong> &mdash; probes your understanding with targeted questions</li>
+                    <li><strong>Identify</strong> &mdash; finds gaps in comprehension</li>
+                    <li><strong>Gate</strong> &mdash; does not advance until mastery is demonstrated</li>
+                </ul>
+
+                <div class="notice notice--success">
+                    <span class="notice__label">Tip</span>
+                    <p>Progress is tracked against your baseline &mdash; growth-based assessment, not pass/fail.</p>
+                </div>
+
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%209.png" alt="MENTOR personalized teaching session">
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%2010.png" alt="MENTOR teaching continued">
+            </div>
+        </div>
+
+        <!-- ========== STEP 08 ========== -->
+        <div class="step-section">
+            <span class="step-section__number">Step 08</span>
+            <h2 class="step-section__title">Verify Setup Progress</h2>
+            <div class="step-section__body">
+                <p>Return to the <strong>Get Started</strong> page to verify your progress. After completing all configuration steps and creating a curriculum with SENSEI, all items should show green.</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Certification requirements</strong></td><td>Defined manually in Configure, or created automatically when SENSEI builds a curriculum with mastery standards.</td></tr>
+                        <tr><td><strong>Peer apps</strong></td><td>Shows green in standalone mode. If other Kindo apps are installed, peer connections are detected automatically.</td></tr>
+                    </tbody>
+                </table>
+
+                <img class="screenshot" src="../Mentor%20Walkthrough/Mentor%2011.png" alt="All 7 Get Started items complete">
+            </div>
+        </div>
 
     </div>
+
+    <!-- ========== KEY DESIGN PRINCIPLES ========== -->
+    <section>
+        <div class="container">
+            <span class="placard">Architecture</span>
+            <h2>Key Design Principles</h2>
+            <div class="step-section__body">
+                <ul>
+                    <li><strong>All data stays in your Atlassian environment</strong> &mdash; Forge Storage and Jira issues. No external data storage.</li>
+                    <li><strong>Gaps are attributed to the material, not the learner</strong> &mdash; if understanding isn't there, the teaching adapts.</li>
+                    <li><strong>Content changes trigger retraining</strong> &mdash; when source material is updated, affected learners are automatically flagged for delta retraining.</li>
+                    <li><strong>Certification requirements can be created two ways</strong> &mdash; manually through Configure, or automatically when SENSEI creates a curriculum with mastery standards.</li>
+                    <li><strong>Standalone by default, ecosystem-ready</strong> &mdash; works fully as a single app. Cross-app features activate automatically when other Kindo apps are installed.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TROUBLESHOOTING ========== -->
+    <section>
+        <div class="container">
+            <span class="placard">Support</span>
+            <h2>Troubleshooting</h2>
+
+            <table class="troubleshooting-table">
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Get Started buttons don't navigate</td><td>Verify the app is upgraded to the latest version (<code>forge install --upgrade</code>)</td></tr>
+                    <tr><td>Configure page is blank</td><td>Check browser console for errors. Ensure the app is deployed and upgraded.</td></tr>
+                    <tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
+                    <tr><td>Certification requirements not showing</td><td>Create a curriculum via SENSEI &mdash; requirements are generated automatically. Or define manually in Configure &rarr; Certification Requirements.</td></tr>
+                    <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__left">
+                <div class="site-footer__logo">KinHelm</div>
+                <p>&copy; 2026 KinHelm</p>
+            </div>
+            <div class="site-footer__right">
+                <ul class="site-footer__links">
+                    <li><a href="../">Back to Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
