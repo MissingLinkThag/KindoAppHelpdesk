@@ -36,6 +36,13 @@
         footer a { color: #777; }
         footer a:hover { color: #64b5f6; }
         @media (max-width: 600px) { .container { padding: 1.25rem 1rem; } h1 { font-size: 1.5rem; } h2 { font-size: 1.25rem; } table { font-size: .85rem; } th, td { padding: .5rem .65rem; } }
+        .screenshot {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid #3a3a5c;
+            margin: 1.5rem 0;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -90,7 +97,8 @@
         </tbody>
     </table>
     <p>Click <strong>&ldquo;Configure App&rdquo;</strong> to begin setup, or talk to <strong>KNOT</strong> &mdash; your configuration agent &mdash; for guided help.</p>
-    <div class="screenshot-placeholder">[Screenshot: Get Started checklist page]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-08%20213356.png" alt="HR Get Started checklist">
+<img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-08%20233536.png" alt="HR Get Started page detail">
 
     <h2>Step 2 &mdash; Configure: HR Team</h2>
     <p>Navigate to <strong>Configure &rarr; HR Team</strong> tab. Add team members who will manage employee records, handle lifecycle events, and oversee HR operations.</p>
@@ -104,7 +112,7 @@
         </tbody>
     </table>
     <p>Click <strong>&ldquo;Add Member&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. A green confirmation banner confirms the save was successful.</p>
-    <div class="screenshot-placeholder">[Screenshot: HR Team configuration page]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-09%20113634.png" alt="HR Team configuration">
 
     <h2>Step 3 &mdash; Configure: Compliance Requirements</h2>
     <p>Navigate to <strong>Configure &rarr; Compliance Requirements</strong> tab. Define the compliance items that apply to employee lifecycle events &mdash; I-9 verification, W-4 filing, benefits enrollment, background checks.</p>
@@ -120,7 +128,8 @@
         </tbody>
     </table>
     <p>Click <strong>&ldquo;Add Requirement&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. ONYX uses these requirements to calculate jurisdiction-specific compliance deadlines automatically when processing lifecycle events.</p>
-    <div class="screenshot-placeholder">[Screenshot: Compliance Requirements configuration]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-09%20113704.png" alt="Compliance Requirements configuration">
+<img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-09%20113924.png" alt="Compliance Requirements detail">
 
     <h2>Step 4 &mdash; Configure: Additional Tabs</h2>
     <p>The Configure page includes additional tabs for fine-tuning your HR environment:</p>
@@ -163,7 +172,7 @@
         </tbody>
     </table>
     <div class="callout warning"><div class="callout-label">Note</div><p>KNOT verifies your access level using the HR team list you configured in Step 2. HR Directors and Coordinators get full configuration visibility. All other users receive standard employee-level responses.</p></div>
-    <div class="screenshot-placeholder">[Screenshot: KNOT configuration verification response]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-09%20114000.png" alt="KNOT configuration verification">
 
     <h2>Step 6 &mdash; Create an Employee Record with HARPER</h2>
     <p>HARPER is your employee records manager. To create an employee record:</p>
@@ -184,7 +193,7 @@
     </table>
     <p>HARPER can also search and update existing records:</p>
     <ul><li><code>"Find Sarah Chen's employee record"</code></li><li><code>"Update KHR-3 — change department to Product Engineering"</code></li></ul>
-    <div class="screenshot-placeholder">[Screenshot: HARPER employee record creation]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-09%20114219.png" alt="HARPER creating employee record">
 
     <h2>Step 7 &mdash; Process an Onboarding with ONYX</h2>
     <p>ONYX handles employee lifecycle events with jurisdiction-specific compliance tracking:</p>
@@ -203,7 +212,7 @@
         </tbody>
     </table>
     <p>ONYX calculates deadlines from the compliance requirements you configured in Step 3 &mdash; federal, state, and company requirements are applied automatically based on jurisdiction.</p>
-    <div class="screenshot-placeholder">[Screenshot: ONYX onboarding lifecycle issue]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-09%20114357.png" alt="ONYX onboarding lifecycle">
 
     <h2>Step 8 &mdash; Review Workforce Analytics with PULSE</h2>
     <p>PULSE provides aggregate workforce analytics &mdash; never individual employee data:</p>
@@ -222,7 +231,7 @@
         </tbody>
     </table>
     <div class="callout warning"><div class="callout-label">Note</div><p>When PULSE identifies data gaps or anomalies, it refers you to the appropriate agent &mdash; ONYX for lifecycle status, HARPER for record verification.</p></div>
-    <div class="screenshot-placeholder">[Screenshot: PULSE workforce analytics response]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-10%20141135.png" alt="PULSE workforce analytics">
 
     <h2>Step 9 &mdash; Verify Setup Progress</h2>
     <p>Return to the <strong>Get Started</strong> page to verify your progress. After completing all configuration steps, all items should show green:</p>
@@ -233,7 +242,8 @@
             <tr><td>Peer apps</td><td>Shows green in standalone mode. If other Kindo apps (Governance, Training, Compliance, Change, Legal) are installed, peer connections are detected automatically.</td></tr>
         </tbody>
     </table>
-    <div class="screenshot-placeholder">[Screenshot: Completed Get Started checklist — all green]</div>
+    <img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-10%20143656.png" alt="All Get Started items complete">
+<img class="screenshot" src="../KINDO%20HR%20Walkthrough/Screenshot%202026-10-10%20151559.png" alt="HR setup verification complete">
 
     <h2>Key Design Principles</h2>
     <ul>
