@@ -4,65 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kindo/Mentor — Security Policy</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.7;padding:2rem 1rem}
-.container{max-width:960px;margin:0 auto}
-a{color:#58a6ff;text-decoration:none}
-a:hover{text-decoration:underline}
-.back-link{display:inline-block;margin-bottom:2rem;font-size:0.95rem}
-h1{font-size:2rem;font-weight:600;color:#f0f6fc;margin-bottom:0.25rem}
-.subtitle{color:#8b949e;font-size:0.95rem;margin-bottom:2rem}
-h2{font-size:1.4rem;font-weight:600;color:#f0f6fc;margin-top:2.5rem;margin-bottom:1rem;padding-bottom:0.4rem;border-bottom:1px solid #21262d}
-h3{font-size:1.1rem;font-weight:600;color:#e6edf3;margin-top:1.5rem;margin-bottom:0.75rem}
-p,li{margin-bottom:0.6rem;font-size:0.95rem}
-ul,ol{padding-left:1.5rem;margin-bottom:1rem}
-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.9rem}
-th{background:#161b22;color:#f0f6fc;text-align:left;padding:0.75rem 1rem;border:1px solid #30363d;font-weight:600}
-td{padding:0.75rem 1rem;border:1px solid #21262d;vertical-align:top}
-tr:nth-child(even){background:#161b22}
-tr:hover{background:#1c2128}
-code{background:#161b22;color:#79c0ff;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.88rem}
-.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.8rem;font-weight:600;margin-right:0.3rem}
-.badge-blue{background:#1f6feb33;color:#58a6ff;border:1px solid #1f6feb55}
-.badge-green{background:#23863633;color:#3fb950;border:1px solid #23863655}
-.badge-yellow{background:#9e6a0333;color:#d29922;border:1px solid #9e6a0355}
-.badge-red{background:#da363433;color:#f85149;border:1px solid #da363455}
-.info-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.25rem;margin:1rem 0}
-.info-box.warning{border-left:4px solid #d29922}
-.info-box.info{border-left:4px solid #58a6ff}
-.divider{border:0;border-top:1px solid #21262d;margin:2rem 0}
-footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b949e;font-size:0.85rem}
-@media(max-width:768px){body{padding:1rem 0.5rem}table{display:block;overflow-x:auto}h1{font-size:1.5rem}}
-</style>
+<link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
+
+<header class="site-header">
+<nav class="site-header__inner container">
+<a href="../../" class="site-header__logo">KindoApps</a>
+<div class="breadcrumbs"><a href="../../">Help Center</a> / <a href="../">Kindo/Mentor</a> / Security Policy</div>
+</nav>
+</header>
+
 <div class="container">
-<a href="../" class="back-link">← Back to Help Center</a>
 
 <h1>Kindo/Mentor — Security Policy</h1>
 <p class="subtitle">Effective Date: October 22, 2026 · App ID: <code>ari:cloud:ecosystem::app/0f22a8a1-080c-4c64-b4aa-54b80ea6c73d</code></p>
 
+<section>
+<span class="placard">PURPOSE &amp; SCOPE</span>
 <h2>1. Purpose &amp; Scope</h2>
 <p>This security policy covers <strong>Kindo/Mentor</strong>, a training and knowledge-transfer application built on Atlassian Forge. Mentor implements the <strong>Feynman Teaching Method</strong> to help teams verify and deepen understanding of technical domains. This policy describes how the app collects, stores, processes, and protects data within the Atlassian cloud environment.</p>
+</section>
 
+<section>
+<span class="placard">AGENTS</span>
 <h2>2. Agents</h2>
 <p>Mentor deploys <strong>5 Rovo agents</strong>, each with defined security-relevant behaviour:</p>
-<table>
+<table class="data-table">
 <thead>
 <tr><th>Agent</th><th>Role</th><th>Security-Relevant Behaviour</th></tr>
 </thead>
 <tbody>
-<tr><td><span class="badge badge-blue">MENTOR</span></td><td>Primary training orchestrator</td><td>Generates teaching assignments from Confluence content; never stores raw source content; operates within Feynman method workflow</td></tr>
-<tr><td><span class="badge badge-green">COACH</span></td><td>Learner guidance</td><td>Provides feedback on teaching attempts; accesses only learner-created content; no access to assessment scores of other learners</td></tr>
-<tr><td><span class="badge badge-yellow">VERIFIER</span></td><td>Knowledge assessment</td><td>Evaluates teaching quality against source material; read-only Confluence access; assessment records stored per-learner with tenant isolation</td></tr>
-<tr><td><span class="badge badge-red">SENSEI</span></td><td>Advanced mastery tracking</td><td>Tracks certification status and expiry; triggers retraining alerts via Jira; no cross-tenant data visibility</td></tr>
-<tr><td><span class="badge badge-blue">KNOT</span></td><td>Cross-app integration router</td><td>Tier 2 event bus communication; routes only structured event payloads; no raw data forwarding; validates source/destination app identity</td></tr>
+<tr><td>MENTOR</td><td>Primary training orchestrator</td><td>Generates teaching assignments from Confluence content; never stores raw source content; operates within Feynman method workflow</td></tr>
+<tr><td>COACH</td><td>Learner guidance</td><td>Provides feedback on teaching attempts; accesses only learner-created content; no access to assessment scores of other learners</td></tr>
+<tr><td>VERIFIER</td><td>Knowledge assessment</td><td>Evaluates teaching quality against source material; read-only Confluence access; assessment records stored per-learner with tenant isolation</td></tr>
+<tr><td>SENSEI</td><td>Advanced mastery tracking</td><td>Tracks certification status and expiry; triggers retraining alerts via Jira; no cross-tenant data visibility</td></tr>
+<tr><td>KNOT</td><td>Cross-app integration router</td><td>Tier 2 event bus communication; routes only structured event payloads; no raw data forwarding; validates source/destination app identity</td></tr>
 </tbody>
 </table>
+</section>
 
+<section>
+<span class="placard">DATA INVENTORY</span>
 <h2>3. Data Inventory</h2>
-<table>
+<table class="data-table">
 <thead>
 <tr><th>Data Type</th><th>Storage</th><th>Sensitivity</th><th>Retention</th></tr>
 </thead>
@@ -76,7 +61,10 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <tr><td>Content Hashes</td><td>Forge SQL</td><td>Low — SHA hashes for change detection</td><td>App lifecycle</td></tr>
 </tbody>
 </table>
+</section>
 
+<section>
+<span class="placard">DATA PRINCIPLES</span>
 <h2>4. Data Principles</h2>
 <ul>
 <li><strong>No egress</strong> — all data remains within the Atlassian Forge boundary; no external network calls</li>
@@ -86,9 +74,13 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <li><strong>No raw content storage</strong> — Confluence content is processed in-memory; only hashes and structured references are persisted</li>
 <li><strong>Learner data minimization</strong> — only accountId and skill-level metadata are stored; no PII beyond what Atlassian provides</li>
 </ul>
+</section>
 
+<section>
+<span class="placard">ARCHITECTURE</span>
 <h2>5. Architecture</h2>
-<div class="info-box info">
+<div class="notice notice--info">
+<span class="notice__label">Architecture</span>
 <p><strong>Platform:</strong> Atlassian Forge (serverless)</p>
 <p><strong>Runtime:</strong> Node.js 22.x</p>
 <p><strong>Backend:</strong> No external backend — all compute runs within the Forge sandbox</p>
@@ -105,7 +97,7 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 </ol>
 
 <h3>Scheduled Operations</h3>
-<table>
+<table class="data-table">
 <thead>
 <tr><th>Operation</th><th>Frequency</th><th>Purpose</th></tr>
 </thead>
@@ -117,7 +109,10 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 
 <h3>Cross-App Communication</h3>
 <p>Mentor communicates with other Kindo apps via the <strong>Tier 2 Jira event bus</strong>. KNOT handles routing of structured event payloads. No raw data is forwarded — only typed event envelopes with metadata references.</p>
+</section>
 
+<section>
+<span class="placard">ACCESS CONTROL</span>
 <h2>6. Access Control</h2>
 <ul>
 <li><strong><code>asApp()</code> context</strong> — all API calls execute under the app's identity, not individual users</li>
@@ -125,9 +120,12 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <li><strong>No credential handling</strong> — the app never stores, processes, or transmits user credentials</li>
 <li><strong>Learner identity</strong> — users are identified solely by Atlassian <code>accountId</code>; no external identity providers</li>
 </ul>
+</section>
 
+<section>
+<span class="placard">PERMISSION SCOPES</span>
 <h2>7. Permission Scopes</h2>
-<table>
+<table class="data-table">
 <thead>
 <tr><th>Scope</th><th>Justification</th></tr>
 </thead>
@@ -144,7 +142,10 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <tr><td><code>read:confluence-space.summary</code></td><td>List available Confluence spaces for training configuration</td></tr>
 </tbody>
 </table>
+</section>
 
+<section>
+<span class="placard">VULNERABILITY MANAGEMENT</span>
 <h2>8. Vulnerability Management</h2>
 <ul>
 <li><strong>SAST</strong> — static application security testing runs in CI/CD on every pull request</li>
@@ -153,7 +154,10 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <li><strong>Dependency monitoring</strong> — continuous monitoring of npm dependencies via automated tooling</li>
 <li><strong>Responsible disclosure</strong> — vulnerabilities are acknowledged within <strong>48 hours</strong> of report; triage completed within 5 business days</li>
 </ul>
+</section>
 
+<section>
+<span class="placard">INCIDENT RESPONSE</span>
 <h2>9. Incident Response</h2>
 <p>Kindo maintains a 6-phase incident response process:</p>
 <ol>
@@ -164,7 +168,10 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <li><strong>Notification</strong> — inform affected customers and Atlassian per contractual and regulatory timelines</li>
 <li><strong>Post-Incident Review</strong> — document lessons learned; update security controls</li>
 </ol>
+</section>
 
+<section>
+<span class="placard">GDPR &amp; COMPLIANCE</span>
 <h2>10. GDPR &amp; Compliance</h2>
 <ul>
 <li><strong>Role:</strong> Kindo acts as a <strong>data processor</strong>; the customer is the data controller</li>
@@ -173,16 +180,26 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #21262d;color:#8b
 <li><strong>DPA:</strong> a Data Processing Agreement is available upon request</li>
 <li><strong>SOC 2 Type II:</strong> Forge platform maintains SOC 2 Type II certification; Kindo inherits these controls</li>
 </ul>
+</section>
 
+<section>
+<span class="placard">CONTACT</span>
 <h2>11. Contact</h2>
-<div class="info-box">
+<div class="card card--accent">
 <p><strong>Security inquiries:</strong> <a href="mailto:security@kindo.ai">security@kindo.ai</a></p>
 <p><strong>Support portal:</strong> <a href="https://kindoapphelp.atlassian.net">kindoapphelp.atlassian.net</a></p>
 </div>
+</section>
 
-<footer>
-<p>© 2026 Kindo (KinHelm Inc.) · This policy is reviewed annually and updated as needed.</p>
-</footer>
 </div>
+
+<footer class="site-footer">
+<div class="site-footer__inner container">
+<div class="site-footer__left">
+<p>© 2026 Kindo (KinHelm Inc.) · This policy is reviewed annually.</p>
+</div>
+</div>
+</footer>
+
 </body>
 </html>
