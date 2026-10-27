@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindo/Change — Setup &amp; Walkthrough Guide</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__logo">KinHelm</div>
+            <nav><ul class="site-nav">
+                <li><a href="../">Help Center</a></li>
+                <li><a href="./" class="active">Kindo/Change</a></li>
+            </ul></nav>
+        </div>
+    </header>
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="../">Kindo App Help Center</a></li>
+            <li>Kindo/Change Setup</li>
+        </ul>
+    </div>
+    <section><div class="container">
+        <span class="placard">Setup &amp; Walkthrough Guide</span>
+        <h1>Kindo/Change</h1>
+        <div class="step-section__body">
+            <p>Kindo/Change is an AI-powered change management app for Atlassian Jira. It provides <strong>ITIL-aligned change lifecycle management</strong> with AI-powered impact assessment, approval routing, and post-implementation review.</p>
+            <p>Five AI agents work together to manage every aspect of change management:</p>
+        </div>
+        <table class="agent-table"><thead><tr><th>Agent</th><th>Role</th><th>Description</th></tr></thead>
+        <tbody>
+            <tr><td>KNOT</td><td>App Configuration Guide</td><td>Setup help, health checks, discovery</td></tr>
+            <tr><td>MARSHAL</td><td>Change Lifecycle Intake</td><td>Creates change requests, enforces rollback requirements, tracks lifecycle status</td></tr>
+            <tr><td>BLAST</td><td>Impact Assessment</td><td>Blast radius analysis, risk scoring, reversibility evaluation, service dependency mapping</td></tr>
+            <tr><td>QUORUM</td><td>Approval Routing</td><td>Routes changes to approvers based on type and risk, records human decisions, enforces quorum</td></tr>
+            <tr><td>REWIND</td><td>Post-Implementation Review</td><td>Records PIR outcomes, captures lessons learned, closes the change lifecycle</td></tr>
+        </tbody></table>
+    </div></section>
+    <section><div class="container">
+        <span class="placard">Before You Begin</span>
+        <h2>Prerequisites</h2>
+        <div class="card card--accent"><ul>
+            <li>Jira Cloud instance with <strong>Rovo enabled</strong></li>
+            <li>Site admin permissions (for initial install)</li>
+        </ul></div>
+    </div></section>
+    <div class="container">
+        <div class="step-section">
+            <span class="step-section__number">Step 01</span>
+            <h2 class="step-section__title">Install &amp; Get Started</h2>
+            <div class="step-section__body">
+                <p>After installing Kindo/Change from the Atlassian Marketplace:</p>
+                <ol>
+                    <li>Navigate to <strong>Jira Admin Settings → Manage Apps → Kindo/Change</strong></li>
+                    <li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li>
+                </ol>
+                <h3>Auto-completed on Install</h3>
+                <ul>
+                    <li>✅ <strong>Change project created</strong> — a dedicated <code>KCM</code> project is created in your Jira instance</li>
+                    <li>✅ <strong>Change framework applied</strong> — the KinHelm Change Management Framework is configured (ITIL-aligned)</li>
+                    <li>✅ <strong>Discovery scan complete</strong> — your Atlassian site is scanned for existing change-relevant content</li>
+                </ul>
+                <h3>Requires Your Configuration</h3>
+                <table class="data-table"><thead><tr><th>Checklist Item</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Change Advisory Board (CAB) assigned</td><td>⚠️ Configuration required</td></tr>
+                    <tr><td>Emergency approvers configured</td><td>⚠️ Configuration required</td></tr>
+                    <tr><td>Service catalog defined</td><td>⚠️ Configuration required</td></tr>
+                    <tr><td>Peer apps connected</td><td>⚠️ Configuration required</td></tr>
+                </tbody></table>
+                <p>Click <strong>"Configure App"</strong> to begin setup, or talk to <strong>KNOT</strong> for guided help.</p>
+                <div class="screenshot-placeholder">Screenshot: Get Started checklist</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 02</span>
+            <h2 class="step-section__title">Configure: Change Advisory Board</h2>
+            <div class="step-section__body">
+                <p>Navigate to <strong>Configure → CAB Team</strong> tab. Add team members who will review and approve change requests.</p>
+                <table class="data-table"><thead><tr><th>Field</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>Atlassian Account ID</td><td>Their Jira account identifier</td></tr>
+                    <tr><td>Display Name</td><td>How they appear in the app</td></tr>
+                    <tr><td>Role</td><td>e.g., Change Manager, CAB Member, Emergency Approver</td></tr>
+                </tbody></table>
+                <p>Click <strong>"Add Member"</strong> then <strong>"Save"</strong>. QUORUM uses the CAB team list to determine approval routing.</p>
+                <div class="screenshot-placeholder">Screenshot: CAB Team configuration</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 03</span>
+            <h2 class="step-section__title">Configure: Additional Tabs</h2>
+            <div class="step-section__body">
+                <table class="data-table"><thead><tr><th>Tab</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Emergency Approvers</strong></td><td>Designate individuals authorized to approve emergency changes outside the standard CAB process.</td></tr>
+                    <tr><td><strong>Service Catalog</strong></td><td>Register services and systems. BLAST uses this for impact assessment and blast radius calculation.</td></tr>
+                    <tr><td><strong>Risk Matrix</strong></td><td>Configure how change type and risk level map to approval requirements.</td></tr>
+                    <tr><td><strong>Content Change Detection</strong></td><td>Set sensitivity for detecting when change policies are updated.</td></tr>
+                    <tr><td><strong>Ecosystem</strong></td><td>View connected Kindo peer apps. Standalone mode if no others installed.</td></tr>
+                </tbody></table>
+                <div class="screenshot-placeholder">Screenshot: Additional configuration tabs</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 04</span>
+            <h2 class="step-section__title">Verify Setup Progress</h2>
+            <div class="step-section__body">
+                <p>Return to <strong>Get Started</strong> to verify. All items should show green after configuration.</p>
+                <div class="screenshot-placeholder">Screenshot: All 7 items complete</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 05</span>
+            <h2 class="step-section__title">Create a Change Request with MARSHAL</h2>
+            <div class="step-section__body">
+                <p><strong>MARSHAL</strong> is your change lifecycle agent:</p>
+                <ol>
+                    <li>Open Rovo Chat → Select <strong>MARSHAL (Kindo)</strong></li>
+                    <li>Example: <em>"Create a new change request: Upgrade the staging web server from Ubuntu 20.04 to 22.04. Standard change, medium risk."</em></li>
+                </ol>
+                <h3>ITIL Requirements Enforced</h3>
+                <p>MARSHAL requires a <strong>rollback plan</strong> before the change can advance past Draft.</p>
+                <h3>What MARSHAL Creates</h3>
+                <table class="data-table"><thead><tr><th>Artifact</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Jira Issue</td><td>Created in the <code>KCM</code> project (e.g., KCM-3)</td></tr>
+                    <tr><td>Summary</td><td><code>[STANDARD] Upgrade staging web server from Ubuntu 20.04 to 22.04</code></td></tr>
+                    <tr><td>Labels</td><td><code>change-type-standard</code>, <code>risk-medium</code></td></tr>
+                    <tr><td>Comment</td><td><code>[MARSHAL] Change request created</code> with Type, Risk, Status, Requestor</td></tr>
+                    <tr><td>App Status</td><td><code>draft</code></td></tr>
+                </tbody></table>
+                <div class="card card--accent">
+                    <p><strong>Key Principle:</strong> Change lifecycle status is owned by the app, not the Jira workflow. The Jira status (To Do/In Progress/Done) is cosmetic. The app-owned status (<code>draft</code> → <code>impact_review</code> → <code>pending_approval</code> → <code>approved</code> → <code>implemented</code> → <code>closed</code>) is authoritative.</p>
+                </div>
+                <div class="screenshot-placeholder">Screenshot: MARSHAL creating a change request</div>
+                <div class="screenshot-placeholder">Screenshot: MARSHAL creation comment on the Jira issue</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 06</span>
+            <h2 class="step-section__title">Assess Impact with BLAST</h2>
+            <div class="step-section__body">
+                <p><strong>BLAST</strong> performs AI-powered impact assessments:</p>
+                <ol>
+                    <li>Select <strong>BLAST (Kindo)</strong> in Rovo Chat</li>
+                    <li>Example: <em>"Run an impact assessment on KCM-3."</em></li>
+                </ol>
+                <h3>Assessment Output</h3>
+                <table class="data-table"><thead><tr><th>Field</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>Blast Radius</td><td>Number of directly affected services</td></tr>
+                    <tr><td>Affected Systems</td><td>Impacted systems including downstream dependencies</td></tr>
+                    <tr><td>Dependency Depth</td><td>How deep the impact chain goes</td></tr>
+                    <tr><td>Reversibility</td><td>Fully reversible, partially, or irreversible</td></tr>
+                    <tr><td>Historical Failure Rate</td><td>Past failure data for similar changes</td></tr>
+                    <tr><td>Expected Downtime</td><td>Estimated service interruption</td></tr>
+                    <tr><td>Risk Level</td><td>BLAST may recommend a different risk level</td></tr>
+                </tbody></table>
+                <div class="card card--accent">
+                    <p><strong>Single-issue audit trail:</strong> BLAST posts the assessment as a <strong>comment on the existing change issue</strong>. No separate issue created. One change = one issue = one audit trail.</p>
+                </div>
+                <p>Status advances: <strong>draft → impact_review</strong>. <em>"BLAST recommends — humans decide."</em></p>
+                <div class="screenshot-placeholder">Screenshot: BLAST impact assessment comment</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 07</span>
+            <h2 class="step-section__title">Route and Approve with QUORUM</h2>
+            <div class="step-section__body">
+                <p><strong>QUORUM</strong> manages the approval workflow:</p>
+                <ol>
+                    <li>Select <strong>QUORUM (Kindo)</strong> → <em>"Route KCM-3 for approval."</em></li>
+                </ol>
+                <h3>Approval Rules</h3>
+                <table class="data-table"><thead><tr><th>Change Type + Risk</th><th>Approval Requirement</th></tr></thead>
+                <tbody>
+                    <tr><td>Standard + Low/Medium</td><td>Single Approver</td></tr>
+                    <tr><td>Standard + High</td><td>CAB Review</td></tr>
+                    <tr><td>Emergency</td><td>Emergency Approver</td></tr>
+                    <tr><td>Major</td><td>Full CAB Quorum</td></tr>
+                </tbody></table>
+                <p>QUORUM posts a <code>[QUORUM Approval Routing]</code> comment. Status: <strong>impact_review → pending_approval</strong>.</p>
+                <h3>Recording the Decision</h3>
+                <p>To approve: <em>"Approve KCM-3."</em></p>
+                <p>QUORUM records a <code>[QUORUM Decision Recorded]</code> comment with Decision, Approver, Quorum status. Status: <strong>pending_approval → approved</strong> (or <strong>rejected</strong>).</p>
+                <div class="card card--accent">
+                    <p><strong>QUORUM never auto-approves.</strong> Every change requires a human decision.</p>
+                </div>
+                <div class="screenshot-placeholder">Screenshot: QUORUM routing comment</div>
+                <div class="screenshot-placeholder">Screenshot: QUORUM approval decision recorded</div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 08</span>
+            <h2 class="step-section__title">Review Implementation with REWIND</h2>
+            <div class="step-section__body">
+                <p><strong>REWIND</strong> closes the change lifecycle with a post-implementation review:</p>
+                <ol>
+                    <li>Select <strong>REWIND (Kindo)</strong></li>
+                    <li>Example: <em>"Record a post-implementation review for KCM-3. The upgrade completed successfully with no downtime."</em></li>
+                </ol>
+                <h3>PIR Output</h3>
+                <table class="data-table"><thead><tr><th>Field</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>Reviewer</td><td>Who conducted the review</td></tr>
+                    <tr><td>Outcome</td><td>Successful, Failed, or Partial</td></tr>
+                    <tr><td>Root Cause</td><td>Root cause analysis (N/A if successful)</td></tr>
+                    <tr><td>Rollback Executed</td><td>Whether rollback was needed</td></tr>
+                    <tr><td>Planned vs. Actual</td><td>Expected vs. actual outcomes</td></tr>
+                    <tr><td>Lessons Learned</td><td>Key takeaways for future changes</td></tr>
+                </tbody></table>
+                <p>Status: <strong>approved → implemented → closed</strong>.</p>
+                <div class="card card--accent">
+                    <p><strong>Safety guard:</strong> REWIND only allows a PIR on changes in <code>approved</code> or <code>implemented</code> status.</p>
+                </div>
+                <h3>The Complete Audit Trail</h3>
+                <p>The change issue contains the full lifecycle as comments:</p>
+                <ol>
+                    <li><code>[MARSHAL]</code> Change request created</li>
+                    <li><code>[BLAST]</code> Impact assessment</li>
+                    <li><code>[QUORUM]</code> Approval routing</li>
+                    <li><code>[QUORUM]</code> Decision recorded</li>
+                    <li><code>[REWIND]</code> Post-implementation review</li>
+                </ol>
+                <p><strong>One issue. Five comments. A clean chronological audit trail.</strong></p>
+                <div class="screenshot-placeholder">Screenshot: REWIND PIR and complete comment thread</div>
+            </div>
+        </div>
+    </div>
+    <section><div class="container">
+        <span class="placard">Reference</span>
+        <h2>Agent Reference</h2>
+        <table class="agent-table"><thead><tr><th>Agent</th><th>What It Does</th><th>When to Use It</th></tr></thead>
+        <tbody>
+            <tr><td>KNOT</td><td>Configuration guide — setup, health checks, advisory</td><td>When new or verifying setup</td></tr>
+            <tr><td>MARSHAL</td><td>Creates change requests, enforces rollback, sets status</td><td>Registering a new change</td></tr>
+            <tr><td>BLAST</td><td>Impact assessment — blast radius, risk, dependencies</td><td>Understanding change impact</td></tr>
+            <tr><td>QUORUM</td><td>Approval routing, records decisions, enforces quorum</td><td>Approving or rejecting changes</td></tr>
+            <tr><td>REWIND</td><td>Post-implementation review, lessons learned, lifecycle close</td><td>After implementation</td></tr>
+        </tbody></table>
+    </div></section>
+    <section><div class="container">
+        <span class="placard">Architecture</span>
+        <h2>Key Design Principles</h2>
+        <div class="step-section__body"><ul>
+            <li><strong>All data stays in your Atlassian environment</strong> — Forge Storage and Jira issues. No external data storage.</li>
+            <li><strong>App-owned lifecycle status</strong> — stored in the app, not the Jira workflow. Works regardless of workflow configuration.</li>
+            <li><strong>One issue per change, comments as audit trail</strong> — no separate issues for assessments or approvals.</li>
+            <li><strong>ITIL-aligned but not ITIL-dependent</strong> — follows ITIL principles without requiring ITIL-specific Jira configurations.</li>
+            <li><strong>Agents recommend, humans decide</strong> — risk acceptance and approval decisions are always human.</li>
+            <li><strong>Standalone by default, ecosystem-ready</strong> — cross-app features activate when other Kindo apps are installed.</li>
+        </ul></div>
+    </div></section>
+    <section><div class="container">
+        <span class="placard">Support</span>
+        <h2>Troubleshooting</h2>
+        <table class="troubleshooting-table"><thead><tr><th>Issue</th><th>Solution</th></tr></thead>
+        <tbody>
+            <tr><td>Get Started buttons don't navigate</td><td>Verify the app is upgraded (<code>forge install --upgrade</code>)</td></tr>
+            <tr><td>Configure page is blank</td><td>Check browser console. Ensure deployed and upgraded.</td></tr>
+            <tr><td>Agent not responding</td><td>Verify Rovo is enabled. Check Browse Agents.</td></tr>
+            <tr><td>MARSHAL requires rollback plan</td><td>Intentional — provide rollback steps when prompted.</td></tr>
+            <tr><td>BLAST says "Service not in catalog"</td><td>Populate Service Catalog in Configure for better assessments.</td></tr>
+            <tr><td>QUORUM won't route</td><td>Change must be in <code>impact_review</code>. Run BLAST first.</td></tr>
+            <tr><td>REWIND won't allow review</td><td>Change must be in <code>approved</code> or <code>implemented</code>.</td></tr>
+            <tr><td>Status shows "To Do" on the board</td><td>Expected. Jira status is cosmetic. App-owned status is in the comment thread.</td></tr>
+            <tr><td>Peer apps not detected</td><td>Other Kindo apps must be on the same site.</td></tr>
+        </tbody></table>
+    </div></section>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__left">
+                <div class="site-footer__logo">KinHelm</div>
+                <p>© 2026 KinHelm</p>
+            </div>
+            <div class="site-footer__right">
+                <ul class="site-footer__links">
+                    <li><a href="../">Back to Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
