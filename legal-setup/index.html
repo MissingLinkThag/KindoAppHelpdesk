@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kindo/Legal — Setup &amp; Walkthrough Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.7;padding:2rem 1rem}
+.container{max-width:860px;margin:0 auto}
+h1{font-size:2rem;margin-bottom:.5rem;color:#f0f6fc}
+h2{font-size:1.5rem;margin:2.5rem 0 1rem;color:#f0f6fc;border-bottom:1px solid #30363d;padding-bottom:.5rem}
+h3{font-size:1.15rem;margin:1.5rem 0 .75rem;color:#e6edf3}
+p{margin-bottom:1rem}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+.back-link{display:inline-block;margin-bottom:2rem;font-size:.9rem}
+.overview-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-bottom:2rem}
+.prereq{background:#1c1f26;border-left:4px solid #d29922;padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:2rem}
+.prereq strong{color:#d29922}
+ol,ul{margin:0 0 1rem 1.5rem}
+li{margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;margin-bottom:1.5rem}
+th,td{text-align:left;padding:.6rem .75rem;border:1px solid #30363d}
+th{background:#161b22;color:#f0f6fc;font-weight:600}
+td{background:#0d1117}
+.step{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-bottom:2rem}
+.step-num{display:inline-block;background:#58a6ff;color:#0d1117;font-weight:700;border-radius:50%;width:28px;height:28px;text-align:center;line-height:28px;margin-right:.5rem;font-size:.85rem}
+.check-pass{color:#3fb950}
+.screenshot-placeholder{background:#161b22;border:2px dashed #30363d;border-radius:8px;padding:2rem;text-align:center;color:#8b949e;font-style:italic;margin:1rem 0}
+.agent-table td:first-child{font-weight:600;color:#58a6ff;white-space:nowrap}
+.tip{background:#0d2847;border:1px solid #1f6feb;border-radius:6px;padding:1rem 1.25rem;margin:1rem 0}
+.tip strong{color:#58a6ff}
+.principles{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1.5rem;margin-bottom:2rem}
+.principles li{margin-bottom:.75rem}
+.troubleshoot td:first-child{font-weight:600;color:#f0f6fc;min-width:200px}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../" class="back-link">&larr; Back to all guides</a>
+<h1>Kindo/Legal &mdash; Setup &amp; Walkthrough Guide</h1>
+<div class="overview-box">
+<h2 style="border:none;margin-top:0;padding:0">Overview</h2>
+<p>Kindo Legal is an AI-powered legal operations platform for Atlassian Jira. It streamlines matter management, contract lifecycle, regulatory tracking, litigation holds, and legal spend analytics &mdash; all within your existing Atlassian environment.</p>
+<p>Five AI agents work together to manage every aspect of legal operations:</p>
+<table class="agent-table">
+<tr><th>Agent</th><th>Role</th></tr>
+<tr><td>KNOT</td><td>App configuration guide and legal domain advisor &mdash; setup help, health checks, legal advisory grounded in your Atlassian data</td></tr>
+<tr><td>ATTICUS</td><td>Matter management &mdash; intake, classification, routing, lifecycle tracking, dashboards</td></tr>
+<tr><td>CLAUSE</td><td>Contract lifecycle &mdash; review submissions, standard terms comparison, signing authority, renewal tracking</td></tr>
+<tr><td>SENTINEL</td><td>Regulatory obligations &mdash; regulatory alerts, litigation holds, filing deadline management</td></tr>
+<tr><td>LEDGER</td><td>Legal spend &mdash; outside counsel cost tracking, billing audit, KPIs, benchmarking</td></tr>
+</table>
+</div>
+<div class="prereq">
+<strong>&#x1F4CC; Prerequisites</strong>
+<ul style="margin-top:.5rem">
+<li>Jira Cloud instance with Rovo enabled</li>
+<li>Site admin permissions (for initial install)</li>
+<li>At least one Jira project with legal-relevant content (optional but recommended for KNOT advisory)</li>
+</ul>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">1</span> Install &amp; Get Started</h2>
+<p>After installing Kindo Legal from the Atlassian Marketplace:</p>
+<ol>
+<li>Navigate to <strong>Jira Admin Settings &rarr; Manage Apps &rarr; Kindo Legal</strong></li>
+<li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li>
+</ol>
+<p>Three items auto-complete on install:</p>
+<table>
+<tr><th>Item</th><th>Details</th></tr>
+<tr><td><span class="check-pass">&#x2705;</span> Legal project created</td><td>A dedicated KLG project is created in your Jira instance</td></tr>
+<tr><td><span class="check-pass">&#x2705;</span> Legal framework applied</td><td>The KinHelm Legal Framework is configured</td></tr>
+<tr><td><span class="check-pass">&#x2705;</span> Discovery scan complete</td><td>Your Atlassian site is scanned for legal-relevant content (projects, Confluence spaces, policy documents)</td></tr>
+</table>
+<p>Four items require your configuration:</p>
+<table>
+<tr><th>Item</th><th>Details</th></tr>
+<tr><td>Legal team assigned</td><td>Add members who will manage legal matters</td></tr>
+<tr><td>Matter types configured</td><td>Define legal work categories and routing</td></tr>
+<tr><td>Contract standards set</td><td>Link your standard terms playbook</td></tr>
+<tr><td>Peer apps connected</td><td>Shows green in standalone mode</td></tr>
+</table>
+<p>Click <strong>&ldquo;Configure App&rdquo;</strong> to begin setup, or talk to <strong>KNOT</strong> &mdash; your configuration agent &mdash; for guided help.</p>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: Get Started page showing 7-item checklist</div>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">2</span> Configure: Legal Team</h2>
+<ol>
+<li>Navigate to <strong>Configure &rarr; Legal Team</strong> tab</li>
+<li>Add team members who will manage legal matters, review contracts, and oversee compliance</li>
+<li>For each member, enter:</li>
+</ol>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td>Atlassian Account ID</td><td>Their Jira account identifier</td></tr>
+<tr><td>Display Name</td><td>How they appear in the app</td></tr>
+<tr><td>Role</td><td>e.g., General Counsel, Associate, Paralegal, Contract Manager</td></tr>
+</table>
+<ol start="4">
+<li>Click <strong>&ldquo;Add Member&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong></li>
+<li>A green confirmation banner confirms the save was successful</li>
+</ol>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: Legal Team configuration with member added</div>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">3</span> Configure: Matter Types &amp; Routing</h2>
+<ol>
+<li>Navigate to <strong>Configure &rarr; Matter Types &amp; Routing</strong> tab</li>
+<li>Define the categories of legal work your team handles</li>
+<li>For each type, enter:</li>
+</ol>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td>Type</td><td>e.g., Litigation, Regulatory, Advisory, Transactional</td></tr>
+<tr><td>Response SLA (hrs)</td><td>Hours to first response</td></tr>
+<tr><td>Resolution SLA (hrs)</td><td>Hours to resolution</td></tr>
+<tr><td>Default Assignee</td><td>Optional, for automatic matter routing</td></tr>
+</table>
+<ol start="4">
+<li>Click <strong>&ldquo;Add Type&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong></li>
+</ol>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: Matter Types &amp; Routing configuration</div>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">4</span> Configure: Additional Tabs</h2>
+<p>The Configure page includes additional tabs for fine-tuning your legal environment:</p>
+<table>
+<tr><th>Tab</th><th>Purpose</th></tr>
+<tr><td>Contract Standards</td><td>Link your Standard Terms Playbook (a Confluence page or Jira board with your organization&rsquo;s standard contract language) and set the Renewal Tracking Window for advance notice before contract expiration. CLAUSE uses these standards to flag deviations in submitted contracts.</td></tr>
+<tr><td>Regulatory Configuration</td><td>Define operating jurisdictions, regulatory bodies, and filing categories. SENTINEL uses this to route regulatory alerts and track filing deadlines.</td></tr>
+<tr><td>Outside Counsel &amp; Billing</td><td>Add your approved law firm panel with rate cards, billing arrangements, and performance benchmarks. LEDGER uses this for spend analytics and billing audit.</td></tr>
+<tr><td>Ecosystem</td><td>View connected Kindo peer apps. The app operates in standalone mode if no other Kindo apps are installed. Ecosystem features activate automatically when peers are detected.</td></tr>
+</table>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">5</span> Verify Setup Progress</h2>
+<p>Return to the <strong>Get Started</strong> page to verify your progress. After configuring your team, matter types, and contract standards, all 7 checks should show green:</p>
+<table>
+<tr><th>Check</th><th>Status</th></tr>
+<tr><td>Legal project created</td><td><span class="check-pass">&#x2705;</span></td></tr>
+<tr><td>Legal framework applied</td><td><span class="check-pass">&#x2705;</span></td></tr>
+<tr><td>Discovery scan complete</td><td><span class="check-pass">&#x2705;</span></td></tr>
+<tr><td>Legal team assigned</td><td><span class="check-pass">&#x2705;</span></td></tr>
+<tr><td>Matter types configured</td><td><span class="check-pass">&#x2705;</span></td></tr>
+<tr><td>Contract standards set</td><td><span class="check-pass">&#x2705;</span></td></tr>
+<tr><td>Peer apps connected</td><td><span class="check-pass">&#x2705;</span></td></tr>
+</table>
+<p><em>&ldquo;All checks passed. Your legal operations platform is fully configured. All agents are ready.&rdquo;</em></p>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: Get Started page showing 7/7 green</div>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">6</span> Create a Legal Matter with ATTICUS</h2>
+<p>ATTICUS is your matter management agent. To create and track a legal matter:</p>
+<ol>
+<li>Open <strong>Rovo Chat</strong> (click &ldquo;Ask Rovo&rdquo; in the top navigation bar)</li>
+<li>Select <strong>ATTICUS (Kindo)</strong> from your available agents</li>
+<li>Tell ATTICUS what matter to create. For example:</li>
+</ol>
+<div class="tip"><strong>Example prompt:</strong> &ldquo;Create a litigation matter &mdash; Patent infringement claim from Acme Corp, US Eastern District of Virginia, high exposure.&rdquo;</div>
+<p>ATTICUS presents a structured summary for review:</p>
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Parties</td><td>Acme Corp vs. Company</td></tr>
+<tr><td>Jurisdiction</td><td>US Eastern District of Virginia</td></tr>
+<tr><td>Exposure estimate</td><td>High</td></tr>
+<tr><td>Matter type</td><td>Litigation</td></tr>
+</table>
+<p>Confirm to create. ATTICUS creates:</p>
+<table>
+<tr><th>Artifact</th><th>Details</th></tr>
+<tr><td>Jira issue in KLG project</td><td>e.g., KLG-2 with full matter details</td></tr>
+<tr><td>Labels</td><td><code>kindo-legal</code>, <code>matter</code>, <code>matter-litigation</code>, <code>exposure-high</code></td></tr>
+<tr><td>Matter ID</td><td>A unique tracking identifier</td></tr>
+</table>
+<p>From there, ATTICUS can update matter status, route matters to team members, and provide dashboard views of all open matters.</p>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: ATTICUS creating a legal matter in Rovo Chat</div>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">7</span> Submit a Contract for Review with CLAUSE</h2>
+<p>CLAUSE manages your contract lifecycle. To submit a contract for review:</p>
+<ol>
+<li>In Rovo Chat, select <strong>CLAUSE (Kindo)</strong></li>
+<li>Describe the contract. For example:</li>
+</ol>
+<div class="tip"><strong>Example prompt:</strong> &ldquo;Submit a contract review for an NDA with TechVentures Inc, standard mutual NDA, $0 value, 2 year term.&rdquo;</div>
+<p>CLAUSE creates a contract review issue with:</p>
+<table>
+<tr><th>Field</th><th>Details</th></tr>
+<tr><td>Contract Type</td><td>NDA</td></tr>
+<tr><td>Counterparty</td><td>TechVentures Inc</td></tr>
+<tr><td>Value and Term</td><td>Calculated automatically (e.g., Oct 11, 2026 to Oct 11, 2028)</td></tr>
+<tr><td>Signing authority verification</td><td>Confirms the requesting user has authority based on team role</td></tr>
+</table>
+<p>CLAUSE then offers to compare the contract against your standard terms, flag deviations, and assess risk level.</p>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: CLAUSE contract review in Rovo Chat</div>
+</div>
+<div class="step">
+<h2 style="border:none;margin-top:0"><span class="step-num">8</span> Issue a Litigation Hold with SENTINEL</h2>
+<p>SENTINEL tracks regulatory obligations and preservation requirements. To issue a litigation hold:</p>
+<ol>
+<li>In Rovo Chat, select <strong>SENTINEL (Kindo)</strong></li>
+<li>Describe the hold. For example:</li>
+</ol>
+<div class="tip"><strong>Example prompt:</strong> &ldquo;Create a litigation hold for the Acme Corp patent matter &mdash; preserve all engineering communications and source code repositories from Jan 1, 2025 to present.&rdquo;</div>
+<p>SENTINEL creates a hold with:</p>
+<table>
+<tr><th>Attribute</th><th>Details</th></tr>
+<tr><td>Scope</td><td>What must be preserved</td></tr>
+<tr><td>Date Range</td><td>The preservation period</td></tr>
+<tr><td>Custodians</td><td>Teams or individuals responsible for preservation (auto-assigned based on scope)</td></tr>
+<tr><td>Acknowledgment tracking</td><td>Custodians are notified and tracked as Pending until they confirm</td></tr>
+</table>
+<p>SENTINEL also manages regulatory alerts and filing deadlines &mdash; ask about upcoming filings or regulatory changes in your jurisdictions.</p>
+<div class="screenshot-placeholder">&#x1F4F8; Screenshot: SENTINEL litigation hold in Rovo Chat</div>
+</div>
+<div class="principles">
+<h2 style="border:none;margin-top:0">Key Design Principles</h2>
+<ul>
+<li><strong>All data stays in your Atlassian environment</strong> &mdash; Forge Storage and Jira issues. No external data storage.</li>
+<li><strong>Legal operations guidance, not legal advice</strong> &mdash; Agents provide operational support grounded in your data. Substantive legal questions are always referred to qualified counsel.</li>
+<li><strong>Advisory boundaries are enforced</strong> &mdash; Active litigation, regulatory investigations, and sensitive personnel matters get factual status only, never strategic recommendations.</li>
+<li><strong>Standalone by default, ecosystem-ready</strong> &mdash; Works fully as a single app. When other Kindo apps are installed (Governance, HR, Compliance, Change, Training), cross-app features activate automatically.</li>
+<li><strong>Team membership controls access</strong> &mdash; Agents read the team list on every interaction. Team members get full access; non-members get general guidance only.</li>
+<li><strong>Every action creates a Jira issue</strong> &mdash; Full audit trail in KLG for all matters, contracts, holds, and reports.</li>
+</ul>
+</div>
+<h2>Troubleshooting</h2>
+<table class="troubleshoot">
+<tr><th>Issue</th><th>Resolution</th></tr>
+<tr><td>Get Started buttons don&rsquo;t navigate</td><td>Verify the app is upgraded to the latest version (<code>forge install --upgrade</code>)</td></tr>
+<tr><td>Configure page is blank</td><td>Check browser console for errors. Ensure the app is deployed and upgraded.</td></tr>
+<tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
+<tr><td>Agent says &ldquo;connection error&rdquo;</td><td>Ensure the app is deployed to the correct environment. Try <code>forge deploy</code> then <code>forge install --upgrade</code>.</td></tr>
+<tr><td>Matter types not showing in routing</td><td>Configure matter types in the Matter Types &amp; Routing tab and click Save.</td></tr>
+<tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
+</table>
+<div style="margin-top:3rem;padding-top:1rem;border-top:1px solid #30363d;color:#8b949e;font-size:.85rem">
+<a href="../">&larr; Back to all guides</a>
+</div>
+</div>
+</body>
+</html>
