@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindo App Help Center</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        a { color: #64b5f6; text-decoration: none; }
+        a:hover { text-decoration: underline; color: #90caf9; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #3a3a5c;
+            padding-bottom: 0.75rem;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #2a2a4a;
+            padding-bottom: 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        .intro {
+            font-size: 1.1rem;
+            color: #b0b0c0;
+            margin-bottom: 0.5rem;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .card {
+            background: #22223a;
+            border: 1px solid #3a3a5c;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .card:hover {
+            border-color: #64b5f6;
+            transform: translateY(-2px);
+        }
+        .card h3 {
+            color: #ffffff;
+            margin: 0 0 0.35rem 0;
+            font-size: 1.1rem;
+        }
+        .card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.15em 0.6em;
+            border-radius: 3px;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .card .tag.available { background: #1b5e20; color: #a5d6a7; }
+        .card .tag.coming-soon { background: #4a3800; color: #ffcc80; }
+        .card p {
+            font-size: 0.92rem;
+            color: #b0b0c0;
+            margin-bottom: 0;
+        }
+        .card a.card-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .card.disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+        .card.disabled:hover {
+            border-color: #3a3a5c;
+            transform: none;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2a2a4a;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1.25rem 1rem; }
+            h1 { font-size: 1.5rem; }
+            .cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Kindo App Help Center</h1>
+        <p class="intro">Setup and walkthrough guides for Kindo's Atlassian Marketplace apps.</p>
+
+        <h2>App Guides</h2>
+        <div class="cards">
+
+            <div class="card">
+                <h3>Kindo Mentor</h3>
+                <span class="tag available">Guide Available</span>
+                <p>AI-powered training and curriculum management using the Feynman Teaching Method.</p>
+                <a class="card-link" href="mentor-setup/">View Setup Guide &rarr;</a>
+            </div>
+
+            <div class="card">
+                <h3>Kindo / WALDO</h3>
+                <span class="tag available">Guide Available</span>
+                <p>AI governance platform &mdash; discover, classify, monitor, and report on AI systems using KGF-1.</p>
+                <a class="card-link" href="waldo-setup/">View Setup Guide &rarr;</a>
+            </div>
+
+            <div class="card disabled">
+                <h3>Kindo Legal</h3>
+                <span class="tag coming-soon">Coming Soon</span>
+                <p>AI-assisted legal review and contract management for Atlassian environments.</p>
+            </div>
+
+            <div class="card disabled">
+                <h3>Kindo HR</h3>
+                <span class="tag coming-soon">Coming Soon</span>
+                <p>AI-powered HR operations &mdash; onboarding, policy management, and employee support.</p>
+            </div>
+
+            <div class="card disabled">
+                <h3>Kindo Compliance</h3>
+                <span class="tag coming-soon">Coming Soon</span>
+                <p>Compliance monitoring and regulatory alignment across your Atlassian ecosystem.</p>
+            </div>
+
+            <div class="card disabled">
+                <h3>Kindo Change</h3>
+                <span class="tag coming-soon">Coming Soon</span>
+                <p>Change management &mdash; impact analysis, approval workflows, and rollback tracking.</p>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 KinHelm</p>
+        </footer>
+
+    </div>
+</body>
+</html>
