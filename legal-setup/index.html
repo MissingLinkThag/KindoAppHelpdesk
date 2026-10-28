@@ -161,6 +161,31 @@
     </div>
   </section>
 
+  <!-- HOW TO USE -->
+  <section class="step-section" style="border-left: 3px solid #E09A1A; padding-left: 1.5rem;">
+    <h2 class="step-section__title">How to Use Kindo/Legal</h2>
+    <div class="step-section__body">
+      <div class="notice notice--success">
+        <span class="notice__label">Important</span>
+        <p>Kindo/Legal <strong>does not add an entry to the Jira sidebar.</strong> All interaction with the app happens through <strong>Rovo Chat</strong> &mdash; Atlassian's built-in AI assistant.</p>
+      </div>
+      <h3>Accessing the Agents</h3>
+      <ol>
+        <li>Click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar of any Jira page</li>
+        <li>Select any Kindo agent from the list: <strong>KNOT</strong>, <strong>ATTICUS</strong>, <strong>CLAUSE</strong>, <strong>SENTINEL</strong>, or <strong>LEDGER</strong></li>
+        <li>Describe what you want to do &mdash; the agent handles the rest</li>
+      </ol>
+      <h3>Where to Find App Data</h3>
+      <ul>
+        <li><strong>KLG project</strong> &mdash; Check your Jira project list for the auto-created <code>KLG</code> project. All matters, contracts, holds, and reports created by the agents appear here as Jira issues.</li>
+      </ul>
+      <h3>Admin Pages</h3>
+      <ul>
+        <li><strong>Get Started</strong>, <strong>Configure</strong>, and <strong>Dashboard</strong> remain accessible at <strong>Jira Admin &rarr; Manage Apps &rarr; Kindo/Legal</strong></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="step-section">
     <span class="step-section__number">5</span>
     <h2 class="step-section__title">Verify Setup Progress</h2>
@@ -306,6 +331,7 @@
         <tr><td>Agent says &ldquo;connection error&rdquo;</td><td>Ensure the app is deployed to the correct environment. Try <code>forge deploy</code> then <code>forge install --upgrade</code>.</td></tr>
         <tr><td>Matter types not showing in routing</td><td>Configure matter types in the Matter Types &amp; Routing tab and click Save.</td></tr>
         <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
+        <tr><td>Can't find the app after install</td><td>Kindo/Legal does not appear in the Jira sidebar. Access agents via <strong>Ask Rovo</strong> in the top navigation bar. Admin pages are at Jira Admin &rarr; Manage Apps &rarr; Kindo/Legal.</td></tr>
       </tbody>
     </table>
   </section>
