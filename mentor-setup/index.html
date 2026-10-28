@@ -203,6 +203,34 @@
             </div>
         </div>
 
+        <!-- ========== HOW TO USE ========== -->
+        <div class="step-section" style="border-left: 3px solid #E09A1A; padding-left: 1.5rem;">
+            <h2 class="step-section__title">How to Use Kindo/Mentor</h2>
+            <div class="step-section__body">
+                <div class="notice notice--success">
+                    <span class="notice__label">Important</span>
+                    <p>Kindo/Mentor <strong>does not add an entry to the Jira sidebar.</strong> All interaction with the app happens through <strong>Rovo Chat</strong> — Atlassian's built-in AI assistant.</p>
+                </div>
+
+                <h3>Accessing the Agents</h3>
+                <ol>
+                    <li>Click <strong>"Ask Rovo"</strong> in the top navigation bar of any Jira page</li>
+                    <li>Select any Kindo agent from the list: <strong>KNOT</strong>, <strong>SENSEI</strong>, <strong>MENTOR</strong>, <strong>COACH</strong>, or <strong>VERIFIER</strong></li>
+                    <li>Describe what you want to do — the agent handles the rest</li>
+                </ol>
+
+                <h3>Where to Find App Data</h3>
+                <ul>
+                    <li><strong>TRAINING project</strong> — Check your Jira project list for the auto-created <code>TRAINING</code> project. All curricula, certifications, and learning records created by the agents appear here as Jira issues.</li>
+                </ul>
+
+                <h3>Admin Pages</h3>
+                <ul>
+                    <li><strong>Get Started</strong>, <strong>Configure</strong>, and <strong>Dashboard</strong> remain accessible at <strong>Jira Admin → Manage Apps → Kindo/Mentor</strong></li>
+                </ul>
+            </div>
+        </div>
+
         <!-- ========== STEP 05 ========== -->
         <div class="step-section">
             <span class="step-section__number">Step 05</span>
@@ -367,7 +395,8 @@
                     <tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
                     <tr><td>Certification requirements not showing</td><td>Create a curriculum via SENSEI &mdash; requirements are generated automatically. Or define manually in Configure &rarr; Certification Requirements.</td></tr>
                     <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
-                </tbody>
+                                    <tr><td>Can't find the app after install</td><td>Kindo/Mentor does not appear in the Jira sidebar. Access agents via <strong>Ask Rovo</strong> in the top navigation bar. Admin pages are at Jira Admin &rarr; Manage Apps &rarr; Kindo/Mentor.</td></tr>
+</tbody>
             </table>
         </div>
     </section>
