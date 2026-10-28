@@ -112,13 +112,37 @@
                 <div class="screenshot-placeholder">Screenshot: All 7 items complete</div>
             </div>
         </div>
+        <!-- HOW TO USE -->
+        <div class="step-section" style="border-left: 3px solid #E09A1A; padding-left: 1.5rem;">
+            <h2 class="step-section__title">How to Use Kindo/Change</h2>
+            <div class="step-section__body">
+                <div class="card card--accent">
+                    <p><strong>Important:</strong> Kindo/Change <strong>does not add an entry to the Jira sidebar.</strong> All interaction with the app happens through <strong>Rovo Chat</strong> — Atlassian's built-in AI assistant.</p>
+                </div>
+                <h3>Accessing the Agents</h3>
+                <ol>
+                    <li>Click <strong>"Ask Rovo"</strong> in the top navigation bar of any Jira page</li>
+                    <li>Select any Kindo agent from the list: <strong>KNOT</strong>, <strong>MARSHAL</strong>, <strong>BLAST</strong>, <strong>QUORUM</strong>, or <strong>REWIND</strong></li>
+                    <li>Describe what you want to do — the agent handles the rest</li>
+                </ol>
+                <h3>Where to Find App Data</h3>
+                <ul>
+                    <li><strong>KCM project</strong> — Check your Jira project list for the auto-created <code>KCM</code> project. All change requests created by the agents appear here as Jira issues, with the full agent comment audit trail on each issue.</li>
+                </ul>
+                <h3>Admin Pages</h3>
+                <ul>
+                    <li><strong>Get Started</strong>, <strong>Configure</strong>, and <strong>Dashboard</strong> remain accessible at <strong>Jira Admin → Manage Apps → Kindo/Change</strong></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="step-section">
             <span class="step-section__number">Step 05</span>
             <h2 class="step-section__title">Create a Change Request with MARSHAL</h2>
             <div class="step-section__body">
                 <p><strong>MARSHAL</strong> is your change lifecycle agent:</p>
                 <ol>
-                    <li>Open Rovo Chat → Select <strong>MARSHAL (Kindo)</strong></li>
+                    <li>Click <strong>"Ask Rovo"</strong> in the top navigation bar, then select <strong>MARSHAL (Kindo)</strong></li>
                     <li>Example: <em>"Create a new change request: Upgrade the staging web server from Ubuntu 20.04 to 22.04. Standard change, medium risk."</em></li>
                 </ol>
                 <h3>ITIL Requirements Enforced</h3>
@@ -268,6 +292,7 @@
             <tr><td>REWIND won't allow review</td><td>Change must be in <code>approved</code> or <code>implemented</code>.</td></tr>
             <tr><td>Status shows "To Do" on the board</td><td>Expected. Jira status is cosmetic. App-owned status is in the comment thread.</td></tr>
             <tr><td>Peer apps not detected</td><td>Other Kindo apps must be on the same site.</td></tr>
+            <tr><td>Can't find the app after install</td><td>Kindo/Change does not appear in the Jira sidebar. Access agents via <strong>Ask Rovo</strong> in the top navigation bar. Admin pages are at Jira Admin → Manage Apps → Kindo/Change.</td></tr>
         </tbody></table>
     </div></section>
     <footer class="site-footer">
