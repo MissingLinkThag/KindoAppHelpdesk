@@ -42,34 +42,12 @@
     <div class="container">
         <h2>Agent Roster</h2>
         <table class="agent-table">
-            <thead>
-                <tr>
-                    <th>Agent</th>
-                    <th>Role</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Agent</th><th>Role</th><th>Description</th></tr></thead>
             <tbody>
-                <tr>
-                    <td>KNOT</td>
-                    <td>App Configuration Guide</td>
-                    <td>Setup help, health checks, discovery</td>
-                </tr>
-                <tr>
-                    <td>HARPER</td>
-                    <td>Employee Records Manager</td>
-                    <td>Creates, updates, and queries employee profiles stored as Jira issues</td>
-                </tr>
-                <tr>
-                    <td>ONYX</td>
-                    <td>Employee Lifecycle</td>
-                    <td>Onboarding, offboarding, transfers, with jurisdiction-specific compliance deadlines</td>
-                </tr>
-                <tr>
-                    <td>PULSE</td>
-                    <td>Workforce Analytics</td>
-                    <td>Aggregate department metrics, capacity analysis, trend reporting</td>
-                </tr>
+                <tr><td>KNOT</td><td>App Configuration Guide</td><td>Setup help, health checks, discovery</td></tr>
+                <tr><td>HARPER</td><td>Employee Records Manager</td><td>Creates, updates, and queries employee profiles stored as Jira issues</td></tr>
+                <tr><td>ONYX</td><td>Employee Lifecycle</td><td>Onboarding, offboarding, transfers, with jurisdiction-specific compliance deadlines</td></tr>
+                <tr><td>PULSE</td><td>Workforce Analytics</td><td>Aggregate department metrics, capacity analysis, trend reporting</td></tr>
             </tbody>
         </table>
     </div>
@@ -81,13 +59,11 @@
 <section>
     <div class="container">
         <h2>Prerequisites</h2>
-        <div class="card card--accent">
-            <ul>
-                <li>Jira Cloud instance with <strong>Rovo enabled</strong></li>
-                <li>Site admin permissions (for initial install)</li>
-                <li>A dedicated Jira project for HR records (created automatically on install)</li>
-            </ul>
-        </div>
+        <div class="card card--accent"><ul>
+            <li>Jira Cloud instance with <strong>Rovo enabled</strong></li>
+            <li>Site admin permissions (for initial install)</li>
+            <li>A dedicated Jira project for HR records (created automatically on install)</li>
+        </ul></div>
     </div>
 </section>
 
@@ -95,527 +71,134 @@
      STEP 1
      ============================================================ -->
 <div class="container">
-
     <div class="step-section">
-        <span class="step-section__number">Step 1</span>
-        <h2 class="step-section__title">Install &amp; Get Started</h2>
+        <span class="step-section__number">Step 1</span><h2 class="step-section__title">Install &amp; Get Started</h2>
         <div class="step-section__body">
-            <p>After installing Kindo/HR from the Atlassian Marketplace:</p>
-            <ol>
-                <li>Navigate to <strong>Jira Admin Settings &rarr; Manage Apps &rarr; Kindo/HR</strong></li>
-                <li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li>
-            </ol>
-
-            <h3>Auto-completed on Install</h3>
-            <p>Three items complete automatically when the app is installed:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>&#x2705; HR project created</td>
-                        <td>A dedicated <code>KHR</code> project is created in your Jira instance</td>
-                    </tr>
-                    <tr>
-                        <td>&#x2705; HR framework applied</td>
-                        <td>The KinHelm HR Framework is configured</td>
-                    </tr>
-                    <tr>
-                        <td>&#x2705; Discovery scan complete</td>
-                        <td>Your Atlassian site is scanned for existing HR-relevant content</td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <p>After installing Kindo/HR from the Atlassian Marketplace:</p><ol><li>Navigate to <strong>Jira Admin Settings &rarr; Manage Apps &rarr; Kindo/HR</strong></li><li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li></ol>
+            <h3>Auto-completed on Install</h3><p>Three items complete automatically when the app is installed:</p>
+            <table class="data-table"><thead><tr><th>Item</th><th>Details</th></tr></thead><tbody>
+                <tr><td>&#x2705; HR project created</td><td>A dedicated <code>KHR</code> project is created in your Jira instance</td></tr>
+                <tr><td>&#x2705; HR framework applied</td><td>The KinHelm HR Framework is configured</td></tr>
+                <tr><td>&#x2705; Discovery scan complete</td><td>Your Atlassian site is scanned for existing HR-relevant content</td></tr>
+            </tbody></table>
             <h3>Requires Your Configuration</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HR team assigned</td>
-                        <td>Add members who will manage HR operations</td>
-                    </tr>
-                    <tr>
-                        <td>Compliance requirements configured</td>
-                        <td>Define jurisdiction-specific compliance items</td>
-                    </tr>
-                    <tr>
-                        <td>Lifecycle templates defined</td>
-                        <td>Configure onboarding/offboarding workflows</td>
-                    </tr>
-                    <tr>
-                        <td>Peer apps connected</td>
-                        <td>Shows green in standalone mode</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p>Click <strong>&ldquo;Configure App&rdquo;</strong> to begin setup, or talk to <strong>KNOT</strong> &mdash; your configuration agent &mdash; for guided help.</p>
-            <img class="screenshot" src="../HR%20Walkthrough/HR1.png" alt="HR Get Started checklist">
+            <table class="data-table"><thead><tr><th>Item</th><th>Details</th></tr></thead><tbody>
+                <tr><td>HR team assigned</td><td>Add members who will manage HR operations</td></tr><tr><td>Compliance requirements configured</td><td>Define jurisdiction-specific compliance items</td></tr><tr><td>Lifecycle templates defined</td><td>Configure onboarding/offboarding workflows</td></tr><tr><td>Peer apps connected</td><td>Shows green in standalone mode</td></tr>
+            </tbody></table>
+            <p>Click <strong>&ldquo;Configure App&rdquo;</strong> to begin setup, or talk to <strong>KNOT</strong> &mdash; your configuration agent &mdash; for guided help.</p><img class="screenshot" src="../HR%20Walkthrough/HR1.png" alt="HR Get Started checklist">
         </div>
     </div>
 
     <!-- ============================================================
          STEP 2
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 2</span>
-        <h2 class="step-section__title">Configure: HR Team</h2>
-        <div class="step-section__body">
-            <p>Navigate to <strong>Configure &rarr; HR Team</strong> tab. Add team members who will manage employee records, handle lifecycle events, and oversee HR operations.</p>
-            <p>For each member, enter:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Field</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Atlassian Account ID</td>
-                        <td>Their Jira account identifier</td>
-                    </tr>
-                    <tr>
-                        <td>Display Name</td>
-                        <td>How they appear in the app</td>
-                    </tr>
-                    <tr>
-                        <td>Role</td>
-                        <td>e.g., HR Director, HR Coordinator</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>Click <strong>&ldquo;Add Member&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. A green confirmation banner confirms the save was successful.</p>
-            <img class="screenshot" src="../HR%20Walkthrough/HR2.png" alt="HR Team configuration">
-            <img class="screenshot" src="../HR%20Walkthrough/HR3.png" alt="HR Team member added confirmation">
-        </div>
-    </div>
+    <div class="step-section"><span class="step-section__number">Step 2</span><h2 class="step-section__title">Configure: HR Team</h2><div class="step-section__body">
+        <p>Navigate to <strong>Configure &rarr; HR Team</strong> tab. Add team members who will manage employee records, handle lifecycle events, and oversee HR operations.</p><p>For each member, enter:</p>
+        <table class="data-table"><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td>Atlassian Account ID</td><td>Their Jira account identifier</td></tr><tr><td>Display Name</td><td>How they appear in the app</td></tr><tr><td>Role</td><td>e.g., HR Director, HR Coordinator</td></tr></tbody></table>
+        <p>Click <strong>&ldquo;Add Member&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. A green confirmation banner confirms the save was successful.</p><img class="screenshot" src="../HR%20Walkthrough/HR2.png" alt="HR Team configuration"><img class="screenshot" src="../HR%20Walkthrough/HR3.png" alt="HR Team member added confirmation">
+    </div></div>
 
     <!-- ============================================================
          STEP 3
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 3</span>
-        <h2 class="step-section__title">Configure: Compliance Requirements</h2>
-        <div class="step-section__body">
-            <p>Navigate to <strong>Configure &rarr; Compliance Requirements</strong> tab. Define the compliance items that apply to employee lifecycle events &mdash; I-9 verification, W-4 filing, benefits enrollment, background checks.</p>
-            <p>For each requirement, enter:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Field</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Requirement Name</td>
-                        <td>e.g., I-9 Verification</td>
-                    </tr>
-                    <tr>
-                        <td>Jurisdiction</td>
-                        <td>Federal, State, or Company</td>
-                    </tr>
-                    <tr>
-                        <td>Deadline Type</td>
-                        <td>Days from start date (business days or calendar days)</td>
-                    </tr>
-                    <tr>
-                        <td>Deadline Value</td>
-                        <td>e.g., 3 (for I-9 federal 3-business-day requirement)</td>
-                    </tr>
-                    <tr>
-                        <td>Applies To</td>
-                        <td>Onboarding, Offboarding, or Both</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>Click <strong>&ldquo;Add Requirement&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. ONYX uses these requirements to calculate jurisdiction-specific compliance deadlines automatically when processing lifecycle events.</p>
-            <img class="screenshot" src="../HR%20Walkthrough/HR4.png" alt="Compliance Requirements configuration">
-        </div>
-    </div>
+    <div class="step-section"><span class="step-section__number">Step 3</span><h2 class="step-section__title">Configure: Compliance Requirements</h2><div class="step-section__body">
+        <p>Navigate to <strong>Configure &rarr; Compliance Requirements</strong> tab. Define the compliance items that apply to employee lifecycle events &mdash; I-9 verification, W-4 filing, benefits enrollment, background checks.</p><p>For each requirement, enter:</p>
+        <table class="data-table"><thead><tr><th>Field</th><th>Details</th></tr></thead><tbody><tr><td>Requirement Name</td><td>e.g., I-9 Verification</td></tr><tr><td>Jurisdiction</td><td>Federal, State, or Company</td></tr><tr><td>Deadline Type</td><td>Days from start date (business days or calendar days)</td></tr><tr><td>Deadline Value</td><td>e.g., 3 (for I-9 federal 3-business-day requirement)</td></tr><tr><td>Applies To</td><td>Onboarding, Offboarding, or Both</td></tr></tbody></table>
+        <p>Click <strong>&ldquo;Add Requirement&rdquo;</strong> then <strong>&ldquo;Save&rdquo;</strong>. ONYX uses these requirements to calculate jurisdiction-specific compliance deadlines automatically when processing lifecycle events.</p><img class="screenshot" src="../HR%20Walkthrough/HR4.png" alt="Compliance Requirements configuration">
+    </div></div>
 
     <!-- ============================================================
          STEP 4
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 4</span>
-        <h2 class="step-section__title">Configure: Additional Tabs</h2>
+    <div class="step-section"><span class="step-section__number">Step 4</span><h2 class="step-section__title">Configure: Additional Tabs</h2><div class="step-section__body">
+        <p>The Configure page includes additional tabs for fine-tuning your HR environment:</p>
+        <table class="data-table"><thead><tr><th>Tab</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Lifecycle Templates</strong></td><td>Define onboarding/offboarding checklists, transfer procedures, and probation workflows. ONYX uses these templates when executing lifecycle events.</td></tr><tr><td><strong>Advisory Settings</strong></td><td>Configure KNOT's HR advisory scope &mdash; policy domains, escalation thresholds, and sensitive topic handling (ER, accommodation, separation always advisory-only).</td></tr><tr><td><strong>Content Change Detection</strong></td><td>Set sensitivity for detecting when HR policies or procedures change. Changes trigger review alerts automatically.</td></tr><tr><td><strong>Ecosystem</strong></td><td>View connected Kindo peer apps. The app operates in standalone mode if no other Kindo apps are installed. Ecosystem features activate automatically when peers are detected.</td></tr></tbody></table>
+        <div class="notice--success notice"><span class="notice__label">Tip</span><p>Accept the defaults for all tabs other than <strong>Lifecycle Templates</strong>.</p></div><img class="screenshot" src="../HR%20Walkthrough/HR5.png" alt="Additional configuration tabs">
+    </div></div>
+
+    <!-- ============================================================
+         HOW TO USE
+         ============================================================ -->
+    <div class="step-section" style="border-left: 3px solid #E09A1A; padding-left: 1.5rem;">
+        <h2 class="step-section__title">How to Use Kindo/HR</h2>
         <div class="step-section__body">
-            <p>The Configure page includes additional tabs for fine-tuning your HR environment:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Tab</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Lifecycle Templates</strong></td>
-                        <td>Define onboarding/offboarding checklists, transfer procedures, and probation workflows. ONYX uses these templates when executing lifecycle events.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Advisory Settings</strong></td>
-                        <td>Configure KNOT's HR advisory scope &mdash; policy domains, escalation thresholds, and sensitive topic handling (ER, accommodation, separation always advisory-only).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Content Change Detection</strong></td>
-                        <td>Set sensitivity for detecting when HR policies or procedures change. Changes trigger review alerts automatically.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ecosystem</strong></td>
-                        <td>View connected Kindo peer apps. The app operates in standalone mode if no other Kindo apps are installed. Ecosystem features activate automatically when peers are detected.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="notice--success notice">
-                <span class="notice__label">Tip</span>
-                <p>Accept the defaults for all tabs other than <strong>Lifecycle Templates</strong>.</p>
-            </div>
-            <img class="screenshot" src="../HR%20Walkthrough/HR5.png" alt="Additional configuration tabs">
+            <div class="notice notice--success"><span class="notice__label">Important</span><p>Kindo/HR <strong>does not add an entry to the Jira sidebar.</strong> All interaction with the app happens through <strong>Rovo Chat</strong> &mdash; Atlassian's built-in AI assistant.</p></div>
+            <h3>Accessing the Agents</h3><ol><li>Click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar of any Jira page</li><li>Select any Kindo agent from the list: <strong>KNOT</strong>, <strong>HARPER</strong>, <strong>ONYX</strong>, or <strong>PULSE</strong></li><li>Describe what you want to do &mdash; the agent handles the rest</li></ol>
+            <h3>Where to Find App Data</h3><ul><li><strong>KHR project</strong> &mdash; Check your Jira project list for the auto-created <code>KHR</code> project. All employee records, lifecycle events, and reports created by the agents appear here as Jira issues.</li></ul>
+            <h3>Admin Pages</h3><ul><li><strong>Get Started</strong>, <strong>Configure</strong>, and <strong>Dashboard</strong> remain accessible at <strong>Jira Admin &rarr; Manage Apps &rarr; Kindo/HR</strong></li></ul>
         </div>
     </div>
 
     <!-- ============================================================
          STEP 5
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 5</span>
-        <h2 class="step-section__title">Validate Your Setup with KNOT</h2>
-        <div class="step-section__body">
-            <p>KNOT is your configuration guide &mdash; available anytime to check your setup, answer questions, and walk you through configuration.</p>
-
-            <h3>How to Open KNOT</h3>
-            <ol>
-                <li>Open Rovo Chat (click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar)</li>
-                <li>Select <strong>KNOT (Kindo)</strong> from your available agents</li>
-                <li>Ask KNOT to verify your configuration. For example: <code>"Am I set up correctly?"</code></li>
-            </ol>
-
-            <h3>What KNOT Reports</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HR team membership and roles</td>
-                        <td>Confirms who is assigned and their role (HR Director, Coordinator, etc.)</td>
-                    </tr>
-                    <tr>
-                        <td>Compliance requirements status</td>
-                        <td>Lists configured requirements &mdash; I-9, W-4, benefits enrollment, and their deadline rules</td>
-                    </tr>
-                    <tr>
-                        <td>Lifecycle template configuration</td>
-                        <td>Shows which onboarding/offboarding templates are defined and active</td>
-                    </tr>
-                    <tr>
-                        <td>Discovery scan results</td>
-                        <td>What HR-relevant content was found across your Atlassian site &mdash; Jira projects, Confluence spaces, existing HR documentation</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Example Follow-up Questions</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Question</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>"Who is on the HR team?"</code></td>
-                        <td>Verify team membership and roles</td>
-                    </tr>
-                    <tr>
-                        <td><code>"What compliance requirements are configured?"</code></td>
-                        <td>Review deadline rules for onboarding/offboarding</td>
-                    </tr>
-                    <tr>
-                        <td><code>"What did the discovery scan find?"</code></td>
-                        <td>See what existing HR content was detected across your Atlassian site</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="notice notice--warning">
-                <span class="notice__label">Note</span>
-                <p>KNOT verifies your access level using the HR team list you configured in Step 2. HR Directors and Coordinators get full configuration visibility. All other users receive standard employee-level responses.</p>
-            </div>
-            <img class="screenshot" src="../HR%20Walkthrough/HR6.png" alt="KNOT configuration verification">
-            <img class="screenshot" src="../HR%20Walkthrough/HR7.png" alt="KNOT report details">
-        </div>
-    </div>
+    <div class="step-section"><span class="step-section__number">Step 5</span><h2 class="step-section__title">Validate Your Setup with KNOT</h2><div class="step-section__body">
+        <p>KNOT is your configuration guide &mdash; available anytime to check your setup, answer questions, and walk you through configuration.</p><h3>How to Open KNOT</h3><ol><li>Open Rovo Chat (click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar)</li><li>Select <strong>KNOT (Kindo)</strong> from your available agents</li><li>Ask KNOT to verify your configuration. For example: <code>"Am I set up correctly?"</code></li></ol>
+        <h3>What KNOT Reports</h3><table class="data-table"><thead><tr><th>Item</th><th>Details</th></tr></thead><tbody><tr><td>HR team membership and roles</td><td>Confirms who is assigned and their role (HR Director, Coordinator, etc.)</td></tr><tr><td>Compliance requirements status</td><td>Lists configured requirements &mdash; I-9, W-4, benefits enrollment, and their deadline rules</td></tr><tr><td>Lifecycle template configuration</td><td>Shows which onboarding/offboarding templates are defined and active</td></tr><tr><td>Discovery scan results</td><td>What HR-relevant content was found across your Atlassian site &mdash; Jira projects, Confluence spaces, existing HR documentation</td></tr></tbody></table>
+        <h3>Example Follow-up Questions</h3><table class="data-table"><thead><tr><th>Question</th><th>Purpose</th></tr></thead><tbody><tr><td><code>"Who is on the HR team?"</code></td><td>Verify team membership and roles</td></tr><tr><td><code>"What compliance requirements are configured?"</code></td><td>Review deadline rules for onboarding/offboarding</td></tr><tr><td><code>"What did the discovery scan find?"</code></td><td>See what existing HR content was detected across your Atlassian site</td></tr></tbody></table>
+        <div class="notice notice--warning"><span class="notice__label">Note</span><p>KNOT verifies your access level using the HR team list you configured in Step 2. HR Directors and Coordinators get full configuration visibility. All other users receive standard employee-level responses.</p></div><img class="screenshot" src="../HR%20Walkthrough/HR6.png" alt="KNOT configuration verification"><img class="screenshot" src="../HR%20Walkthrough/HR7.png" alt="KNOT report details">
+    </div></div>
 
     <!-- ============================================================
          STEP 6
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 6</span>
-        <h2 class="step-section__title">Create an Employee Record with HARPER</h2>
-        <div class="step-section__body">
-            <p>HARPER is your employee records manager. To create an employee record:</p>
-            <ol>
-                <li>Open Rovo Chat (click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar)</li>
-                <li>Select <strong>HARPER (Kindo)</strong> from your available agents</li>
-                <li>Tell HARPER who to create a record for. For example: <code>"Create an employee record for Sarah Chen &mdash; Software Engineer, Engineering department, started October 12 2026, reports to Tom Rudolph, active status."</code></li>
-            </ol>
-            <p>HARPER creates:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Created Item</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>A Jira Task in the KHR project (e.g., KHR-3)</td>
-                        <td>With the full employee details</td>
-                    </tr>
-                    <tr>
-                        <td>Summary format</td>
-                        <td>"Employee Record: [Name]"</td>
-                    </tr>
-                    <tr>
-                        <td>Labels</td>
-                        <td><code>kindo-hr</code>, <code>employee-record</code></td>
-                    </tr>
-                    <tr>
-                        <td>All employee details in the description</td>
-                        <td>Name, title, department, start date, manager, status</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>HARPER can also search and update existing records:</p>
-            <ul>
-                <li><code>"Find Sarah Chen's employee record"</code></li>
-                <li><code>"Update KHR-3 &mdash; change department to Product Engineering"</code></li>
-            </ul>
-            <img class="screenshot" src="../HR%20Walkthrough/HR8.png" alt="HARPER creating employee record">
-            <img class="screenshot" src="../HR%20Walkthrough/HR9.png" alt="HARPER record created in Jira">
-        </div>
-    </div>
+    <div class="step-section"><span class="step-section__number">Step 6</span><h2 class="step-section__title">Create an Employee Record with HARPER</h2><div class="step-section__body">
+        <p>HARPER is your employee records manager. To create an employee record:</p><ol><li>Open Rovo Chat (click <strong>&ldquo;Ask Rovo&rdquo;</strong> in the top navigation bar)</li><li>Select <strong>HARPER (Kindo)</strong> from your available agents</li><li>Tell HARPER who to create a record for. For example: <code>"Create an employee record for Sarah Chen &mdash; Software Engineer, Engineering department, started October 12 2026, reports to Tom Rudolph, active status."</code></li></ol>
+        <p>HARPER creates:</p><table class="data-table"><thead><tr><th>Created Item</th><th>Details</th></tr></thead><tbody><tr><td>A Jira Task in the KHR project (e.g., KHR-3)</td><td>With the full employee details</td></tr><tr><td>Summary format</td><td>"Employee Record: [Name]"</td></tr><tr><td>Labels</td><td><code>kindo-hr</code>, <code>employee-record</code></td></tr><tr><td>All employee details in the description</td><td>Name, title, department, start date, manager, status</td></tr></tbody></table>
+        <p>HARPER can also search and update existing records:</p><ul><li><code>"Find Sarah Chen's employee record"</code></li><li><code>"Update KHR-3 &mdash; change department to Product Engineering"</code></li></ul><img class="screenshot" src="../HR%20Walkthrough/HR8.png" alt="HARPER creating employee record"><img class="screenshot" src="../HR%20Walkthrough/HR9.png" alt="HARPER record created in Jira">
+    </div></div>
 
     <!-- ============================================================
          STEP 7
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 7</span>
-        <h2 class="step-section__title">Process an Onboarding with ONYX</h2>
-        <div class="step-section__body">
-            <p>ONYX handles employee lifecycle events with jurisdiction-specific compliance tracking:</p>
-            <ol>
-                <li>Open Rovo Chat and select <strong>ONYX (Kindo)</strong></li>
-                <li>Tell ONYX about the lifecycle event. For example: <code>"Onboard Sarah Chen &mdash; Software Engineer, Engineering, starting October 12 2026, remote US, full-time, manager Tom Rudolph."</code></li>
-            </ol>
-            <p>ONYX creates a lifecycle issue in KHR with:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Detail</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Summary</td>
-                        <td>[ONBOARDING] Sarah Chen &mdash; Engineering</td>
-                    </tr>
-                    <tr>
-                        <td>Compliance items with calculated deadlines</td>
-                        <td>I-9 due Oct 15 (federal, 3 business days), W-4 due Oct 13, Benefits enrollment due Nov 11 (30-day window)</td>
-                    </tr>
-                    <tr>
-                        <td>Labels</td>
-                        <td><code>kindo-hr</code>, <code>lifecycle</code>, <code>onboarding</code></td>
-                    </tr>
-                    <tr>
-                        <td>All hire details</td>
-                        <td>Name, start date, department, location, employment type, manager</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>ONYX calculates deadlines from the compliance requirements you configured in Step 3 &mdash; federal, state, and company requirements are applied automatically based on jurisdiction.</p>
-            <img class="screenshot" src="../HR%20Walkthrough/HR10.png" alt="ONYX onboarding lifecycle">
-            <img class="screenshot" src="../HR%20Walkthrough/HR11.png" alt="ONYX compliance deadlines calculated">
-        </div>
-    </div>
+    <div class="step-section"><span class="step-section__number">Step 7</span><h2 class="step-section__title">Process an Onboarding with ONYX</h2><div class="step-section__body">
+        <p>ONYX handles employee lifecycle events with jurisdiction-specific compliance tracking:</p><ol><li>Open Rovo Chat and select <strong>ONYX (Kindo)</strong></li><li>Tell ONYX about the lifecycle event. For example: <code>"Onboard Sarah Chen &mdash; Software Engineer, Engineering, starting October 12 2026, remote US, full-time, manager Tom Rudolph."</code></li></ol>
+        <p>ONYX creates a lifecycle issue in KHR with:</p><table class="data-table"><thead><tr><th>Detail</th><th>Example</th></tr></thead><tbody><tr><td>Summary</td><td>[ONBOARDING] Sarah Chen &mdash; Engineering</td></tr><tr><td>Compliance items with calculated deadlines</td><td>I-9 due Oct 15 (federal, 3 business days), W-4 due Oct 13, Benefits enrollment due Nov 11 (30-day window)</td></tr><tr><td>Labels</td><td><code>kindo-hr</code>, <code>lifecycle</code>, <code>onboarding</code></td></tr><tr><td>All hire details</td><td>Name, start date, department, location, employment type, manager</td></tr></tbody></table>
+        <p>ONYX calculates deadlines from the compliance requirements you configured in Step 3 &mdash; federal, state, and company requirements are applied automatically based on jurisdiction.</p><img class="screenshot" src="../HR%20Walkthrough/HR10.png" alt="ONYX onboarding lifecycle"><img class="screenshot" src="../HR%20Walkthrough/HR11.png" alt="ONYX compliance deadlines calculated">
+    </div></div>
 
     <!-- ============================================================
          STEP 8
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 8</span>
-        <h2 class="step-section__title">Review Workforce Analytics with PULSE</h2>
-        <div class="step-section__body">
-            <p>PULSE provides aggregate workforce analytics &mdash; never individual employee data:</p>
-            <ol>
-                <li>Open Rovo Chat and select <strong>PULSE (Kindo)</strong></li>
-                <li>Ask for department or organization-level metrics. For example: <code>"Show me a workforce capacity analysis for the Engineering department."</code></li>
-            </ol>
-            <p>PULSE reports on:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Metric</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Headcount and open positions</td>
-                        <td>Current staffing levels vs. capacity</td>
-                    </tr>
-                    <tr>
-                        <td>Turnover rate and trends</td>
-                        <td>Historical and projected attrition</td>
-                    </tr>
-                    <tr>
-                        <td>Onboarding completion status</td>
-                        <td>Lifecycle event progress tracking</td>
-                    </tr>
-                    <tr>
-                        <td>Department capacity metrics</td>
-                        <td>Workload distribution and gaps</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="notice notice--warning">
-                <span class="notice__label">Note</span>
-                <p>When PULSE identifies data gaps or anomalies, it refers you to the appropriate agent &mdash; ONYX for lifecycle status, HARPER for record verification.</p>
-            </div>
-            <img class="screenshot" src="../HR%20Walkthrough/HR12.png" alt="PULSE workforce analytics">
-        </div>
-    </div>
+    <div class="step-section"><span class="step-section__number">Step 8</span><h2 class="step-section__title">Review Workforce Analytics with PULSE</h2><div class="step-section__body">
+        <p>PULSE provides aggregate workforce analytics &mdash; never individual employee data:</p><ol><li>Open Rovo Chat and select <strong>PULSE (Kindo)</strong></li><li>Ask for department or organization-level metrics. For example: <code>"Show me a workforce capacity analysis for the Engineering department."</code></li></ol>
+        <p>PULSE reports on:</p><table class="data-table"><thead><tr><th>Metric</th><th>Description</th></tr></thead><tbody><tr><td>Headcount and open positions</td><td>Current staffing levels vs. capacity</td></tr><tr><td>Turnover rate and trends</td><td>Historical and projected attrition</td></tr><tr><td>Onboarding completion status</td><td>Lifecycle event progress tracking</td></tr><tr><td>Department capacity metrics</td><td>Workload distribution and gaps</td></tr></tbody></table>
+        <div class="notice notice--warning"><span class="notice__label">Note</span><p>When PULSE identifies data gaps or anomalies, it refers you to the appropriate agent &mdash; ONYX for lifecycle status, HARPER for record verification.</p></div><img class="screenshot" src="../HR%20Walkthrough/HR12.png" alt="PULSE workforce analytics">
+    </div></div>
 
     <!-- ============================================================
          STEP 9
          ============================================================ -->
-    <div class="step-section">
-        <span class="step-section__number">Step 9</span>
-        <h2 class="step-section__title">Verify Setup Progress</h2>
-        <div class="step-section__body">
-            <p>Return to the <strong>Get Started</strong> page to verify your progress. After completing all configuration steps, all items should show green:</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Compliance requirements</td>
-                        <td>Defined manually in Configure, or auto-populated from lifecycle templates</td>
-                    </tr>
-                    <tr>
-                        <td>Peer apps</td>
-                        <td>Shows green in standalone mode. If other Kindo apps (Governance, Training, Compliance, Change, Legal) are installed, peer connections are detected automatically.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <img class="screenshot" src="../HR%20Walkthrough/HR13.png" alt="All Get Started items complete">
-        </div>
-    </div>
-
+    <div class="step-section"><span class="step-section__number">Step 9</span><h2 class="step-section__title">Verify Setup Progress</h2><div class="step-section__body">
+        <p>Return to the <strong>Get Started</strong> page to verify your progress. After completing all configuration steps, all items should show green:</p><table class="data-table"><thead><tr><th>Item</th><th>Notes</th></tr></thead><tbody><tr><td>Compliance requirements</td><td>Defined manually in Configure, or auto-populated from lifecycle templates</td></tr><tr><td>Peer apps</td><td>Shows green in standalone mode. If other Kindo apps (Governance, Training, Compliance, Change, Legal) are installed, peer connections are detected automatically.</td></tr></tbody></table><img class="screenshot" src="../HR%20Walkthrough/HR13.png" alt="All Get Started items complete">
+    </div></div>
 </div>
 
 <!-- ============================================================
      KEY DESIGN PRINCIPLES
      ============================================================ -->
-<section>
-    <div class="container">
-        <span class="placard">Architecture</span>
-        <h2>Key Design Principles</h2>
-        <ul>
-            <li><strong>All data stays in your Atlassian environment</strong> &mdash; Forge Storage and Jira issues. No external data storage.</li>
-            <li><strong>Compliance deadlines are jurisdiction-aware</strong> &mdash; ONYX calculates federal, state, and company deadlines from the employee's location and your configured requirements.</li>
-            <li><strong>Sensitive topics are always advisory-only</strong> &mdash; ER cases, accommodation requests, separation, and compensation are handled as guidance, never automated execution.</li>
-            <li><strong>PULSE reports aggregate only</strong> &mdash; no individual employee data in analytics. Team minimums enforced.</li>
-            <li><strong>Standalone by default, ecosystem-ready</strong> &mdash; works fully as a single app. When other Kindo apps are installed, cross-app features activate automatically.</li>
-            <li><strong>Every action creates a Jira issue</strong> &mdash; full audit trail in KHR for all records, lifecycle events, and reports.</li>
-        </ul>
-    </div>
-</section>
+<section><div class="container"><span class="placard">Architecture</span><h2>Key Design Principles</h2><ul>
+    <li><strong>All data stays in your Atlassian environment</strong> &mdash; Forge Storage and Jira issues. No external data storage.</li><li><strong>Compliance deadlines are jurisdiction-aware</strong> &mdash; ONYX calculates federal, state, and company deadlines from the employee's location and your configured requirements.</li><li><strong>Sensitive topics are always advisory-only</strong> &mdash; ER cases, accommodation requests, separation, and compensation are handled as guidance, never automated execution.</li><li><strong>PULSE reports aggregate only</strong> &mdash; no individual employee data in analytics. Team minimums enforced.</li><li><strong>Standalone by default, ecosystem-ready</strong> &mdash; works fully as a single app. When other Kindo apps are installed, cross-app features activate automatically.</li><li><strong>Every action creates a Jira issue</strong> &mdash; full audit trail in KHR for all records, lifecycle events, and reports.</li>
+</ul></div></section>
 
 <!-- ============================================================
      TROUBLESHOOTING
      ============================================================ -->
-<section>
-    <div class="container">
-        <span class="placard">Troubleshooting</span>
-        <h2>Troubleshooting</h2>
-        <table class="troubleshooting-table">
-            <thead>
-                <tr>
-                    <th>Issue</th>
-                    <th>Resolution</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Get Started buttons don't navigate</td>
-                    <td>Verify the app is upgraded to the latest version (<code>forge install --upgrade</code>)</td>
-                </tr>
-                <tr>
-                    <td>Configure page is blank</td>
-                    <td>Check browser console for errors. Ensure the app is deployed and upgraded.</td>
-                </tr>
-                <tr>
-                    <td>Agent not responding</td>
-                    <td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td>
-                </tr>
-                <tr>
-                    <td>HARPER returns "Full name is required"</td>
-                    <td>Ensure you're running the latest version &mdash; earlier versions had a field mapping issue. Redeploy and upgrade.</td>
-                </tr>
-                <tr>
-                    <td>ONYX not calculating compliance deadlines</td>
-                    <td>Verify compliance requirements are configured in Configure &rarr; Compliance Requirements.</td>
-                </tr>
-                <tr>
-                    <td>Peer apps not detected</td>
-                    <td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+<section><div class="container"><span class="placard">Troubleshooting</span><h2>Troubleshooting</h2><table class="troubleshooting-table">
+    <thead><tr><th>Issue</th><th>Resolution</th></tr></thead><tbody>
+        <tr><td>Get Started buttons don't navigate</td><td>Verify the app is upgraded to the latest version (<code>forge install --upgrade</code>)</td></tr>
+        <tr><td>Configure page is blank</td><td>Check browser console for errors. Ensure the app is deployed and upgraded.</td></tr>
+        <tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
+        <tr><td>HARPER returns "Full name is required"</td><td>Ensure you're running the latest version &mdash; earlier versions had a field mapping issue. Redeploy and upgrade.</td></tr>
+        <tr><td>ONYX not calculating compliance deadlines</td><td>Verify compliance requirements are configured in Configure &rarr; Compliance Requirements.</td></tr>
+        <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
+        <tr><td>Can't find the app after install</td><td>Kindo/HR does not appear in the Jira sidebar. Access agents via <strong>Ask Rovo</strong> in the top navigation bar. Admin pages are at Jira Admin &rarr; Manage Apps &rarr; Kindo/HR.</td></tr>
+    </tbody>
+</table></div></section>
 
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="site-footer">
-    <div class="container">
-        <div class="site-footer__left">
-            <div class="site-footer__logo">KinHelm</div>
-            <p>&copy; 2026 KinHelm</p>
-        </div>
-        <div class="site-footer__right">
-            <ul class="site-footer__links">
-                <li><a href="../">Back to Help Center</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
+<footer class="site-footer"><div class="container"><div class="site-footer__left"><div class="site-footer__logo">KinHelm</div><p>&copy; 2026 KinHelm</p></div><div class="site-footer__right"><ul class="site-footer__links"><li><a href="../">Back to Help Center</a></li></ul></div></div></footer>
 </body>
 </html>
