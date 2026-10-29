@@ -1,1 +1,329 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindo/Waldo — Setup &amp; Walkthrough Guide</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__logo">KinHelm</div>
+            <nav><ul class="site-nav">
+                <li><a href="../">Help Center</a></li>
+                <li><a href="./" class="active">Kindo/Waldo</a></li>
+            </ul></nav>
+        </div>
+    </header>
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li><a href="../">Kindo App Help Center</a></li>
+            <li>Kindo/Waldo Setup</li>
+        </ul>
+    </div>
+    <section><div class="container">
+        <span class="placard">Setup &amp; Walkthrough Guide</span>
+        <h1>Kindo/Waldo</h1>
+        <div class="step-section__body">
+            <p>Kindo/Waldo is an AI-powered governance platform for Atlassian Jira. It helps organizations <strong>discover, classify, monitor, and report on their AI systems</strong> using the KGF-1 (KinHelm Governance Framework).</p>
+            <p>Five AI agents work together to manage every aspect of AI governance:</p>
+        </div>
+        <table class="agent-table"><thead><tr><th>Agent</th><th>Role</th><th>Description</th></tr></thead>
+        <tbody>
+            <tr><td>Waldo</td><td>AI Governance Advisor</td><td>Framework guidance, discovery scanning, governance strategy, teaches KGF-1</td></tr>
+            <tr><td>CENSUS</td><td>Component Registration</td><td>Discover, register, classify, and assign ownership of AI systems</td></tr>
+            <tr><td>EMBER</td><td>Trust Monitoring</td><td>Behavioral drift detection, trust scoring, anomaly alerting</td></tr>
+            <tr><td>DECREE</td><td>Policy &amp; Access</td><td>Create policies, classify data sensitivity, manage access rules</td></tr>
+            <tr><td>VISTA</td><td>Reporting &amp; Analytics</td><td>Governance dashboards, risk posture, board-ready reports</td></tr>
+        </tbody></table>
+    </div></section>
+    <section><div class="container">
+        <span class="placard">Before You Begin</span>
+        <h2>Prerequisites</h2>
+        <div class="card card--accent"><ul>
+            <li>Jira Cloud instance with <strong>Rovo enabled</strong></li>
+            <li>Site admin permissions (for initial install)</li>
+            <li>Knowledge of your organization's AI tools, models, and systems (for classification)</li>
+        </ul></div>
+    </div></section>
+    <div class="container">
+        <div class="step-section">
+            <span class="step-section__number">Step 01</span>
+            <h2 class="step-section__title">Install &amp; Get Started</h2>
+            <div class="step-section__body">
+                <p>After installing Kindo/Waldo from the Atlassian Marketplace:</p>
+                <ol>
+                    <li>Navigate to <strong>Jira Admin Settings → Manage Apps → Kindo/Waldo</strong></li>
+                    <li>The <strong>Get Started</strong> page shows a 7-item setup checklist</li>
+                </ol>
+                <h3>Auto-completed on Install (6 items)</h3>
+                <ul>
+                    <li>✅ <strong>Discovery scan complete</strong> — your Atlassian environment is scanned for Jira projects, Confluence spaces, and installed apps</li>
+                    <li>✅ <strong>GOV project created</strong> — a dedicated GOV project is created in your Jira instance for governance records</li>
+                    <li>✅ <strong>Governance framework applied</strong> — the KGF-1 framework is configured with risk tiers, trust scoring, and data classifications</li>
+                    <li>✅ <strong>Components classified</strong> — tracks classification progress (starts at 0/0 — complete until components are registered)</li>
+                    <li>✅ <strong>Component owners assigned</strong> — tracks ownership assignment progress (starts at 0/0 — complete until components are registered)</li>
+                    <li>✅ <strong>Peer apps connected</strong> — shows green in standalone mode. If other Kindo apps are installed, peer connections are detected automatically</li>
+                </ul>
+                <h3>Requires Your Configuration (1 item)</h3>
+                <table class="data-table"><thead><tr><th>Checklist Item</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Governance team assigned</td><td>⚠️ Add members who will review governance decisions and approve risk classifications</td></tr>
+                </tbody></table>
+                <p>Click <strong>"Configure App"</strong> to begin setup, or talk to <strong>Waldo</strong> — your AI governance advisor — for guided help.</p>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 02</span>
+            <h2 class="step-section__title">Configure: Governance Team</h2>
+            <div class="step-section__body">
+                <p>Navigate to <strong>Configure → Team</strong> tab. Add team members who will oversee AI governance decisions.</p>
+                <p>For each member, enter:</p>
+                <table class="data-table"><thead><tr><th>Field</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>Atlassian Account ID</td><td>Their Jira account identifier</td></tr>
+                    <tr><td>Display Name</td><td>How they appear in the app</td></tr>
+                    <tr><td>Role</td><td>e.g., Admin, Reviewer, Auditor</td></tr>
+                </tbody></table>
+                <p>Click <strong>"Add Member"</strong> then <strong>"Save"</strong>. A green confirmation banner confirms the save was successful.</p>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 03</span>
+            <h2 class="step-section__title">Configure: Additional Tabs</h2>
+            <div class="step-section__body">
+                <table class="data-table"><thead><tr><th>Tab</th><th>Purpose</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Risk Tiers</strong></td><td>Define the four risk tiers (T1–T4) and their associated controls and review frequencies</td></tr>
+                    <tr><td><strong>Trust Scoring</strong></td><td>Configure the 5-factor weighted trust model (Incident History, Compliance Posture, Behavioral Consistency, Review Recency, Control Coverage)</td></tr>
+                    <tr><td><strong>Framework</strong></td><td>View and configure the KGF-1 governance framework settings</td></tr>
+                    <tr><td><strong>Discovery</strong></td><td>Review discovery scan results and trigger rescans</td></tr>
+                    <tr><td><strong>Ecosystem</strong></td><td>View connected Kindo peer apps. Standalone mode if no others installed. Ecosystem features activate automatically when peers are detected</td></tr>
+                </tbody></table>
+                <p>Accept the defaults for initial setup. These can be refined as your governance practice matures.</p>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 04</span>
+            <h2 class="step-section__title">Verify Setup Progress</h2>
+            <div class="step-section__body">
+                <p>Return to the <strong>Get Started</strong> page to verify your progress.</p>
+                <p>After configuring your governance team, all items should show green:</p>
+                <div class="card card--accent">
+                    <p><strong>Setup Progress: 7 of 7 complete (100%)</strong></p>
+                    <p>"All checks passed. Your governance platform is fully configured. All agents are ready."</p>
+                </div>
+            </div>
+        </div>
+        <!-- HOW TO USE -->
+        <div class="step-section" style="border-left: 3px solid #E09A1A; padding-left: 1.5rem;">
+            <h2 class="step-section__title">How to Use Kindo/Waldo</h2>
+            <div class="step-section__body">
+                <div class="card card--accent">
+                    <p><strong>Important:</strong> Kindo/Waldo <strong>does not add an entry to the Jira sidebar.</strong> All interaction with the app happens through <strong>Rovo Chat</strong> — Atlassian's built-in AI assistant.</p>
+                </div>
+                <h3>Accessing the Agents</h3>
+                <ol>
+                    <li>Click <strong>"Ask Rovo"</strong> in the top navigation bar of any Jira page</li>
+                    <li>Select any Kindo agent from the list: <strong>Waldo</strong>, <strong>CENSUS</strong>, <strong>EMBER</strong>, <strong>DECREE</strong>, or <strong>VISTA</strong></li>
+                    <li>Describe what you want to do — the agent handles the rest</li>
+                </ol>
+                <h3>Where to Find App Data</h3>
+                <ul>
+                    <li><strong>GOV project</strong> — Check your Jira project list for the auto-created <code>GOV</code> project. Component registrations, policies, evaluations, and incidents all appear here as Jira issues with full audit trails.</li>
+                </ul>
+                <h3>Admin Pages</h3>
+                <ul>
+                    <li><strong>Get Started</strong>, <strong>Configure</strong>, and <strong>Dashboard</strong> remain accessible at <strong>Jira Admin → Manage Apps → Kindo/Waldo</strong></li>
+                </ul>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 05</span>
+            <h2 class="step-section__title">Discover Your Environment with Waldo</h2>
+            <div class="step-section__body">
+                <p><strong>Waldo</strong> is your AI governance advisor. Unlike a setup guide, Waldo understands the KGF-1 framework and helps you apply it to your specific environment.</p>
+                <ol>
+                    <li>Open Rovo Chat (click <strong>"Ask Rovo"</strong> in the top navigation bar)</li>
+                    <li>Select <strong>Waldo (Kindo)</strong> from your available agents</li>
+                    <li>Ask Waldo to scan your environment: <em>"Scan my environment for AI components that need governance."</em></li>
+                </ol>
+                <p>Waldo runs a discovery scan and reports what it found — Jira projects, Confluence spaces, installed apps.</p>
+                <p>Waldo explains why discovery matters in the KGF-1 framework and outlines the three axes of classification:</p>
+                <table class="data-table"><thead><tr><th>Axis</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Risk Tiering (T1–T4)</strong></td><td>How much scrutiny each system needs</td></tr>
+                    <tr><td><strong>Risk Rating (C/H/M/L)</strong></td><td>The impact of a potential failure</td></tr>
+                    <tr><td><strong>Data Classification</strong></td><td>What information the system handles (Public/Internal/Confidential/Restricted)</td></tr>
+                </tbody></table>
+                <div class="card card--accent">
+                    <p><strong>Three orthogonal axes:</strong> Risk Tier, Risk Rating, and Data Classification are independent. A T1 component can handle Restricted data. A T4 component can handle Public data. They measure different things.</p>
+                </div>
+                <p>Ask Waldo to explain the risk tiers: <em>"How do the risk tiers apply to my components?"</em></p>
+                <p>Waldo presents the four-tier framework with descriptions, key controls, and review frequencies — contextualized to your environment, not abstract definitions.</p>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 06</span>
+            <h2 class="step-section__title">Register Components with CENSUS</h2>
+            <div class="step-section__body">
+                <p><strong>CENSUS</strong> is your component registration agent. It takes discovered items and formally registers them in the governance framework.</p>
+                <ol>
+                    <li>Open Rovo Chat and select <strong>CENSUS (Kindo)</strong></li>
+                    <li>Ask CENSUS to register your discovered components: <em>"Help me register all discovered components."</em></li>
+                </ol>
+                <p>CENSUS identifies all unregistered components and suggests grouping them by category:</p>
+                <table class="data-table"><thead><tr><th>Group</th><th>Priority / Notes</th></tr></thead>
+                <tbody>
+                    <tr><td>AI &amp; Intelligent Agents</td><td>High priority — autonomy and data processing risks</td></tr>
+                    <tr><td>External SaaS &amp; Integrations</td><td>Third-party data sharing</td></tr>
+                    <tr><td>Core Infrastructure &amp; Internal Systems</td><td>Foundational systems</td></tr>
+                    <tr><td>Business Unit Service Desks &amp; Automations</td><td>Workflow automation</td></tr>
+                    <tr><td>Mobile &amp; Specialized Tools</td><td>Edge cases and specialized use</td></tr>
+                </tbody></table>
+                <p>For each component, CENSUS collects:</p>
+                <table class="data-table"><thead><tr><th>Field</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>Component Type</td><td>ai_model, agent, automation, data_pipeline, saas_tool, internal_system</td></tr>
+                    <tr><td>Owner</td><td>The Atlassian account ID of the responsible person</td></tr>
+                    <tr><td>Description</td><td>What the component does</td></tr>
+                    <tr><td>Data Access</td><td>What data the component can reach</td></tr>
+                    <tr><td>Deployment Scope</td><td>internal, customer_facing, or both</td></tr>
+                </tbody></table>
+                <p>CENSUS registers the components, assigns advisory risk tier recommendations, and creates Jira issues in the GOV project (e.g., GOV-2, GOV-3).</p>
+                <div class="card card--accent">
+                    <p><strong>Important:</strong> Risk tier recommendations are advisory. A human member of the governance team must review and confirm the final tier.</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 07</span>
+            <h2 class="step-section__title">Monitor Trust with EMBER</h2>
+            <div class="step-section__body">
+                <p><strong>EMBER</strong> tracks the trustworthiness of your governed components using a weighted 5-factor model.</p>
+                <ol>
+                    <li>Open Rovo Chat and select <strong>EMBER (Kindo)</strong></li>
+                    <li>Ask for a component's trust score: <em>"What is the trust score for Slack?"</em></li>
+                </ol>
+                <p>EMBER returns a full breakdown:</p>
+                <ul>
+                    <li><strong>Current Score</strong> (0–100)</li>
+                    <li><strong>Trust Level</strong> — Trusted (≥80), Provisional, Probation, or Suspended</li>
+                    <li><strong>Risk Tier</strong> assignment</li>
+                    <li><strong>Factor Analysis</strong> with individual scores, weights, and impact descriptions</li>
+                </ul>
+                <table class="data-table"><thead><tr><th>Factor</th><th>Weight</th><th>What It Measures</th></tr></thead>
+                <tbody>
+                    <tr><td>Incident History</td><td>30%</td><td>Fewer/less severe incidents = higher score</td></tr>
+                    <tr><td>Compliance Posture</td><td>20%</td><td>Adherence to defined policies</td></tr>
+                    <tr><td>Behavioral Consistency</td><td>20%</td><td>Stability of behavior over time</td></tr>
+                    <tr><td>Review Recency</td><td>15%</td><td>How recently the component was reviewed</td></tr>
+                    <tr><td>Control Coverage</td><td>15%</td><td>Implementation of required controls for its tier</td></tr>
+                </tbody></table>
+                <p>EMBER identifies what's holding the score back and what actions would improve it.</p>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 08</span>
+            <h2 class="step-section__title">Create Policies with DECREE</h2>
+            <div class="step-section__body">
+                <p><strong>DECREE</strong> manages governance policies, data classification, and access rules.</p>
+                <ol>
+                    <li>Open Rovo Chat and select <strong>DECREE (Kindo)</strong></li>
+                    <li>Ask DECREE to create a policy: <em>"Create an access control policy for all components handling internal data."</em></li>
+                </ol>
+                <p>DECREE drafts the policy with:</p>
+                <table class="data-table"><thead><tr><th>Item</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Name, Type, and Scope</td><td>Policy identity and applicability</td></tr>
+                    <tr><td>Requirements</td><td>e.g., MFA required, access restricted to authenticated employees, quarterly log review</td></tr>
+                    <tr><td>Review Cycle</td><td>e.g., quarterly, with next review date</td></tr>
+                    <tr><td>Owner assignment</td><td>Responsible governance team member</td></tr>
+                </tbody></table>
+                <p>Review and confirm the policy. DECREE creates a corresponding Jira issue in the GOV project (e.g., GOV-8) with:</p>
+                <ul>
+                    <li><code>[POLICY]</code> summary prefix</li>
+                    <li>Labels: <code>kindo-governance</code>, <code>policy</code>, <code>policy-access</code></li>
+                    <li>Full requirements in the description</li>
+                    <li>Audit trail of creation and updates</li>
+                </ul>
+            </div>
+        </div>
+        <div class="step-section">
+            <span class="step-section__number">Step 09</span>
+            <h2 class="step-section__title">Report to Leadership with VISTA</h2>
+            <div class="step-section__body">
+                <p><strong>VISTA</strong> generates governance dashboards and board-ready reports.</p>
+                <ol>
+                    <li>Open Rovo Chat and select <strong>VISTA (Kindo)</strong></li>
+                    <li>Ask for a governance posture report: <em>"Generate a governance posture report for our board."</em></li>
+                </ol>
+                <p>VISTA generates an <strong>Executive Governance Posture Report</strong> including:</p>
+                <ul>
+                    <li><strong>Executive Summary</strong> — total governed components, average trust score, material incidents</li>
+                    <li><strong>Risk Tier Distribution</strong> — breakdown by T1–T4 and unclassified</li>
+                    <li><strong>Trust &amp; Compliance Trends</strong> — tier performance, policy coverage, review status</li>
+                    <li><strong>Incident Overview</strong> — total incidents and governance breaches</li>
+                    <li><strong>Strategic Recommendations</strong> — actionable next steps based on current data</li>
+                </ul>
+                <div class="card card--accent">
+                    <p><strong>Note:</strong> VISTA is a read-only agent. It reports on data and trends to help you make informed decisions, but it does not determine or change your governance posture.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section><div class="container">
+        <span class="placard">Reference</span>
+        <h2>Agent Reference</h2>
+        <table class="agent-table"><thead><tr><th>Agent</th><th>What It Does</th><th>When to Use It</th></tr></thead>
+        <tbody>
+            <tr><td>Waldo</td><td>Governance advisor — teaches KGF-1, scans environment, explains risk tiers and classification</td><td>First point of contact. Start here when new to governance or need strategic guidance</td></tr>
+            <tr><td>CENSUS</td><td>Registers and classifies components — bulk registration, risk tier recommendations, ownership</td><td>When adding AI systems to the governance framework</td></tr>
+            <tr><td>EMBER</td><td>Monitors trust — scoring, drift detection, anomaly alerts, decay tracking</td><td>When checking component health or investigating behavioral changes</td></tr>
+            <tr><td>DECREE</td><td>Manages policies — create/update policies, classify data sensitivity, access rules</td><td>When establishing or enforcing governance rules</td></tr>
+            <tr><td>VISTA</td><td>Reports — dashboards, posture reports, trend analysis, tier comparisons</td><td>When reporting to leadership or tracking governance maturity</td></tr>
+        </tbody></table>
+    </div></section>
+    <section><div class="container">
+        <span class="placard">Architecture</span>
+        <h2>Key Design Principles</h2>
+        <div class="step-section__body"><ul>
+            <li><strong>All data stays in your Atlassian environment</strong> — Forge Storage and Jira issues. No external data storage.</li>
+            <li><strong>Governance-write decisions are human-only</strong> — agents recommend, humans confirm. Risk tiers, status changes, and clearance decisions require human approval.</li>
+            <li><strong>Three orthogonal governance axes</strong> — Risk Tier (T1–T4), Risk Rating (C/H/M/L), and Data Classification (Public/Internal/Confidential/Restricted) are independent.</li>
+            <li><strong>Advisory, not authoritative</strong> — CENSUS recommends risk tiers, EMBER calculates trust scores, DECREE drafts policies. All require human review and confirmation.</li>
+            <li><strong>Standalone by default, ecosystem-ready</strong> — works fully as a single app. When other Kindo apps (HR, Training, Compliance, Change, Legal) are installed, cross-app governance features activate automatically.</li>
+            <li><strong>Every governance action creates a Jira issue</strong> — component registrations, policies, evaluations, and incidents all live as GOV project issues for full audit trail.</li>
+        </ul></div>
+    </div></section>
+    <section><div class="container">
+        <span class="placard">Support</span>
+        <h2>Troubleshooting</h2>
+        <table class="troubleshooting-table"><thead><tr><th>Issue</th><th>Solution</th></tr></thead>
+        <tbody>
+            <tr><td>Get Started shows items as incomplete</td><td>Click "Refresh Checks". If discovery or framework still show incomplete, try uninstalling and reinstalling the app.</td></tr>
+            <tr><td>Configure page is blank</td><td>Check browser console for errors. Ensure the app is deployed and upgraded to the latest version.</td></tr>
+            <tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
+            <tr><td>Discovery scan finds no components</td><td>Ensure your Jira site has at least one project. The scan looks for Jira projects, Confluence spaces, and installed apps.</td></tr>
+            <tr><td>Trust scores not updating</td><td>EMBER recalculates scores when trust events are logged. Check that events have been recorded for the component.</td></tr>
+            <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
+            <tr><td>Waldo doesn't run the scan</td><td>Make sure you're asking Waldo to scan, not just asking about scanning. Try: "Scan my environment for AI components."</td></tr>
+            <tr><td>Can't find the app after install</td><td>Kindo/Waldo does not appear in the Jira sidebar. Access agents via <strong>"Ask Rovo"</strong> in the top navigation bar. Admin pages are at <strong>Jira Admin → Manage Apps → Kindo/Waldo</strong>.</td></tr>
+        </tbody></table>
+    </div></section>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__left">
+                <div class="site-footer__logo">KinHelm</div>
+                <p>© 2026 KinHelm</p>
+            </div>
+            <div class="site-footer__right">
+                <ul class="site-footer__links">
+                    <li><a href="../">Back to Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
