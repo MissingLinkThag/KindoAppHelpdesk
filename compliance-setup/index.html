@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kindo/Compliance &mdash; Setup &amp; Walkthrough Guide</title>
+<link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../">&larr; Back to Helpdesk</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="placard">Kindo/Compliance</div>
+      <h1>Kindo/Compliance &mdash; Setup &amp; Walkthrough Guide</h1>
+      <p>Kindo/Compliance brings AI-powered compliance management into your Atlassian environment &mdash; designed for teams where compliance is one of many responsibilities, not a standalone department. Five AI agents handle framework management, evidence collection, audit lifecycle, and risk analytics, all within Jira.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="agent-roster">
+      <h2>Meet Your Compliance Team</h2>
+      <p>Five specialized agents work together to support your compliance program.</p>
+      <table class="agent-table">
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>KNOT</strong></td>
+            <td>Your guide to the app &mdash; configuration help, health checks, and cross-app compliance coordination. KNOT knows what&rsquo;s configured, what&rsquo;s missing, and which agent handles what.</td>
+          </tr>
+          <tr>
+            <td><strong>CANON</strong></td>
+            <td>Framework &amp; control management &mdash; load compliance frameworks (SOC 2, ISO 27001, HIPAA, PCI-DSS), run gap analysis, and map crosswalks between frameworks.</td>
+          </tr>
+          <tr>
+            <td><strong>VIGIL</strong></td>
+            <td>Evidence &amp; monitoring &mdash; collect evidence for controls, track testing schedules, check evidence expiry, and scan connected projects for existing proof.</td>
+          </tr>
+          <tr>
+            <td><strong>RELIC</strong></td>
+            <td>Audit management &mdash; create audit engagements, log findings, manage corrective actions, and verify effectiveness. Enforces Complete &ne; Closed.</td>
+          </tr>
+          <tr>
+            <td><strong>GAUGE</strong></td>
+            <td>Reporting &amp; risk analytics &mdash; compliance dashboards, per-framework risk scores, and evidence coverage metrics. Measures and reports only &mdash; never certifies compliance.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card card--accent">
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Jira Cloud instance with Rovo enabled</li>
+        <li>Site admin permissions for the initial install</li>
+        <li>At least one Jira project with compliance-relevant content (optional but recommended for evidence scanning)</li>
+      </ul>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">1</div>
+      <h2 class="step-section__title">Install &amp; Get Started</h2>
+      <div class="step-section__body">
+        <p>After installing Kindo/Compliance from the Atlassian Marketplace:</p>
+        <ol>
+          <li>Navigate to <strong>Jira Admin Settings &rarr; Manage Apps &rarr; Kindo/Compliance</strong>.</li>
+          <li>The <strong>Get Started</strong> page shows a seven-item setup checklist.</li>
+        </ol>
+
+        <h3>Auto-complete on install</h3>
+        <table class="data-table">
+          <thead>
+            <tr><th>Item</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>&#9989; Compliance project created</td><td>A dedicated KCC project is created in your Jira instance.</td></tr>
+            <tr><td>&#9989; Compliance framework applied</td><td>SOC 2, ISO 27001, HIPAA, and PCI-DSS frameworks are configured.</td></tr>
+            <tr><td>&#9989; Control library loaded</td><td>223 controls are seeded across all frameworks (SOC 2: 64, ISO 27001: 93, HIPAA: 18, PCI-DSS: 48).</td></tr>
+            <tr><td>&#9989; Discovery scan complete</td><td>Your Atlassian site is scanned for compliance-relevant content.</td></tr>
+            <tr><td>&#9989; Peer apps connected</td><td>Shows green in standalone mode and activates automatically when other Kindo apps are installed.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Require configuration</h3>
+        <table class="data-table">
+          <thead>
+            <tr><th>Item</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Compliance team assigned</td><td>Add members who will manage compliance activities. The installer account is added automatically.</td></tr>
+            <tr><td>Active frameworks selected</td><td>Choose which frameworks to actively track. All four are available; enable the ones that apply to you.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="video-embed">
+          <iframe width="700" height="400" src="https://embed.app.guidde.com/playbooks/sh6TqckLoVQNinjVkDzXAk?mode=videoOnly" title="Configure Kindo/Compliance" frameborder="0" referrerpolicy="unsafe-url" allowfullscreen="true" allow="clipboard-write" sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms allow-same-origin allow-presentation" style="border-radius: 10px"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">2</div>
+      <h2 class="step-section__title">Configure: Compliance Team</h2>
+      <div class="step-section__body">
+        <ol>
+          <li>Navigate to <strong>Configure &rarr; Compliance Team</strong>.</li>
+          <li>Add team members who will manage compliance controls, collect evidence, and oversee audits.</li>
+          <li>Complete the fields for each member:</li>
+        </ol>
+        <table class="data-table">
+          <thead>
+            <tr><th>Field</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Atlassian Account ID</td><td>Their Jira account identifier.</td></tr>
+            <tr><td>Display Name</td><td>How they appear in the app.</td></tr>
+            <tr><td>Role</td><td>For example: Compliance Officer, Auditor, Control Owner, or Risk Analyst.</td></tr>
+          </tbody>
+        </table>
+        <ol start="4">
+          <li>Click <strong>Add Member</strong>, then <strong>Save</strong>.</li>
+          <li>A green confirmation banner confirms success.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">3</div>
+      <h2 class="step-section__title">Configure: Frameworks</h2>
+      <div class="step-section__body">
+        <p>Four frameworks are pre-seeded during installation: <strong>SOC 2 Type II</strong>, <strong>ISO 27001:2022</strong>, <strong>HIPAA Security Rule</strong>, and <strong>PCI-DSS v4.0</strong>.</p>
+        <ol>
+          <li>Navigate to <strong>Configure &rarr; Frameworks</strong>.</li>
+          <li>Toggle each framework active or inactive based on your compliance obligations.</li>
+        </ol>
+        <table class="data-table">
+          <thead>
+            <tr><th>Field</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Framework</td><td>SOC 2, ISO 27001, HIPAA, or PCI-DSS.</td></tr>
+            <tr><td>Total Controls</td><td>Number of requirements in the control library.</td></tr>
+            <tr><td>Status</td><td>Active or Inactive.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">4</div>
+      <h2 class="step-section__title">Configure: Evidence &amp; Testing</h2>
+      <div class="step-section__body">
+        <p>Evidence configuration tells VIGIL how to manage proof of compliance. It has three components.</p>
+
+        <h3>Evidence Validity Periods</h3>
+        <table class="data-table">
+          <thead>
+            <tr><th>Evidence Type</th><th>Default Validity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Screenshot</td><td>90 days</td></tr>
+            <tr><td>System Export</td><td>180 days</td></tr>
+            <tr><td>Policy Document</td><td>365 days</td></tr>
+            <tr><td>Audit Report</td><td>365 days</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Default Test Cadence</h3>
+        <p><strong>Quarterly</strong> &mdash; controls should be re-tested every quarter by default.</p>
+
+        <h3>Staleness Threshold</h3>
+        <p><strong>30 days</strong> &mdash; evidence approaching expiry is flagged 30 days before it becomes stale.</p>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">5</div>
+      <h2 class="step-section__title">Configure: Additional Tabs</h2>
+      <div class="step-section__body">
+        <table class="data-table">
+          <thead>
+            <tr><th>Tab</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Audit Configuration</td><td>Define audit types (Internal, External, Certification, Surveillance) and finding severity SLAs. RELIC uses these when managing audit engagements. Default SLAs are Critical: 7 days, Major: 30 days, Minor: 90 days, and Observation: 180 days.</td></tr>
+            <tr><td>Discovery &amp; Monitoring</td><td>View discovered Jira projects and configure which ones VIGIL should scan for evidence artifacts. This tab shows results from the initial discovery scan.</td></tr>
+            <tr><td>Ecosystem</td><td>View connected Kindo peer apps. The app operates in standalone mode if no other Kindo apps are installed. Cross-app features such as change impact assessment and HR offboarding ownership checks activate automatically when peers are detected.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="step-section" style="border-left: 3px solid #E09A1A; padding-left: 1.5rem;">
+      <h2>How to Use Kindo/Compliance</h2>
+      <div class="notice notice--success">
+        <p><strong>Kindo/Compliance does not add an entry to the Jira sidebar.</strong> All interaction with the app happens through Rovo Chat &mdash; Atlassian&rsquo;s built-in AI assistant.</p>
+      </div>
+
+      <h3>Accessing the Agents</h3>
+      <ol>
+        <li>Click <strong>Ask Rovo</strong> in Jira&rsquo;s top navigation bar.</li>
+        <li>Select the Kindo/Compliance agent you want to use.</li>
+        <li>Describe what you want in plain language.</li>
+      </ol>
+
+      <h3>How Agents Work</h3>
+      <p>Agents gather the information needed for a task, explain the proposed action, and ask for confirmation before making changes. Review the summary, confirm the action, and the agent creates or updates the appropriate Jira records. This confirmation pattern keeps you in control and preserves a clear audit trail.</p>
+
+      <div class="video-embed">
+        <iframe width="700" height="400" src="https://embed.app.guidde.com/playbooks/mxmtjSE8b2r7dppZX41tWf?mode=videoOnly" title="Explore Kindo/Compliance" frameborder="0" referrerpolicy="unsafe-url" allowfullscreen="true" allow="clipboard-write" sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms allow-same-origin allow-presentation" style="border-radius: 10px"></iframe>
+      </div>
+
+      <h3>Where to Find App Data</h3>
+      <p>Compliance records created by the agents are stored in the dedicated <strong>KCC project</strong>. Use this project to review issues, ownership, status, history, and the complete audit trail.</p>
+
+      <h3>Admin Pages</h3>
+      <p>Configuration, setup, and dashboard pages are available at <strong>Jira Admin &rarr; Manage Apps &rarr; Kindo/Compliance</strong>.</p>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">6</div>
+      <h2 class="step-section__title">Run a Gap Analysis with CANON</h2>
+      <div class="step-section__body">
+        <p>CANON identifies where your compliance program has gaps.</p>
+        <p><strong>Example prompt:</strong> &ldquo;Run a SOC 2 gap analysis&rdquo;</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Section</th><th>What It Shows</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Priority Grouping</td><td>Critical, High, and Medium risk gaps &mdash; most urgent first.</td></tr>
+            <tr><td>Control Details</td><td>A plain-language explanation of each requirement with its control code.</td></tr>
+            <tr><td>Evidence Status</td><td>Whether each control has current, expiring, or no evidence.</td></tr>
+            <tr><td>Remediation Tracking</td><td>Automatically creates a parent issue and subtasks in KCC for high-priority gaps.</td></tr>
+          </tbody>
+        </table>
+        <p>After the gap analysis, CANON recommends which controls to address first based on risk level.</p>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">7</div>
+      <h2 class="step-section__title">Collect Evidence with VIGIL</h2>
+      <div class="step-section__body">
+        <p>VIGIL manages proof that your controls are working.</p>
+        <h3>Two Collection Modes</h3>
+        <ul>
+          <li><strong>Scan Mode:</strong> &ldquo;Scan the environment for SOC 2 evidence&rdquo; &mdash; VIGIL searches connected Jira projects for existing artifacts that could serve as compliance evidence.</li>
+          <li><strong>Manual Collection:</strong> &ldquo;Collect evidence for CC6.1 &mdash; policy document, source is our Okta SSO configuration&rdquo;</li>
+        </ul>
+        <p>VIGIL creates evidence records with the following fields:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Field</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Control</td><td>Which requirement the evidence covers.</td></tr>
+            <tr><td>Evidence Type</td><td>Document, screenshot, log, attestation, or automated.</td></tr>
+            <tr><td>Source</td><td>URL or description of where the proof lives.</td></tr>
+            <tr><td>Validity Period</td><td>How long the evidence remains valid, automatically calculated from its type.</td></tr>
+            <tr><td>Cross-Framework Links</td><td>If a crosswalk exists, evidence automatically links to equivalent controls in other frameworks.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">8</div>
+      <h2 class="step-section__title">Manage Audits with RELIC</h2>
+      <div class="step-section__body">
+        <p>RELIC handles the full audit lifecycle &mdash; from planning through verification.</p>
+        <h3>Example Flow</h3>
+        <ol>
+          <li>&ldquo;Create an internal audit for SOC 2&rdquo; &rarr; RELIC creates the engagement with Jira issue tracking.</li>
+          <li>&ldquo;Log a major finding against CC6.8 &mdash; no EDR deployed&rdquo; &rarr; RELIC creates a finding with severity, root cause, and repeat detection.</li>
+          <li>&ldquo;Create a corrective action &mdash; deploy CrowdStrike by end of January&rdquo; &rarr; RELIC creates a corrective action with an owner, target date, and verification method.</li>
+        </ol>
+
+        <div class="notice notice--success">
+          <p><strong>RELIC enforces Complete &ne; Closed.</strong> Completing a corrective action is not the same as closing it. Every corrective action must be independently verified for effectiveness before the finding is closed.</p>
+        </div>
+
+        <h3>Audit Prep Check</h3>
+        <p><strong>Prompt:</strong> &ldquo;Are we ready for the external audit?&rdquo;</p>
+        <p>RELIC returns evidence coverage percentage, test coverage percentage, open findings, overdue policies, and a plain-language readiness narrative.</p>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">9</div>
+      <h2 class="step-section__title">Review Risk with GAUGE</h2>
+      <div class="step-section__body">
+        <p>GAUGE provides compliance analytics through two primary views.</p>
+
+        <h3>Compliance Dashboard</h3>
+        <p><strong>Prompt:</strong> &ldquo;Show the compliance dashboard&rdquo;</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Section</th><th>What It Shows</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Framework Compliance</td><td>Per-framework implementation percentage.</td></tr>
+            <tr><td>Evidence Coverage</td><td>Controls with current, expiring, or no evidence.</td></tr>
+            <tr><td>Open Findings</td><td>Active audit findings by severity.</td></tr>
+            <tr><td>Risk Trend</td><td>Compliance posture over time.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Risk Score</h3>
+        <p><strong>Prompt:</strong> &ldquo;What&rsquo;s our risk score?&rdquo;</p>
+        <ul>
+          <li>Aggregate score from 0&ndash;100, weighted by control gaps, evidence coverage, and finding severity.</li>
+          <li>Per-framework breakdown with primary risk drivers.</li>
+          <li>Actionable recommendations for reducing risk.</li>
+        </ul>
+
+        <div class="notice notice--success">
+          <p><strong>GAUGE measures and reports compliance posture.</strong> Compliance certification is a human/auditor determination and cannot be guaranteed by this tool.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-section__number">10</div>
+      <h2 class="step-section__title">Dashboard</h2>
+      <div class="step-section__body">
+        <p>The Compliance Dashboard at <strong>Jira Admin &rarr; Manage Apps &rarr; Kindo/Compliance &rarr; Dashboard</strong> provides a single view of your program.</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Section</th><th>What It Shows</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Needs Your Attention</td><td>Overdue control tests, expiring evidence, overdue corrective actions, and overdue policy reviews.</td></tr>
+            <tr><td>Framework Status</td><td>Per-framework compliance percentage with control counts.</td></tr>
+            <tr><td>Evidence Freshness</td><td>Green for current, Yellow for expiring within 30 days, and Red for expired.</td></tr>
+            <tr><td>Open Findings</td><td>Active findings by severity with age.</td></tr>
+            <tr><td>Agent Status</td><td>All five agents showing Active with their last activity timestamp.</td></tr>
+            <tr><td>Activity Feed</td><td>Configuration changes, agent actions, evidence events, and audit milestones.</td></tr>
+          </tbody>
+        </table>
+        <p>The dashboard reflects data created through agent interactions.</p>
+      </div>
+    </section>
+
+    <section class="key-principles">
+      <h2>Key Design Principles</h2>
+      <div class="card card--accent">
+        <ul>
+          <li><strong>Designed for small teams</strong> &mdash; Agents provide actionable guidance without assuming a full compliance department. If compliance is one of your many responsibilities, these agents work for you.</li>
+          <li><strong>All data stays in your Atlassian environment</strong> &mdash; Forge Storage, Forge SQL, and Jira issues. There is no external data storage.</li>
+          <li><strong>Compliance guidance, not legal advice</strong> &mdash; Agents provide operational support grounded in your data. Formal compliance determinations are made by qualified professionals.</li>
+          <li><strong>Plain language first</strong> &mdash; Every control requirement is explained in terms anyone can understand, with the technical control code shown second.</li>
+          <li><strong>Complete &ne; Closed</strong> &mdash; Corrective actions must be verified for effectiveness, not just marked done. This is enforced at the system level.</li>
+          <li><strong>Standalone by default, ecosystem-ready</strong> &mdash; Kindo/Compliance works fully as a single app. When other Kindo apps are installed (Governance, HR, Legal, Change, Training), cross-app features activate automatically.</li>
+          <li><strong>Team membership controls access</strong> &mdash; Agents read the team list on every interaction. Team members get full access; non-members receive general guidance only.</li>
+          <li><strong>Every action creates a Jira issue</strong> &mdash; KCC provides a full audit trail for all audits, findings, corrective actions, and evidence records.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="troubleshooting">
+      <h2>Troubleshooting</h2>
+      <table class="troubleshooting-table">
+        <thead>
+          <tr><th>Issue</th><th>Resolution</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Get Started buttons don&rsquo;t navigate</td><td>Verify the app is upgraded to the latest version (<code>forge install --upgrade</code>).</td></tr>
+          <tr><td>Configure page is blank</td><td>Check the browser console for errors. Ensure the app is deployed and upgraded.</td></tr>
+          <tr><td>Agent not responding</td><td>Verify Rovo is enabled on your Jira site. Check that the agent appears in Browse Agents.</td></tr>
+          <tr><td>Agent says &ldquo;connection error&rdquo;</td><td>Ensure the app is deployed to the correct environment. Try <code>forge deploy</code>, then <code>forge install --upgrade</code>.</td></tr>
+          <tr><td>Dashboard shows no data</td><td>Run a gap analysis and collect evidence through the agents first. The dashboard reflects data created through agent interactions.</td></tr>
+          <tr><td>KNOT reports optional items as missing</td><td>KNOT shows all configuration areas, including optional ones. Items such as Discovery sources and Ecosystem peers are optional.</td></tr>
+          <tr><td>Gap analysis shows 0% implemented</td><td>This is expected on the first run. All controls start as &ldquo;not implemented&rdquo; until you update their status through CANON.</td></tr>
+          <tr><td>Evidence shows as expired</td><td>Evidence has validity periods. Expired evidence needs to be re-collected with current proof. Use VIGIL to check expiry status.</td></tr>
+          <tr><td>Subtasks not created from gap analysis</td><td>Verify that the KCC project has the &ldquo;Subtask&rdquo; issue type enabled in <strong>Project Settings &rarr; Issue Types</strong>.</td></tr>
+          <tr><td>Peer apps not detected</td><td>Other Kindo apps must be installed on the same Jira site. The app works fully in standalone mode.</td></tr>
+          <tr><td>Can&rsquo;t find the app after install</td><td>Kindo/Compliance does not appear in the Jira sidebar. Access agents through Ask Rovo in the top navigation bar. Admin pages are at <strong>Jira Admin &rarr; Manage Apps &rarr; Kindo/Compliance</strong>.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a href="../">&larr; Back to Helpdesk</a>
+  </div>
+</footer>
+</body>
+</html>
